@@ -1,4 +1,6 @@
-Site Individual - Fire Force  <img src="[https://preview.redd.it/9dwc1u5yxnm61.png?width=842&format=png&auto=webp&s=60c0ed424cd40df1f2ef82947aa48afa5542bd11](https://tienda.coalise.es/wp-content/uploads/2020/05/logo-vertical-1.png)"
+Site Individual - Fire Force
+
+<img src="https://tienda.coalise.es/wp-content/uploads/2020/05/logo-vertical-1.png"
 
 
 Este site é sobre o mangá japonês, Fire Force, escrito e ilustrado por Atsuchi Okubo, mesmo criador de outro grande sucesso chamado Soul Eater. Escolhi este tema para aborda sobre mim e apresentar um dos meus mangás favoritos. aproveitar para treinar minhas habilidades de programação front-end e back-end.
