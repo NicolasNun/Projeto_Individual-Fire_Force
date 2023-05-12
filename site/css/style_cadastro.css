@@ -1,5 +1,3 @@
-
-
 body {
     margin: 0;
     padding: 0;
@@ -57,16 +55,59 @@ body {
 }
 
 .conteudo .container {
-    flex-direction: column;
+    gap: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .campos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 45%;
+
 }
 
-.conteudo input {
+.campos input {
     width: 100%;
-    border: 3px solid #000000;
+    border: 5px solid #000000;
     border-radius: 50px;
     padding: 2%;
+    margin-bottom: 4%;
+}
+
+.personagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.personagem #img_personagem {
+    background-image: url(../assets/personagens_icon/shinra_icon.jpg);
+    background-size: cover;
+    width: 224px;
+    height: 224px;
+    border: 8px solid #000000;
+    border-radius: 5px;
+}
+
+.personagem #select_personagem_favorito {
+    width: 100%;
+    height: 11%;
+    border: 5px solid #000000;
+    border-radius: 50px;
+    padding-left: 2%;
+    font-weight: 900;
+}
+
+.conteudo button {
+    width: 30%;
+    height: 55px;
+    font-size: x-large;
+    font-weight: 900;
+    background: #C6260E;
+    border: 5px solid #000000;
+    border-radius: 50px;
 }
