@@ -42,7 +42,7 @@ body {
     text-decoration: none;
 }
 
-.navegacao #nav_cadastro {
+.navegacao #nav_login {
     background-color: rgba(198, 38, 14, 0.8);
     border: rgba(198, 38, 14, 0.8) solid;
     border-radius: 5px;
@@ -58,9 +58,10 @@ body {
 }
 
 .conteudo .container {
-    gap: 5%;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 10vh;
+    height: 79.8vh;
+    align-items: center;
+    flex-direction: column;
 }
 
 .campos {
@@ -84,51 +85,6 @@ body {
     text-align: center;
 }
 
-.personagem {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.personagem #img_personagem {
-    background-size: cover;
-    width: 224px;
-    height: 224px;
-    border: 8px solid #000000;
-    border-radius: 5px;
-}
-
-.shinra {
-    background-image: url(../assets/personagens_icon/shinra_icon.jpg);
-}
-
-.arthur {
-    background-image: url(../assets/personagens_icon/arhur_icon.jpg);
-}
-
-.benimaru {
-    background-image: url(../assets/personagens_icon/beni_icon.jpg);
-}
-
-.obi {
-    background-image: url(../assets/personagens_icon/obi_icon.jpg)
-}
-
-.maki {
-    background-image: url(../assets/personagens_icon/maki_icon.jpg);
-}
-
-.personagem #select_personagem_favorito {
-    width: 100%;
-    height: 11%;
-    border: 5px solid #000000;
-    border-radius: 50px;
-    padding-left: 2%;
-    font-weight: 900;
-}
-
 .conteudo button {
     width: 30%;
     height: 55px;
@@ -137,4 +93,13 @@ body {
     background: #C6260E;
     border: 5px solid #000000;
     border-radius: 50px;
+}
+
+.conteudo h3 {
+    color: white;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
 }
