@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/style_cadastro.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="./assets/logo.png" alt="Logo de Fire Force">
+            <ul class="navegacao">
+                <li><a href="index.html">H O M E</a></li>
+                <li><a href="">S O B R E M I M</a></li>
+                <li><a href="login.html">L O G I N</a></li>
+                <li id="nav_cadastro">C A D A S T R O</li>
+            </ul>
+        </div>
+    </div>
+    <div class="conteudo">
+        <div class="container">
+            <div class="campos">
+                <h1>SEJA BEM VINDO!</h1>
+                <input type="text" id="input_username" placeholder="USERNAME">
+                <input type="text" id="input_email" placeholder="EMAIL">
+                <input type="text" id="input_confirmar_email" placeholder="CONFIRMAR EMAIL">
+                <input type="text" id="input_senha" placeholder="SENHA">
+                <input type="text" id="input_confirmar_senha" placeholder="CONFIRMAR SENHA">
+            </div>
+            <div class="personagem">
+                <div class="shinra" id="img_personagem"></div>
+                <h1>Personagem Preferido</h1>
+                <select name="favorito" id="select_personagem_favorito" onchange="fotoPersonagem()">
+                    <option value="1">Shinra Kusakabe</option>
+                    <option value="2">Arthur Boyle</option>
+                    <option value="3">Benimaru Shinmon</option>
+                    <option value="4">Joker</option>
+                    <option value="5">Akitaru Obi</option>
+                    <option value="6">Maki Oze</option>
+                    <option value="7">Iris</option>
+                    <option value="8">Tamaki Kotatsu</option>
+                </select>
+            </div>
+            <button onclick="cadastrar()">CADASTRAR</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function fotoPersonagem() {
+        img_personagem.className = ""
+        var num_personagem = select_personagem_favorito.value;
+
+        if (num_personagem == 1) {
+            img_personagem.classList.add("shinra")
+        } else if (num_personagem == 2) {
+            img_personagem.classList.add("arthur")
+        } else if (num_personagem == 3) {
+            img_personagem.classList.add("benimaru")
+        } else if (num_personagem == 4) {
+            img_personagem.classList.add("joker")
+        } else if (num_personagem == 5) {
+            img_personagem.classList.add("obi")
+        } else if (num_personagem == 6) {
+            img_personagem.classList.add("maki")
+        } else if (num_personagem == 7) {
+            img_personagem.classList.add("iris")
+        } else {
+            img_personagem.classList.add("tamaki")
+        }
+    }
+
+    function cadastrar() {
+        //aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var usuarioVar = input_username.value;
+        var emailVar = input_email.value;
+        var confirmarEmailvar = input_confirmar_email.value
+        var senhaVar = input_senha.value;
+        var confirmarSenhavar = input_confirmar_senha.value
+        var personagemVar = select_personagem_favorito.value;
+        
+
+        if (usuarioVar == "" || emailVar == "" || confirmarEmailvar == "" || senhaVar == "" || confirmarSenhavar == "" || personagemVar == "") {
+            //cardErro.style.display = "block"
+            swal("Ops", "Preencha todos os campos!", "error")
+
+
+            finalizarAguardar();
+            return false;
+        }
+        else if (usuarioVar.length < 5) {
+            swal("Ops", "O nome inserido é muito curto. Por favor, insira um nome com pelo menos 8 caracteres 😠", "warning")
+        }
+        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 7) {
+            swal("Ops", "Por favor, insira um e-mail válido", "warning")
+        }
+        else if (confirmarEmailvar != emailVar) {
+            swal("Ops", "Os emails não correspondem", "warning")
+        } 
+        else if (senhaVar.length < 8) {
+            swal("Ops", "Por favor,insira uma senha com pelo menos 8 caracteres", "warning")
+        }
+        else if (confirmarSenhavar != senhaVar) {
+            swal("Ops", "As senhas não correspondem", "warning")
+        }
+        else {
+            setInterval('oi', 5000)
+
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    usuarioServer: usuarioVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    personagemServer: personagemVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    //cardErro.style.display = "block";
+                    swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄...!", "success");
+
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, 3000)
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    swal("Ops", "Mais de um usuário com o mesmo login e senha 😭!")
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+        }
+    }
+
+    //function sumirMensagem() {
+        //cardErro.style.display = "none"
+    //}
+
+</script>
