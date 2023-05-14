@@ -1,55 +1,91 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url(../assets/background.png);
-    background-size: cover;
-}
-
 .banner {
     background-image: url(../assets/banner.jpg);
     background-size: cover;
     height: 65vh;
 }
 
-.container {
-    display: flex;
-    width: 80%;
-    margin: auto;
-}
-
-.header {
-    display: flex;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.header img {
-    width: 199px;
-    height: 99px;
-    left: 84px;
-    top: 11px;
-}
-
-.header .container {
-    justify-content: space-between;
-    padding: 1%;
-}
-
-.navegacao {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 40%;
-    list-style: none;
-}
-
-.navegacao li,
-.navegacao a {
-    color: white;
-    text-decoration: none;
-}
-
 .navegacao #nav_index {
     background-color: rgba(198, 38, 14, 0.8);
     border: rgba(198, 38, 14, 0.8) solid;
     border-radius: 5px;
+}
+
+.conteudo h1 {
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.conteudo .container {
+    gap: 10vh;
+    height: 79.8vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info {
+    display: flex;
+    width: 79vw;
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 56vw;
+    height: 20vh;
+    color: #ffffff;
+    font-size: larger;
+    text-shadow: 
+    -1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px -1px 0px #000000,
+    1px 0px 0px #000000;
+    background-color: #FF3300;
+    border: #000000 solid;
+    border-radius: 8px;
+    align-self: self-start;
+}
+
+.info-dados {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info .autor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.autor h2 {
+    color: #ffffff;
+    text-shadow:
+    -1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px -1px 0px #000000,
+    1px 0px 0px #000000;
+    margin: 0;
+}
+
+.autor .img_autor {
+    background-image: url(../assets/Atsushi__Okubo.jpg);
+    background-size: cover;
+    border: #000000 solid;
+    border-radius: 8px;
+    height: 54vh;
+    width: 16vw;
 }

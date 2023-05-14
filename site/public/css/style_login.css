@@ -1,47 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url(../assets/background.png);
-    background-size: cover;
-}
-
-.container {
-    display: flex;
-    width: 80%;
-    margin: auto;
-}
-
-.header {
-    display: flex;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.header img {
-    width: 199px;
-    height: 99px;
-    left: 84px;
-    top: 11px;
-}
-
-.header .container {
-    justify-content: space-between;
-    padding: 1%;
-}
-
-.navegacao {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 40%;
-    list-style: none;
-}
-
-.navegacao li,
-.navegacao a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
 .navegacao #nav_login {
     background-color: rgba(198, 38, 14, 0.8);
     border: rgba(198, 38, 14, 0.8) solid;
@@ -86,6 +42,7 @@ body {
 }
 
 .conteudo button {
+    cursor: pointer;
     width: 30%;
     height: 55px;
     font-size: x-large;

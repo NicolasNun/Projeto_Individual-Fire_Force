@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="./css/style_cadastro.css">
+    <link rel="stylesheet" href="./css/style_header.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
@@ -88,7 +89,7 @@
         var senhaVar = input_senha.value;
         var confirmarSenhavar = input_confirmar_senha.value
         var personagemVar = select_personagem_favorito.value;
-        
+
 
         if (usuarioVar == "" || emailVar == "" || confirmarEmailvar == "" || senhaVar == "" || confirmarSenhavar == "" || personagemVar == "") {
             //cardErro.style.display = "block"
@@ -106,7 +107,7 @@
         }
         else if (confirmarEmailvar != emailVar) {
             swal("Ops", "Os emails não correspondem", "warning")
-        } 
+        }
         else if (senhaVar.length < 8) {
             swal("Ops", "Por favor,insira uma senha com pelo menos 8 caracteres", "warning")
         }

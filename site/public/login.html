@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./css/style_login.css">
+    <link rel="stylesheet" href="./css/style_header.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
@@ -42,71 +43,71 @@
     function entrar() {
 
 
-var emailVar = input_usuario.value;
-var senhaVar = input_senha.value;
+        var emailVar = input_usuario.value;
+        var senhaVar = input_senha.value;
 
-if (emailVar == "" || senhaVar == "") {
-    // cardErro.style.display = "block"
-    swal ( "Ops" ,  "Preencha os campos!", "error")
-    finalizarAguardar();
-    return false;
-}
-else {
-    swal ( "Parábens" ,  "Login realizado com sucesso!", "success");
-    setInterval('...', 2000)  
+        if (emailVar == "" || senhaVar == "") {
+            // cardErro.style.display = "block"
+            swal("Ops", "Preencha os campos!", "error")
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            swal("Parábens", "Login realizado com sucesso!", "success");
+            setInterval('...', 2000)
 
 
-console.log("FORM LOGIN: ", emailVar);
-console.log("FORM SENHA: ", senhaVar);
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
 
-fetch("/usuarios/autenticar", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        emailServer: emailVar,
-        senhaServer: senhaVar
-    })
-}).then(function (resposta) {
-    console.log("ESTOU NO THEN DO entrar()!")
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
 
-    if (resposta.ok) {
-        console.log(resposta);
+                if (resposta.ok) {
+                    console.log(resposta);
 
-        resposta.json().then(json => {
-            console.log(json);
-            console.log(JSON.stringify(json));
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
 
-            sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.nome;
-            sessionStorage.ID_USUARIO = json.idUsuario;
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
 
-            setTimeout(function () {
-                window.location = "index.html"; 
-            }, 3000); // apenas para exibir o loading
+                        setTimeout(function () {
+                            window.location = "index.html";
+                        }, 3000); // apenas para exibir o loading
 
-        });
+                    });
 
-    } else {
+                } else {
 
-        swal ( "Ops" ,  "Email e/ou senha inválido(s)" ,  "error" )
+                    swal("Ops", "Email e/ou senha inválido(s)", "error")
 
-        resposta.text().then(texto => {
-            console.error(texto);
-            finalizarAguardar(texto);
-        });
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        finalizarAguardar(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+        }
+
+        //function sumirMensagem() {
+        //  cardErro.style.display = "none"
+        // } 
     }
-
-}).catch(function (erro) {
-    console.log(erro);
-})
-
-return false;
-}
-
-//function sumirMensagem() {
-//  cardErro.style.display = "none"
-// } 
-}
 </script>

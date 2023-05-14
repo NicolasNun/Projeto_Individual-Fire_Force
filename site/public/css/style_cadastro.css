@@ -142,6 +142,7 @@ body {
 }
 
 .conteudo button {
+    cursor: pointer;
     width: 30%;
     height: 55px;
     font-size: x-large;
