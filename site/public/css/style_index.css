@@ -44,7 +44,7 @@
     width: 56vw;
     height: 20vh;
     color: #ffffff;
-    font-size: larger;
+    font-size: x-large;
     text-shadow: 
     -1px -1px 0px #000000,
     -1px 1px 0px #000000,
@@ -88,4 +88,106 @@
     border-radius: 8px;
     height: 54vh;
     width: 16vw;
+}
+
+.personagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 79vw;
+}
+
+.cartao {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    gap: 5vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    background-color: #000000;
+    color: #ffffff;
+    text-shadow:
+    -1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px -1px 0px #000000,
+    1px 0px 0px #000000;
+}
+
+.cartao #select_personagem {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: xx-large;
+}
+
+#apelidos {
+    font-size: xx-large;
+}
+
+.cartao #gif_personagem {
+    background-size: cover;
+    width: 65vw;
+    height: 50vh;
+
+}
+
+.shinra {
+    background-image: url(../assets/gifs/shinra_gif.gif);
+}
+
+.arthur {
+    background-image: url(../assets/gifs/arthur_gif.gif);
+}
+
+.benimaru {
+    background-image: url(../assets/gifs/beni_gif.gif);
+}
+
+.joker {
+    background-image: url(../assets/gifs/joker_gif.gif);
+}
+
+.obi {
+    background-image: url(../assets/gifs/)
+}
+
+.maki {
+    background-image: url(../assets/gifs/);
+}
+
+.iris {
+    background-image: url(../assets/gifs/);
+}
+
+.tamaki {
+    background-image: url(../assets/gifs/);
+}
+
+.info {
+    display: flex;
+}
+
+.historiaPer {
+    width: 50%;
+    align-self: flex-start;
+    font-size: 1.2rem;
+}
+
+.habilidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 47vw;
+    height: 42vh;
+    background-color: #FF3300;
+}
+
+.habilidade #geracao {
+    font-size: 1.2rem;
+}
+
+.habilidade #texto_habiliade {
+    font-size: 1.2rem;
+    margin-left: 1vw;
 }
