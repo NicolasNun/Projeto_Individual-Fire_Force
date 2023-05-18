@@ -98,8 +98,7 @@
 }
 
 .cartao {
-    width: 100%;
-    height: 120vh;
+    width: 77.5vw;
     display: flex;
     gap: 5vh;
     flex-direction: column;
@@ -122,45 +121,6 @@
 
 #apelidos {
     font-size: xx-large;
-}
-
-.cartao #gif_personagem {
-    background-size: cover;
-    width: 65vw;
-    height: 50vh;
-
-}
-
-.shinra {
-    background-image: url(../assets/gifs/shinra_gif.gif);
-}
-
-.arthur {
-    background-image: url(../assets/gifs/arthur_gif.gif);
-}
-
-.benimaru {
-    background-image: url(../assets/gifs/beni_gif.gif);
-}
-
-.joker {
-    background-image: url(../assets/gifs/joker_gif.gif);
-}
-
-.obi {
-    background-image: url(../assets/gifs/)
-}
-
-.maki {
-    background-image: url(../assets/gifs/);
-}
-
-.iris {
-    background-image: url(../assets/gifs/);
-}
-
-.tamaki {
-    background-image: url(../assets/gifs/);
 }
 
 .info {
