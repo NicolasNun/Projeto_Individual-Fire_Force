@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .banner {
     background-image: url(../assets/banner.jpg);
     background-size: cover;
@@ -10,7 +14,7 @@
     border-radius: 5px;
 }
 
-.conteudo h1 {
+h1 {
     color: #ffffff;
     text-shadow:
         -1px -1px 0px #000000,
@@ -45,11 +49,11 @@
     height: 20vh;
     color: #ffffff;
     font-size: x-large;
-    text-shadow: 
-    -1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px -1px 0px #000000,
-    1px 0px 0px #000000;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
     background-color: #FF3300;
     border: #000000 solid;
     border-radius: 8px;
@@ -74,10 +78,10 @@
 .autor h2 {
     color: #ffffff;
     text-shadow:
-    -1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px -1px 0px #000000,
-    1px 0px 0px #000000;
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
     margin: 0;
 }
 
@@ -103,14 +107,15 @@
     gap: 5vh;
     flex-direction: column;
     align-items: center;
-    padding: 1%;
+    padding: 1% 1% 0 1%;;
     background-color: #000000;
     color: #ffffff;
+    border-radius: 8px;
     text-shadow:
-    -1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px -1px 0px #000000,
-    1px 0px 0px #000000;
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
 }
 
 .cartao #select_personagem {
@@ -150,4 +155,66 @@
 .habilidade #texto_habiliade {
     font-size: 1.2rem;
     margin-left: 1vw;
+}
+
+.historia {
+    border-radius: 8px;
+    background-color: #000000;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow:
+    -1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px -1px 0px #000000,
+    1px 0px 0px #000000;
+}
+
+.historia span {
+    font-size: 1.5rem;
+}
+
+.sobreMim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 79vw;
+}
+
+
+.sobreMim .sobre {
+    display: flex;
+    align-items: center;
+}
+
+.sobreMim #textoEu {
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.sobreMim .eu {
+    display: flex;
+    border: #000000 solid;
+    border-radius: 100%;
+}
+
+.eu img {
+    border-radius: 100%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    color: #ffffff;
+    width: 98.9vw;
+    height: 20vh;
 }

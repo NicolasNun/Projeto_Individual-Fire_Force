@@ -18,7 +18,7 @@
                 <img src="./assets/logo.png" alt="Logo de Fire Force">
                 <ul class="navegacao">
                     <li id="nav_index">H O M E</li>
-                    <li><a href="">S O B R E M I M</a></li>
+                    <li><a href="#sobremim">S O B R E M I M</a></li>
                     <li><a href="login.html">L O G I N</a></li>
                     <li><a href="cadastro.html">C A D A S T R O</a></li>
                 </ul>
@@ -78,6 +78,35 @@
                     </div>
                 </div>
             </div>
+            <div class="historia">
+                <h1>HISTÓRIA</h1>
+                <span>O planeta Terra passou por um grande cataclisma, onde o mundo todo foi tomado por chamas, muitos países sumiram do mapa, muito dos animais foram extintos, muita coisa mudou. A humanidade estava desesperada, até que uma esperança surgiu, no Japão, Raffles I junto de seus seguidores, construiram Amaterasu, uma fonte ineterrupta de energia, ela abastece o imperio inteiro de Tóquio.</span>
+                <div class="imagem">
+                    <img src="https://static.wikia.nocookie.net/fire-brigade-of-flames/images/7/72/Raffles_I.png/revision/latest?cb=20200229122822">
+                    <h4>Raffles I</h4>
+                </div>
+                <span>No ano 198 da Era Solar em Tóquio, as brigadas de incêndio especiais, denominadas "Fire Force", combatem crescentes incidentes de combustão humana espontânea, onde seres humanos são transformados em infernos vivos, chamados "Infernais". Enquanto os Infernais são seres sem consciência chamados de primeira geração, as gerações posteriores são pessoas que possuem a habilidade de pirocinese, que conseguem manter a sua forma humana. A segunda geração tem a habilidade de controlar o fogo, já a terceira geração conseguem criar chamas em partes de seu corpo. A Fire Force foi formada pela combinação de pessoas com esses poderes do Templo do Santo Sol, das Forças Armadas de Tóquio e da Agência de Defesa de Incêndio, e é composta por oito companhias independentes.</span>
+                <div class="imagem">
+                    <img src="https://static.wikia.nocookie.net/fire-brigade-of-flames/images/3/31/Battalion_Commanders.png/revision/latest?cb=20160603200824&path-prefix=pt-br" width="500px" height="300px">
+                    <h4>Capitães das companhias(em ordem da direita pra esquerda)</h4>
+                </div>
+                <span>Shinra Kusakabe é um jovem pirocinético de terceira geração que ganhou o apelido de "Pegadas do Diabo" por ter a habilidade de acender fogo em seus pés. Ele se junta à 8ª Companhia de Bombeiros Especiais. Seu sonho é de torna-se um herói e salvar as pessoas da combustão, objetivo que ele adquiriu após a morte de sua mãe e seu irmão mais novo após um incêndio em sua casa onde Shinra foi considerado culpado pelo falecimento dos dois.</span>
+            </div>
+            <div class="sobreMim" id="sobremim">
+                <h1>SOBRE MIM</h1>
+                <div class="sobre">
+                    <span id="textoEu">Olá, me chamo Nicolas Santos, tenho 18 anos e estudo análise e desenvolvimento de sistemas. Meu personagem favorito é o Arthur, Não tem jeito. Criei essa pagína como projeto indívidual pedido pela SPTech (São Paulo Tech School), resolvi fazer sobre Enen no Shouboutai (Fire Force) uma série de mangás japonesa.Um dos meus mangás favoritos, terminei de ler ele recentemente e gostei muito.</span>
+                    <div class="eu">
+                        <img src="./assets/personagens_icon/arhur_icon.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <span>OBRIGADO PELA ATENÇÃO! <img src="./assets/coracao-em-chamas.png"></span>
+                    <span>Feito em (2023)</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -114,21 +143,21 @@
             texto_habiliade.innerHTML = "Joker manipula as chamas de seu cigarro para criar formas, como cartas  e síbolos de baralho, as quais ele  utiliza de projéteis para lançar nos adversaríos. Ele também usa um pó, feito de cinzas de infernais, que explodem ao seu comando, como manobra defensiva."
         } else if (num_personagem == 5) {
             apelidos.innerHTML = "(Capitão da 8ª brigada)"
-            gif_personagem.innerHTML = `<img src="./assets/gifs/obi_gif.gif">`
+            gif_personagem.innerHTML = `<img src="https://img.wattpad.com/329be6ee6aaed3a13b23e7cdf97e26bd64d893ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f53494f6c436e73393068762d78673d3d2d333534372e313634323037666330633665336363303332393839333532323739312e676966">`
             historiaPer.innerHTML = "Obi já foi um bombeiro comum, que era frequentemente repreendido por desobedecer ordens, memso que seja para savar vidas. Como fruto da sua motivação, Obi consquistou espaço e conseguiu sua própria brigada especial de bombeiros, A 8ª. Muito admirado por todos a sua volta, pela sua grande determinação e honestidade. Obi preza muito pela segurança de seus membros e se orgulha muita do seu batalhão, considera todos os membros como familía. Visto por Joker, como alguem essencial para o mundo"
             geracao.innerHTML = ""
             texto_habiliade.innerHTML = "Obi não possui habilidades de ignição. Ele possui muita força física e motivação, treina todos os dias."
         } else if (num_personagem == 6) {
             apelidos.innerHTML = "(Bruxa / Ogra)"
-            gif_personagem.innerHTML = `<img src="./assets/gifs/maki_gif.gif">`
-            historiaPer.innerHTML = ""
+            gif_personagem.innerHTML = `<img src="https://i.pinimg.com/originals/e0/7d/e4/e07de4cac72fe30a30e3260d83c2054a.gif">`
+            historiaPer.innerHTML = "Maki é filha de um tenente do exército, ela serviu o exército por um bom tempoe durante seu tempo de militar, ela trabalhava mais do que os soldados normais e passou por um treinamento além do necessário. Após algum tempo, Maki decidiu que ela preferia salvar pessoas do que lutar contra elas, por isso, contra a vontade de seu pai, ela saiu do exército e entrou para a Brigada Especial de Incêndio. Apesar de Maki ser bem forte e poderosa, seu pai e irmão mais velho, são superprotetores e não querem que ela corra perigo, mas isso é inevitável para uma bombeira."
             geracao.innerHTML = "(Segunda Geração)"
             texto_habiliade.innerHTML = 'Capaz de manipular e controlar uma grande quantidade de chamas, podendo extinguir e absorver chamas, criando uma bola de fogo gigante. Normalmente é vista com suas pequenas "criaturinhas" de fogo, Pusu Pusu e Mera Mera, as quais ela utiliza para energizar e controlar as unidades gemeas "Coruja de ferro" par de maquínas feitas por Vulcan(Engenheiro da 8ª brigada). Maki é muito forte fisicamente e possui treinamento militar'
         } else if (num_personagem == 7) {
-            apelidos.innerHTML = ""
-            gif_personagem.innerHTML = `<img src="./assets/gifs/iris_gif.gif">`
-            historiaPer.innerHTML = ""
-            geracao.innerHTML = ""
+            apelidos.innerHTML = "(Irmã)"
+            gif_personagem.innerHTML = `<img src="https://1.bp.blogspot.com/-1hSu0EsshR8/X6hjkVr81nI/AAAAAAACBXg/lKQ30FvMhXUdMZ-HbTT-fHtR8uE35PjzwCPcBGAsYHg/s1920/Enen%2Bno%2BShouboutai%2BS2%2B-%2BEpisode%2B18%2B-%2BIris%2BFlexes%2BCobra.gif">`
+            historiaPer.innerHTML = "Iris cresceu em um convento para freiras junto de outras meninas, até que um dia, tudo começou a pegar fogo e somente Hibana(Capitã da 5ª Brigada) e Iris sairam vivas. Iris é uma pessoa muito bondosa, ingenua e curiosa"
+            geracao.innerHTML = "(Terceira Geração)"
             texto_habiliade.innerHTML = ""
         } else {
             apelidos.innerHTML = ""
