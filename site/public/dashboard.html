@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash-Home</title>
+    <link rel="stylesheet" href="./css/style_dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="perfil">
+            <div class="foto_usu"><img src="./assets/personagens_icon/arhur_icon.jpg"></div>
+            <span id="nome_usuario">Tulida</span>
+        </div>
+        <ul class="navegacao">
+            <li id="nav_home">HOME</li>
+            <li><a href="quiz.html">QUIZ</a></li>
+            <li><a href="placar.html">PLACAR</a></li>
+        </ul>
+        <div class="saida">
+            <span><a href="./login.html"><img src="./assets/exit_icon.png">SAÍDA</a></span>
+        </div>
+    </div>
+    <div class="home">
+        <div class="container">
+            <div class="card">
+                <span>Número de usuaríos:</span>
+                <div id="numero_de_usuarios">25</div>
+            </div>
+            <div class="card">
+                <span>Personagem mais escolhido</span>
+                <div id="img_fav"><img src="./assets/personagens_icon/arhur_icon.jpg"></div>
+            </div>
+            <div class="graficos" id="grafico_personagem"><canvas id="num_escolhas"></canvas></div>
+            <div class="graficos" id="grafico_quiz"><canvas id="media_quiz"></canvas></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    const ctx = document.getElementById('num_escolhas');
+    const ct = document.getElementById('media_quiz');
+
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['', '', '', '', '', '', '', ''],
+            datasets: [{
+                label: 'Número de escolhas',
+                data: [, , , , , , , ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    new Chart(ct, {
+        type: 'bar',
+        data: {
+            labels: ['0 - 2.4', '4.8 - 7.2', '9.6 - 12', '14.4 - 16.8', '19.2 - 21.6', '24'],
+            datasets: [{
+                label: 'Média de resultados do quiz',
+                data: [, , , , , ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,160 @@
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-image: url(../assets/background.png);
+    background-size: cover;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 15vw;
+    height: 100vh;
+    color: #ffffff;
+    text-shadow:
+    -1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px -1px 0px #000000,
+    1px 0px 0px #000000;
+    background-color: #FF3300;
+    border-right: #000000 solid;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil .foto_usu {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: #000000 solid;
+    border-radius: 100%;
+}
+
+.perfil img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.navegacao {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+    text-align: center;
+}
+
+.navegacao li,
+.navegacao a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navegacao #nav_placar {
+    background-color: #FF5A00;
+    border: #000000 solid 1px;
+}
+
+.menu .saida a {
+    display: flex;
+    color: #ffffff;
+    gap: 7px;
+    text-decoration: none;
+}
+
+.placar {
+    display: flex;
+    width: 85vw;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.cartao {
+    display: flex;
+    flex-direction: column;
+    gap: 30vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    font-size: large;
+    color: #ffffff;
+    background-color: #FF3300;
+    border: #000000 solid;
+    width: 362px;
+    height: 160px;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.card div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #000000 solid;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.card img {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.card #nome_usu {
+    font-size: xx-large;
+}
+
+.historico {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 362px;
+    height: 75vh;
+    color: #ffffff;
+    background-color: #FF3300;
+    border: #000000 solid;
+    border-radius: 20px;
+}
+
+.historico #titulo_do_historico {
+    font-size: x-large;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.historico #info {
+    text-shadow:
+    -1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px -1px 0px #000000,
+    1px 0px 0px #000000;
+}
