@@ -15,10 +15,10 @@ body {
     height: 100vh;
     color: #ffffff;
     text-shadow:
-    -1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px -1px 0px #000000,
-    1px 0px 0px #000000;
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
     background-color: #FF3300;
     border-right: #000000 solid;
 }
@@ -133,7 +133,7 @@ body {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     width: 362px;
     height: 75vh;
     color: #ffffff;
@@ -152,9 +152,11 @@ body {
 }
 
 .historico #info {
+    display: flex;
+    gap: 7rem;
     text-shadow:
-    -1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px -1px 0px #000000,
-    1px 0px 0px #000000;
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
 }
