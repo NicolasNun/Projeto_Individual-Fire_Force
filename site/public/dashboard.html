@@ -14,8 +14,8 @@
 <body>
     <div class="menu">
         <div class="perfil">
-            <div class="foto_usu"><img src="./assets/personagens_icon/arhur_icon.jpg"></div>
-            <span id="nome_usuario">Tulida</span>
+            <div id="foto_perfil" class="foto_usu"></div>
+            <span id="nome_usuario"></span>
         </div>
         <ul class="navegacao">
             <li id="nav_home">HOME</li>
@@ -45,6 +45,27 @@
 </html>
 
 <script>
+    nome_usuario.innerHTML = sessionStorage.NOME_USUARIO
+
+    var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO
+
+    if (fk_personagem == 1) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
+    } else if (fk_personagem == 2) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
+    } else if (fk_personagem == 3) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`
+    } else if (fk_personagem == 4) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`
+    } else if (fk_personagem == 5) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`
+    } else if (fk_personagem == 6) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`
+    } else if (fk_personagem == 7) {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpg">`
+    } else {
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
+    }
 
     const ctx = document.getElementById('num_escolhas');
     const ct = document.getElementById('media_quiz');

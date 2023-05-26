@@ -80,11 +80,12 @@
                         console.log(JSON.stringify(json));
 
                         sessionStorage.EMAIL_USUARIO = json.email;
-                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.NOME_USUARIO = json.usuario;
                         sessionStorage.ID_USUARIO = json.idUsuario;
+                        sessionStorage.PERSONAGEM_FAVORITO = json.fkPersonagem;
 
                         setTimeout(function () {
-                            window.location = "index.html";
+                            window.location = "dashboard.html";
                         }, 3000); // apenas para exibir o loading
 
                     });
