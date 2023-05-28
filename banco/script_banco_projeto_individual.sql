@@ -25,11 +25,23 @@ CONSTRAINT fkUsuarioPoint FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 ) AUTO_INCREMENT = 50;
 
 INSERT INTO personagem VALUES
-	(NULL, 'Arthur Boyle'),
 	(NULL, 'Shinra Kusakabe'),
+	(NULL, 'Arthur Boyle'),
     (NULL, 'Benimaru Shinmon'),
-	(NULL, 'Akitaru Obi'),
 	(NULL, 'Joker'),
+	(NULL, 'Akitaru Obi'),
 	(NULL, 'Maki Oze'),
 	(NULL, 'Iris'),
 	(NULL, 'Tamaki Kotatsu');
+    
+SELECT * FROM usuario;
+
+SELECT count(idUsuario) FROM usuario;
+
+SELECT COUNT(Usuario.fkPersonagem) as voto
+FROM Usuario JOIN Personagem ON  personagem.idPersonagem = usuario.fkPersonagem group by usuario.fkPersonagem;
+    
+SELECT COUNT(Usuario.fkPersonagem) as voto, Personagem.*
+FROM Usuario RIGHT JOIN Personagem ON  personagem.idPersonagem = usuario.fkPersonagem GROUP BY personagem.idPersonagem ORDER BY voto DESC;
+
+SELECT * FROM pontuacao;
