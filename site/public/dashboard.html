@@ -54,7 +54,6 @@
                 data: [],
                 borderWidth: 1
             }],
-            
         },
         options: {
             indexAxis: 'y',
@@ -63,6 +62,9 @@
                     beginAtZero: true
                 }
             },
+            backgroundColor: [
+                "rgba(21, 227, 235)"
+            ],
         }
     }
     nome_usuario.innerHTML = sessionStorage.NOME_USUARIO
@@ -151,20 +153,22 @@
 
     votos()
     setInterval(() => {
+        contarVotoPersonagem()
+        contarUsu()
+    }, 2000)
+    setInterval(() => {
+        votos()
         dadosGraficos.data.datasets[0].data = []
         dadosGraficos.data.labels = []
         chart.update
-        votos()
-        contarVotoPersonagem()
-        contarUsu()
-    }, 3000)
+    }, 30000)
 
     const ct = document.getElementById('media_quiz');
 
     new Chart(ct, {
         type: 'bar',
         data: {
-            labels: ['0 - 2.4', '4.8 - 7.2', '9.6 - 12', '14.4 - 16.8', '19.2 - 21.6', '24'],
+            labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             datasets: [{
                 label: 'Média de resultados do quiz',
                 data: [, , , , ,],
