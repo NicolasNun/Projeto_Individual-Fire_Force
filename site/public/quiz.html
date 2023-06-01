@@ -29,24 +29,27 @@
     <div class="quiz">
         <div class="container">
             <div class="caixa_de_pergunta">
-                <div class="pergunta">
-                    <h2>A qual batalhão Shinra pertence?</h2>
-                    <div>
-                        <input type="radio" name="opcao1"><span>1ª Batalhão</span>
+                <div class="pergunta" id="pergunta">
+                    <div class="imagem_pergunta">
+                        <h2>A qual batalhão Shinra pertence?</h2>
                     </div>
-                    <div>
-                        <input type="radio" name="opcao1"><span>5ª Batalhão</span>
+                    <div class="opcoes">
+                        <div id="alternativa">
+                            <button onclick="responder(this)" value="0">1ª Batalhão</button>
+                        </div>
+                        <div id="alternativa">
+                            <button onclick="responder(this)" value="0">5ª Batalhão</button>
+                        </div>
+                        <div id="alternativa">
+                            <button onclick="responder(this)" value="0">4ª Batalhão</button>
+                        </div>
+                        <div id="alternativa">
+                            <button onclick="responder(this)" value="1">8ª Batalhão</button>
+                        </div>
+                        <div id="alternativa">
+                            <button onclick="responder(this)" value="0">7ª Batalhão</button>
+                        </div>
                     </div>
-                    <div>
-                        <input type="radio" name="opcao1"><span>4ª Batalhão</span>
-                    </div>
-                    <div>
-                        <input type="radio" name="opcao1"><span>8ª Batalhão</span>
-                    </div>
-                    <div>
-                        <input type="radio" name="opcao1"><span>7ª Batalhão</span>
-                    </div>
-                    <button>Proxima</button>
                 </div>
             </div>
         </div>
@@ -76,5 +79,37 @@
         foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
     } else {
         foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
+    }
+
+    var pontos = 0;
+    var quest2 = `
+        <div class="imagem_pergunta">
+            <h2>Quantos são os pilares?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">2</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">8</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">4</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">5</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">7</button>
+            </div>
+        </div>`
+
+    function responder(resposta) {
+
+        if (resposta.value == 1) {
+            pontos++
+        }
+
+        pergunta.innerHTML = quest2
     }
 </script>

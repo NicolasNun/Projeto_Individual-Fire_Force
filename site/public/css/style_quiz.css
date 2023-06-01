@@ -98,9 +98,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
+}
+
+.imagem_pergunta {
+    display: flex;
+    width: 100%;
+    height: inherit;
+    justify-content: center;
     background-image: url(../assets/banner.jpg);
     background-size: cover;
 }
@@ -115,16 +122,25 @@ body {
     ;
 }
 
-.pergunta input {
-    background-color: #FF3300;
+.opcoes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    width: 100%;
 }
 
-.pergunta span {
-    color: #ffffff;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
-    ;
+#alternativa button {
+    cursor: pointer;
+    height: 6vh;
+    width: 50vw;
+}
+
+#alternativa button::placeholder {
+    font-weight: bold;
+    color: #000000;
+}
+
+#alternativa button:hover {
+    background-color: #53bdeb;
 }
