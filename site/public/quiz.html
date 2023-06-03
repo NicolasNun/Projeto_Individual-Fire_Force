@@ -31,23 +31,24 @@
             <div class="caixa_de_pergunta">
                 <div class="pergunta" id="pergunta">
                     <div class="imagem_pergunta">
-                        <h2>A qual batalhão Shinra pertence?</h2>
+                            <h2>A qual batalhão Shinra pertence?</h2>
                     </div>
-                    <div class="opcoes">
-                        <div id="alternativa">
-                            <button onclick="responder(this)" value="0">1ª Batalhão</button>
-                        </div>
-                        <div id="alternativa">
-                            <button onclick="responder(this)" value="0">5ª Batalhão</button>
-                        </div>
-                        <div id="alternativa">
-                            <button onclick="responder(this)" value="0">4ª Batalhão</button>
-                        </div>
-                        <div id="alternativa">
-                            <button onclick="responder(this)" value="1">8ª Batalhão</button>
-                        </div>
-                        <div id="alternativa">
-                            <button onclick="responder(this)" value="0">7ª Batalhão</button>
+                        <div class="opcoes">
+                            <div id="alternativa">
+                                <button onclick="responder(this)" value="0" id="errado">1ª Batalhão</button>
+                            </div>
+                            <div id="alternativa">
+                                <button onclick="responder(this)" value="0" id="errado">5ª Batalhão</button>
+                            </div>
+                            <div id="alternativa">
+                                <button onclick="responder(this)" value="0" id="errado">4ª Batalhão</button>
+                            </div>
+                            <div id="alternativa">
+                                <button onclick="responder(this)" value="1" id="certo">8ª Batalhão</button>
+                            </div>
+                            <div id="alternativa">
+                                <button onclick="responder(this)" value="0" id="errado">7ª Batalhão</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,16 +83,41 @@
     }
 
     var pontos = 0;
-    var quest2 = `
+
+    var quest= "";
+    var pergunta = [{
+    quest1: `
+        <div class="imagem_pergunta">
+            <h2>A qual batalhão Shinra pertence?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0" id="errado">1ª Batalhão</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0" id="errado">5ª Batalhão</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0" id="errado">4ª Batalhão</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1" id="certo">8ª Batalhão</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0" id="errado">7ª Batalhão</button>
+            </div>
+        </div>`
+,
+    quest2: `
         <div class="imagem_pergunta">
             <h2>Quantos são os pilares?</h2>
         </div>
         <div class="opcoes">
             <div id="alternativa">
-                <button onclick="responder(this)" value="0">2</button>
+                <button onclick="responder(this)" value="0" id="errado">2</button>
             </div>
             <div id="alternativa">
-                <button onclick="responder(this)" value="1">8</button>
+                <button onclick="responder(this)" value="1" id="errado">8</button>
             </div>
             <div id="alternativa">
                 <button onclick="responder(this)" value="0">4</button>
@@ -103,13 +129,201 @@
                 <button onclick="responder(this)" value="0">7</button>
             </div>
         </div>`
+,
+    quest3: `
+        <div class="imagem_pergunta">
+            <h2>Quem é o irmão de Shinra?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Arthur</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Joker</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">benimaru</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Sho</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Obi</button>
+            </div>
+        </div>`
+,
+    quest4: `
+        <div class="imagem_pergunta">
+            <h2>Quem é o quinto pilar?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Shinra Kusakabe</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Haumea</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Inca Kasugatani</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Sho Kusakabe</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Benimaru shinmon</button>
+            </div>
+        </div>`
+,
+    quest5: `
+        <div class="imagem_pergunta">
+            <h2>Quem era o traidor da 1ª Brigada?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Rekka hoshimya</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+        </div>`
+,
+    quest6: `
+        <div class="imagem_pergunta">
+            <h2>Quem é o capitão da 4ª Brigada?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Soichiro Hague</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+        </div>`
+,
+    quest7: `
+        <div class="imagem_pergunta">
+            <h2>Quem sobreviveu junto de iris ao incêndio no convento?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Soichiro Hague</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Hibana</button>
+            </div>
+        </div>`
+,
+    quest8: `
+        <div class="imagem_pergunta">
+            <h2>Quem recrutou a Maki para a 8ª?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Takehisa Hinawa</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+        </div>`
+,
+    quest9: `
+        <div class="imagem_pergunta">
+            <h2>O que o Arthur imagina ser?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Rei</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Herói</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0">Cavaleiro</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Cavaleiro Rei</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+        </div>`
+,
+    quest10: `
+        <div class="imagem_pergunta">
+            <h2>Qual o sonho de shinra?</h2>
+        </div>
+        <div class="opcoes">
+            <div id="alternativa">
+                <button onclick="responder(this)" value="1">Ser um herói e salvar todas as pessoas do terror das chamas</button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+            <div id="alternativa">
+                <button onclick="responder(this)" value="0"></button>
+            </div>
+        </div>`
+        }]
+
+    function comecar() {
+        pergunta.innerHTML = pergunta[0].quest1
+    }
 
     function responder(resposta) {
 
         if (resposta.value == 1) {
             pontos++
+            certo.classList.add("certo")
+        } else{
+            errado.classList.add("errado")
         }
 
-        pergunta.innerHTML = quest2
+
+
+        for (var i = 0; i < pergunta.length; i++) {
+            pergunta.innerHTML = `${pergunta[i].quest[i+1]}`
+        }
     }
 </script>

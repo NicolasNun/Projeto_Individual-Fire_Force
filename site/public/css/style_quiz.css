@@ -130,6 +130,14 @@ body {
     width: 100%;
 }
 
+.certo {
+    background-color: #00ff00;
+}
+
+.errado {
+    background-color: #ff0000;
+}
+
 #alternativa button {
     cursor: pointer;
     height: 6vh;
