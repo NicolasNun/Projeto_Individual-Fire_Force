@@ -135,20 +135,17 @@ body {
 }
 
 .errado {
-    background-color: #ff0000;
+    background-color: #FF3300;
 }
 
-#alternativa button {
+.alternativa button {
+    transition: 0.5s;
     cursor: pointer;
     height: 6vh;
     width: 50vw;
 }
 
-#alternativa button::placeholder {
+.alternativa button::placeholder {
     font-weight: bold;
     color: #000000;
-}
-
-#alternativa button:hover {
-    background-color: #53bdeb;
 }

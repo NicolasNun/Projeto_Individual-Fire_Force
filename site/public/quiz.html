@@ -31,25 +31,7 @@
             <div class="caixa_de_pergunta">
                 <div class="pergunta" id="pergunta">
                     <div class="imagem_pergunta">
-                            <h2>A qual batalhão Shinra pertence?</h2>
-                    </div>
-                        <div class="opcoes">
-                            <div id="alternativaA">
-                                <button onclick="responder(this)" value="0">1ª Batalhão</button>
-                            </div>
-                            <div id="alternativaB">
-                                <button onclick="responder(this)" value="0">5ª Batalhão</button>
-                            </div>
-                            <div id="alternativaC">
-                                <button onclick="responder(this)" value="0">4ª Batalhão</button>
-                            </div>
-                            <div id="alternativaD">
-                                <button onclick="responder(this)" value="1" id="certo">8ª Batalhão</button>
-                            </div>
-                            <div id="alternativaE">
-                                <button onclick="responder(this)" value="0">7ª Batalhão</button>
-                            </div>
-                        </div>
+                        <button id="comecar" onclick="comecar()">COMEÇAR QUIZ</button>
                     </div>
                 </div>
             </div>
@@ -84,115 +66,271 @@
 
     var pontos = 0;
 
-    var quasts = [{
-    quest1: {
-        questao: "A qual batalhão Shinra pertence?",
-        a: `<button onclick="responder(this)" value="0">1ª Batalhão</button>`,
-        b: `<button onclick="responder(this)" value="0">5ª Batalhão</button>`,
-        c: `<button onclick="responder(this)" value="0">4ª Batalhão</button>`,
-        d: `<button onclick="responder(this)" value="1" id="certo">8ª Batalhão</button>`,
-        e: `<button onclick="responder(this)" value="0">7ª Batalhão</button>`
-    }
-,
-    quest2: {
-        questao: "Quantos são os pilares?",
-        a: `<button onclick="responder(this)" value="0">2</button>`,
-        b: `<button onclick="responder(this)" value="1">8</button>`,
-        c: `<button onclick="responder(this)" value="0">4</button>`,
-        d: `<button onclick="responder(this)" value="0" id="certo">5</button>`,
-        e: `<button onclick="responder(this)" value="0">7</button>`
-    }
-,
-    quest3: {
-        questao: "Quem é o irmão de Shinra?",
-        a: `<button onclick="responder(this)" value="0">Arthur</button>`,
-        b: `<button onclick="responder(this)" value="0">Joker</button>`,
-        c: `<button onclick="responder(this)" value="0">Benimaru</button>`,
-        d: `<button onclick="responder(this)" value="1" id="certo">Sho</button>`,
-        e: `<button onclick="responder(this)" value="0">Obi</button>`
-    }
-,
-    quest4: {
-        questao: "Quem é o quinto pilar?",
-        a: `<button onclick="responder(this)" value="0">Shinra Kusakabe</button>`,
-        b: `<button onclick="responder(this)" value="0">Haumea</button>`,
-        c: `<button onclick="responder(this)" value="1">Inca Kasugatani</button>`,
-        d: `<button onclick="responder(this)" value="0" id="">Sho Kusakabe</button>`,
-        e: `<button onclick="responder(this)" value="0">Benimaru Shinmon</button>`
-    }
-,
-    quest5: {
-        questao: "Quem era o traidor da 1ª Brigada?",
-        a: `<button onclick="responder(this)" value="1">Rekka hoshimya</button>`,
-        b: `<button onclick="responder(this)" value="0"></button>`,
-        c: `<button onclick="responder(this)" value="0"></button>`,
-        d: `<button onclick="responder(this)" value="0" id=""></button>`,
-        e: `<button onclick="responder(this)" value="0"></button>`
-    }
-,
-    quest6: {
-        questao: "Quem é o capitão da 4ª Brigada?",
-        a: `<button onclick="responder(this)" value="0"></button>`,
-        b: `<button onclick="responder(this)" value="1">Soichiro Hague</button>`,
-        c: `<button onclick="responder(this)" value="0"></button>`,
-        d: `<button onclick="responder(this)" value="0" id=""></button>`,
-        e: `<button onclick="responder(this)" value="0"></button>`
-    }
-,
-    quest7: {
-        questao: "Quem sobreviveu junto de iris ao incêndio no convento?",
-        a: `<button onclick="responder(this)" value="0"></button>`,
-        b: `<button onclick="responder(this)" value="0"></button>`,
-        c: `<button onclick="responder(this)" value="0"></button>`,
-        d: `<button onclick="responder(this)" value="0" id=""></button>`,
-        e: `<button onclick="responder(this)" value="1">Hibana</button>`
-    }
-,
-    quest8: {
-        questao: "Quem recrutou a Maki para a 8ª?",
-        a: `<button onclick="responder(this)" value="0"></button>`,
-        b: `<button onclick="responder(this)" value="1">Takehisa Hinawa</button>`,
-        c: `<button onclick="responder(this)" value="0"></button>`,
-        d: `<button onclick="responder(this)" value="0" id=""></button>`,
-        e: `<button onclick="responder(this)" value="0"></button>`
-    }
-,
-    quest9: {
-        questao: "O que o Arthur imagina ser?",
-        a: `<button onclick="responder(this)" value="0">Rei</button>`,
-        b: `<button onclick="responder(this)" value="0">Herói</button>`,
-        c: `<button onclick="responder(this)" value="0">Cavaleiro</button>`,
-        d: `<button onclick="responder(this)" value="1" id="">Cavaleiro Rei</button>`,
-        e: `<button onclick="responder(this)" value="0">Rei Cavaleiro</button>`
-    }
-,
-    quest10: {
-        questao: "Qual o sonho de shinra?",
-        a: `<button onclick="responder(this)" value="0"></button>`,
-        b: `<button onclick="responder(this)" value="1">Ser um herói e salvar todas as pessoas do terror das chamas</button>`,
-        c: `<button onclick="responder(this)" value="0"></button>`,
-        d: `<button onclick="responder(this)" value="0" id=""></button>`,
-        e: `<button onclick="responder(this)" value="0"></button>`
-    }
-}]
+    // Questões no caminho. VA PARA A LINHA 297
+    var quest1 = `
+    <div class="imagem_pergunta">
+                            <h2>A qual batalhão Shinra pertence?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">1ª Batalhão</button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">5ª Batalhão</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">4ª Batalhão</button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">8ª Batalhão</button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">7ª Batalhão</button>
+                            </div>
+                        </div>
+                    </div>`
+    var quest2 = `
+    <div class="imagem_pergunta">
+                            <h2>Quantos são os pilares?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">2</button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">8</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">4</button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">5</button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">7</button>
+                            </div>
+                        </div>
+                    </div>`
+    var quest3 = `
+    <div class="imagem_pergunta">
+                            <h2>Quem é o irmão de Shinra?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Athur</button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Joker</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Benimaru</button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Sho</button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Obi</button>
+                            </div>
+                        </div>
+                    </div>`
 
+    var quest4 = `
+    <div class="imagem_pergunta">
+                            <h2>Quem é o quinto pilar?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Shinra Kusakabe</button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Haumea</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Inca Kasugatani</button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Sho Kusakabe</button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Benimaru Shinmon</button>
+                            </div>
+                        </div>
+                    </div>`
+        
+    var quest5 = `
+    <div class="imagem_pergunta">
+                            <h2>Quem era o traidor da 1ª Brigada?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Rekka hoshimya</button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                        </div>
+                    </div>`
+
+    var quest6 = `
+    <div class="imagem_pergunta">
+                            <h2>Quem é o capitão da 4ª Brigada?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Soichiro Hague</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                        </div>
+                    </div>`
+                    
+    var quest7 = `
+    <div class="imagem_pergunta">
+                            <h2>Quem sobreviveu junto de iris ao incêndio no convento?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Hibana</button>
+                            </div>
+                        </div>
+                    </div>`
+        
+    var quest8 = `
+    <div class="imagem_pergunta">
+                            <h2>Quem recrutou a Maki para a 8ª?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Takehisa Hinawa</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                        </div>
+                    </div>`
+
+    var quest9 = `
+    <div class="imagem_pergunta">
+                            <h2>O que o Arthur imagina ser?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Rei</button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Herói</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Cavaleiro</button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Cavaleiro Rei</button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0">Rei Cavaleiro</button>
+                            </div>
+                        </div>
+                    </div>`
+
+    var quest10 = `
+    <div class="imagem_pergunta">
+                            <h2>Qual o sonho de shinra?</h2>
+                    </div>
+                        <div class="opcoes">
+                            <div class="alternativa" id="A">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="B">
+                                <button class="opcao" onclick="responder(this, this.value)" value="1">Ser um herói e salvar todas as pessoas do terror das chamas</button>
+                            </div>
+                            <div class="alternativa" id="C">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="D">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                            <div class="alternativa" id="E">
+                                <button class="opcao" onclick="responder(this, this.value)" value="0"></button>
+                            </div>
+                        </div>
+                    </div>`
+                    
     function comecar() {
-        pergunta.innerHTML = pergunta[0].quest1
+        pergunta.innerHTML = quest1
     }
 
-    function responder(resposta) {
+    // function bloquear(){
+    //     var bt_alternativa = document.getElementsByClassName("opcao");
 
-        if (resposta.value == 1) {
+    //     for (var i = 0; bt_alternativa.length; i++) {
+    //         bt_alternativa[i].setAttribute("disabled", "");
+    //     }
+    // }
+
+    var questoes = [quest2, quest3, quest4, quest5, quest6, quest7, quest8, quest9, quest10] 
+
+    var quest_atual = 
+    function responder(botao, resposta) {
+       // bloquear();
+        var bt_alternativa = document.getElementsByClassName("opcao");
+        var correta = '';
+
+        for(var i = 0; i < bt_alternativa.length; i++){
+            if(bt_alternativa[i].value == 1){
+                correta = bt_alternativa[i];
+            }
+        }
+
+        if (resposta == 1) {
             pontos++
-            certo.classList.add("certo")
         } else{
-            errado.classList.add("errado")
+            botao.classList.add("errado")
         }
-
-
-
-        for (var i = 0; i < pergunta.length; i++) {
-            pergunta.innerHTML = `${pergunta[i].quest[i+1]}`
-        }
+        
+         correta.classList.add("certo");
+        
+         setTimeout(() => {
+             pergunta.innerHTML = questoes[0]
+        }, 2000);
     }
 </script>
