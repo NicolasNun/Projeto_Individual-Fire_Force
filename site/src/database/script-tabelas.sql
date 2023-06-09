@@ -29,21 +29,14 @@ CONSTRAINT fkUsuarioPoint FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 ) AUTO_INCREMENT = 50;
 
 INSERT INTO personagem VALUES
-	(NULL, 'Arthur Boyle'),
 	(NULL, 'Shinra Kusakabe'),
+	(NULL, 'Arthur Boyle'),
     (NULL, 'Benimaru Shinmon'),
-	(NULL, 'Akitaru Obi'),
 	(NULL, 'Joker'),
+	(NULL, 'Akitaru Obi'),
 	(NULL, 'Maki Oze'),
 	(NULL, 'Iris'),
 	(NULL, 'Tamaki Kotatsu');
-
-
-SELECT * FROM usuario;
-
-SELECT COUNT(Usuario.fkPersonagem) as voto, Personagem.nomePersonagem AS personagem 
-FROM Usuario JOIN Personagem ON  personagem.idPersonagem = usuario.fkPersonagem group by usuario.fkPersonagem;
-
 
 /*
 comando para sql server - banco remoto - ambiente de produção

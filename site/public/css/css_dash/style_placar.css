@@ -2,7 +2,7 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    background-image: url(../assets/background.png);
+    background-image: url(../../assets/background.png);
     background-size: cover;
 }
 
@@ -58,7 +58,7 @@ body {
     text-decoration: none;
 }
 
-.navegacao #nav_home {
+.navegacao #nav_placar {
     background-color: #FF5A00;
     border: #000000 solid 1px;
 }
@@ -70,7 +70,7 @@ body {
     text-decoration: none;
 }
 
-.home {
+.placar {
     display: flex;
     width: 85vw;
 }
@@ -78,7 +78,6 @@ body {
 .container {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    grid-template-rows: 2fr 2fr;
     width: 100%;
     height: 100%;
     margin: auto;
@@ -86,18 +85,23 @@ body {
     justify-items: center;
 }
 
+.cartao {
+    display: flex;
+    flex-direction: column;
+    gap: 30vh;
+}
+
 .card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     border-radius: 20px;
-    padding: 5px;
-    font-size: xx-large;
+    font-size: large;
     color: #ffffff;
     background-color: #FF3300;
     border: #000000 solid;
     width: 362px;
-    height: 140px;
+    height: 160px;
     text-shadow:
         -1px -1px 0px #000000,
         -1px 1px 0px #000000,
@@ -105,11 +109,7 @@ body {
         1px 0px 0px #000000;
 }
 
-#numero_de_usuarios {
-    font-size: 5rem;
-}
-
-.card #img_fav {
+.card div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,15 +125,38 @@ body {
     height: 100px;
 }
 
-.graficos {
-    display: flex;
-    justify-content: center;
-    background-color: #FF3300;
-    border: #000000 solid;
-    width: 30vw;
-    height: 140px;
+.card #nome_usu {
+    font-size: xx-large;
 }
 
-#grafico_personagem {
-    height: 48vh;
+.historico {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 362px;
+    height: 75vh;
+    color: #ffffff;
+    background-color: #FF3300;
+    border: #000000 solid;
+    border-radius: 20px;
+}
+
+.historico #titulo_do_historico {
+    font-size: x-large;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.historico #info {
+    display: flex;
+    gap: 7rem;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
 }

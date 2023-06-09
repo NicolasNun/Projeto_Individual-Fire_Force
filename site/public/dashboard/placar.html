@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash-Placar</title>
-    <link rel="stylesheet" href="./css/style_placar.css">
+    <link rel="stylesheet" href="../css/css_dash/style_placar.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -18,12 +18,12 @@
             <span id="nome_usuario">Tulida</span>
         </div>
         <ul class="navegacao">
-            <li><a href="dashboard.html">HOME</a></li>
-            <li><a href="quiz.html">QUIZ</a></li>
+            <li><a href="./dashboard.html">HOME</a></li>
+            <li><a href="./quiz.html">QUIZ</a></li>
             <li id="nav_placar">PLACAR</li>
         </ul>
         <div class="saida">
-            <span><a href="./login.html"><img src="./assets/exit_icon.png">SAÍDA</a></span>
+            <span><a href="../login.html"><img src="../assets/exit_icon.png">SAÍDA</a></span>
         </div>
     </div>
     <div class="placar">
@@ -31,12 +31,12 @@
             <div class="cartao">
                 <div class="card">
                     <span>Primeiro a gabaritar</span>
-                    <div class="img_usu"><img src="./assets/personagens_icon/arhur_icon.jpg"></div>
+                    <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
                     <span id="nome_usu">Tulida</span>
                 </div>
                 <div class="card">
                     <span>Usuarío com a pontuação mais baixa</span>
-                    <div class="img_usu"><img src="./assets/personagens_icon/arhur_icon.jpg"></div>
+                    <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
                     <span id="nome_usu">Tulida</span>
                 </div>
             </div>
@@ -59,20 +59,20 @@
     var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO
 
     if (fk_personagem == 1) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
     } else if (fk_personagem == 2) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/arthur_icon.jpg">`
     } else if (fk_personagem == 3) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/beni_icon.jpg">`
     } else if (fk_personagem == 4) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/joker_icon.jpg">`
     } else if (fk_personagem == 5) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/obi_icon.jpg">`
     } else if (fk_personagem == 6) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/maki_icon.jpg">`
     } else if (fk_personagem == 7) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/iris_icon.jpeg">`
     } else {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`
     }
 </script>
