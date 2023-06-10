@@ -130,6 +130,22 @@
     background-image: url(../../assets/img_pontuacao/umAquatro_pontos.jpg);
 }
 
+.img_pontuacao_cinco {
+    background-image: url(../../assets/img_pontuacao/cinco_pontos.jpg);
+}
+
+.img_pontuacao_seisAsete {
+    background-image: url();
+}
+
+.img_pontuacao_oitoAnove {
+    background-image: url();
+}
+
+.img_pontuacao_dez {
+    background-image: url(../../assets/img_pontuacao/dez_pontos.png);
+}
+
 .text_final {
     display: flex;
     height: 15vh;
