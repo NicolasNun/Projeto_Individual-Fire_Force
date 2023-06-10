@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash-Placar</title>
     <link rel="stylesheet" href="../css/css_dash/style_placar.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/css_dash/style_sidebar.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -17,25 +17,40 @@
             <div id="foto_perfil" class="foto_usu"></div>
             <span id="nome_usuario">Tulida</span>
         </div>
-        <ul class="navegacao">
-            <li><a href="./dashboard.html">HOME</a></li>
-            <li><a href="./quiz.html">QUIZ</a></li>
-            <li id="nav_placar">PLACAR</li>
-        </ul>
+        <div class="navegacao">
+            <div><a href="./dashboard.html"><img src="../assets/icones/house.png">HOME</a></div>
+            <div><a href="./quiz.html"><img src="../assets/icones/rapid-fire-question.png">QUIZ</a></div>
+            <div id="nav_placar"><img src="../assets/icones/podium.png">PLACAR</div>
+        </div>
         <div class="saida">
-            <span><a href="../login.html"><img src="../assets/exit_icon.png">SAÍDA</a></span>
+            <span><a href="../login.html"><img src="../assets/icones/exit_icon.png">SAIR</a></span>
         </div>
     </div>
     <div class="placar">
         <div class="container">
             <div class="cartao">
-                <div class="card">
-                    <span>Primeiro a gabaritar</span>
-                    <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
-                    <span id="nome_usu">Tulida</span>
+                <div class="podium">
+                    <h2>Os três melhores</h2>
+                    <div class="classificacoes">
+                        <div class="lugar">
+                            <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
+                            <span id="nome_usu">Tulida</span>
+                            <div class="segundo">2ª</div>
+                        </div>
+                        <div class="lugar">
+                            <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
+                            <span id="nome_usu">Tulida</span>
+                            <div class="primeiro">1ª</div>
+                        </div>
+                        <div class="lugar">
+                            <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
+                            <span id="nome_usu">Tulida</span>
+                            <div class="terceiro">3ª</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
-                    <span>Usuarío com a pontuação mais baixa</span>
+                    <span>Primeiro a gabaritar</span>
                     <div class="img_usu"><img src="../assets/personagens_icon/arthur_icon.jpg"></div>
                     <span id="nome_usu">Tulida</span>
                 </div>

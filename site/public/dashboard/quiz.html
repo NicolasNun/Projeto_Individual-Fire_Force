@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash-Quiz</title>
     <link rel="stylesheet" href="../css/css_dash/style_quiz.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/css_dash/style_sidebar.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -17,13 +17,13 @@
             <div id="foto_perfil" class="foto_usu"></div>
             <span id="nome_usuario">Tulida</span>
         </div>
-        <ul class="navegacao">
-            <li><a href="./dashboard.html">HOME</a></li>
-            <li id="nav_quiz">QUIZ</li>
-            <li><a href="./placar.html">PLACAR</a></li>
-        </ul>
+        <div class="navegacao">
+            <div><a href="./dashboard.html"><img src="../assets/icones/house.png">HOME</a></div>
+            <div id="nav_quiz"><img src="../assets/icones/rapid-fire-question.png">QUIZ</div>
+            <div><a href="./placar.html"><img src="../assets/icones/podium.png">PLACAR</a></div>
+        </div>
         <div class="saida">
-            <span><a href="../login.html"><img src="../assets/exit_icon.png">SAÍDA</a></span>
+            <span><a href="../login.html"><img src="../assets/icones/exit_icon.png">SAIR</a></span>
         </div>
     </div>
     <div class="quiz">
@@ -134,7 +134,7 @@
     </div>`
 
     var quest4 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_quatro">
         <h2>4 - Quem é o quinto pilar?</h2>
     </div>
     <div class="opcoes">
@@ -293,13 +293,13 @@
 
     var bt_alternativa = document.getElementsByClassName("opcao");
 
-    function bloquear(){
+    function bloquear() {
         for (var i = 0; i < bt_alternativa.length; i++) {
             bt_alternativa[i].classList.add("bloqueado");
         }
     }
 
-    function liberar(){
+    function liberar() {
         for (var i = 0; i < bt_alternativa.length; i++) {
             bt_alternativa[i].classList.remove("bloqueado")
         }
@@ -332,14 +332,79 @@
                 pergunta.innerHTML = questoes[quest_atual]
                 quest_atual++
             } else {
-                pergunta.innerHTML = `
-                <div class="imagem_pergunta">
-                    <h2>Jamaica</h2>
-                </div>
-                <div class="opcoes">
-                    ${pontos}/10
-                </div>
-                    `
+                if (pontos == 0) {
+                    pergunta.innerHTML = `
+                    <div class="imagem_pergunta_final img_pontuacao_zero">
+                        <div class="pontuacao">
+                            <span class="pontos">${pontos}</span>
+                            / 10
+                        </div>
+                    </div>
+                    <div class="text_final">
+                        <h2>${pontos} - ACERTOS</h2>
+                        <p>VOCÊ FOI MUITO MAL, MAIS SORTE NA PROXIMA!</p>
+                    </div>`
+                } else if (pontos <= 4) {
+                    pergunta.innerHTML = `
+                    <div class="imagem_pergunta_final img_pontuacao_umAquatro">
+                        <div class="pontuacao">
+                            <span class="pontos">${pontos}</span>
+                            / 10
+                        </div>
+                    </div>
+                    <div class="text_final">
+                        <h2>${pontos} - ACERTOS</h2>
+                        <p>JÁ É UM COMEÇO!</p>
+                    </div>`
+                } else if (pontos == 5) {
+                    pergunta.innerHTML = `
+                    <div class="imagem_pergunta_final img_pontuacao_cinco">
+                        <div class="pontuacao">
+                            <span class="pontos">${pontos}</span>
+                            / 10
+                        </div>
+                    </div>
+                    <div class="text_final">
+                        <h2>${pontos} - ACERTOS</h2>
+                        <p>ACERTOU METADE, FOI BEM!</p>
+                    </div>`
+                } else if (pontos < 7) {
+                    pergunta.innerHTML = `
+                    <div class="imagem_pergunta_final img_pontuacao_seisAsete">
+                        <div class="pontuacao">
+                            <span class="pontos">${pontos}</span>
+                            / 10
+                        </div>
+                    </div>
+                    <div class="text_final">
+                        <h2>${pontos} - ACERTOS</h2>
+                        <p>VOCÊ SABE BEM DAS COIAS!</p>
+                    </div>`
+                } else if (pontos < 9) {
+                    pergunta.innerHTML = `
+                    <div class="imagem_pergunta_final img_pontuacao_oitoAnove">
+                        <div class="pontuacao">
+                            <span class="pontos">${pontos}</span>
+                            / 10
+                        </div>
+                    </div>
+                    <div class="text_final">
+                        <h2>${pontos} - ACERTOS</h2>
+                        <p>MUITO QUASE, MAS VOCÊ MANJA!</p>
+                    </div>`
+                } else {
+                    pergunta.innerHTML = `
+                    <div class="imagem_pergunta_final img_pontuacao_dez">
+                        <div class="pontuacao">
+                            <span class="pontos">${pontos}</span>
+                            / 10
+                        </div>
+                    </div>
+                    <div class="text_final">
+                        <h2>${pontos} - ACERTOS</h2>
+                        <p>PARABÉNS, VOCÊ É O FIRE FORCE!</p>
+                    </div>`
+                }
             }
             liberar()
         }, 2500);

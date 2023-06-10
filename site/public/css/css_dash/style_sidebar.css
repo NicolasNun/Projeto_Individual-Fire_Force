@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../assets/background.png);
+    background-size: cover;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 15vw;
+    height: 100vh;
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+    background: repeating-linear-gradient(45deg, #FF3300, #EC5A00 100px);
+    border-right: #000000 solid;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil .foto_usu {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: #000000 solid;
+    border-radius: 100%;
+}
+
+.perfil img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.navegacao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navegacao div,
+.navegacao a {
+    display: flex;
+    gap: 10px;
+    color: #ffffff;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navegacao div:hover,
+.navegacao a:hover {
+    background-color: rgba(255, 90, 0, 0.55);
+}
+
+.navegacao #nav_home, #nav_quiz, #nav_placar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #FF5A00;
+    border: #000000 solid 1px;
+    border-radius: 20px;
+    cursor: default;
+}
+
+.menu .saida a {
+    display: flex;
+    color: #ffffff;
+    gap: 7px;
+    text-decoration: none;
+}
