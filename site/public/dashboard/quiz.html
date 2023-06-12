@@ -71,7 +71,7 @@
     // Questões no caminho. VÁ PARA A LINHA 289
     var quest1 = `
     <div class="imagem_pergunta">
-        <h2>1 - A qual batalhão Shinra pertence?</h2>
+        <h2>1 - A QUAL BATALHÃO SHINRA PERTENCE?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -92,7 +92,7 @@
     </div>`
     var quest2 = `
     <div class="imagem_pergunta">
-        <h2>2 - Quantos são os pilares?</h2>
+        <h2>2 - QUANTOS SÃO OS PILARES?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -113,7 +113,7 @@
     </div>`
     var quest3 = `
     <div class="imagem_pergunta">
-        <h2>3 - Quem é o irmão de Shinra?</h2>
+        <h2>3 - QUEM É O IRMÃO DE SHINRA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -135,7 +135,7 @@
 
     var quest4 = `
     <div class="imagem_pergunta img_pergunta_quatro">
-        <h2>4 - Quem é o quinto pilar?</h2>
+        <h2>4 - QUEM É O QUINTO PILAR?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -157,7 +157,7 @@
 
     var quest5 = `
     <div class="imagem_pergunta">
-        <h2>5 - Quem era o traidor da 1ª Brigada?</h2>
+        <h2>5 - QUEM ERA O TRAIDOR DA 1ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -179,7 +179,7 @@
 
     var quest6 = `
     <div class="imagem_pergunta">
-        <h2>6 - Quem é o capitão da 4ª Brigada?</h2>
+        <h2>6 - QUEM É O CAPITÃO DA 4ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -201,7 +201,7 @@
 
     var quest7 = `
     <div class="imagem_pergunta">
-        <h2>7 - Quem sobreviveu junto de Iris ao incêndio no convento?</h2>
+        <h2>7 - QUEM SOBREVIVEU JUNTO DE IRIS AO INCÊNDIO NO CONVENTO?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -223,7 +223,7 @@
 
     var quest8 = `
     <div class="imagem_pergunta">
-        <h2>8 - Como Maki entrou para a 8ª Brigada?</h2>
+        <h2>8 - COMO MAKI ENTROU PARA A 8ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -245,7 +245,7 @@
 
     var quest9 = `
     <div class="imagem_pergunta">
-        <h2>9 - O que o Arthur imagina ser?</h2>
+        <h2>9 - O QUE O ARTHUR IMAGINA SER?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -267,23 +267,23 @@
 
     var quest10 = `
     <div class="imagem_pergunta">
-        <h2>10 - Qual o objetivo de shinra?</h2>
+        <h2>10 - QUAL O OBJETIVO DE SHINRA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
-            <button class="opcao" onclick="responder(this, this.value)" value="0">Desvendar o mistério da combustão espontânea de corpos</button>
+            <button class="opcao" onclick="responder(this, this.value), pontuar()" value="0">Desvendar o mistério da combustão espontânea de corpos</button>
         </div>
         <div class="alternativa" id="B">
-            <button class="opcao" onclick="responder(this, this.value)" value="1">Ser um herói e salvar todas as pessoas do terror das chamas</button>
+            <button class="opcao" onclick="responder(this, this.value), pontuar()" value="1">Ser um herói e salvar todas as pessoas do terror das chamas</button>
         </div>
         <div class="alternativa" id="C">
-            <button class="opcao" onclick="responder(this, this.value)" value="0">Se tornar o bombeiro mais forte de todos</button>
+            <button class="opcao" onclick="responder(this, this.value), pontuar()" value="0">Se tornar o bombeiro mais forte de todos</button>
         </div>
         <div class="alternativa" id="D">
-            <button class="opcao" onclick="responder(this, this.value)" value="0">Fundar sua própria brigada especial de bombeiros</button>
+            <button class="opcao" onclick="responder(this, this.value), pontuar()" value="0">Fundar sua própria brigada especial de bombeiros</button>
         </div>
         <div class="alternativa" id="E">
-            <button class="opcao" onclick="responder(this, this.value)" value="0">Matar o demônio que tirou sua família</button>
+            <button class="opcao" onclick="responder(this, this.value), pontuar()" value="0">Matar o demônio que tirou sua família</button>
         </div>
     </div>`
 
@@ -307,6 +307,10 @@
 
     var questoes = [quest2, quest3, quest4, quest5, quest6, quest7, quest8, quest9, quest10]
     var quest_atual = 0
+
+    var idUsuarioVar = Number(sessionStorage.ID_USUARIO);
+    console.log(sessionStorage.ID_USUARIO)
+    var nome = sessionStorage.NOME_USUARIO;
 
     function responder(botao, resposta) {
         bloquear();
@@ -407,6 +411,35 @@
                 }
             }
             liberar()
-        }, 2500);
+        }, 1500);
+    }
+    function pontuar() {
+        fetch("/usuarios/placar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.j
+                idUsuarioServer: idUsuarioVar,
+                pontosServer: pontos
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                setTimeout(function () {
+                    window.location = "placar.html";
+                }, 4000);
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
     }
 </script>

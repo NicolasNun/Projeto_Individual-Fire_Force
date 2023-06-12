@@ -17,7 +17,7 @@
 .card {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 20px;
     padding: 5px;
     font-size: xx-large;
@@ -56,12 +56,8 @@
 .graficos {
     display: flex;
     justify-content: center;
-    background-color: #FF3300;
+    background-color: #151515;
     border: #000000 solid;
     width: 30vw;
-    height: 140px;
-}
-
-#grafico_personagem {
-    height: 48vh;
+    height: 30vh;
 }

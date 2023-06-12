@@ -1,9 +1,15 @@
+@font-face {
+    font-family: Chp-fire;
+    src: url(../../assets/font/chp-fire.ttf);
+}
+
 body {
     display: flex;
     margin: 0;
     padding: 0;
     background-image: url(../../assets/background.png);
     background-size: cover;
+    font-family: Chp-fire;
 }
 
 .menu {

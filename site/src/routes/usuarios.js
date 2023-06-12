@@ -32,4 +32,24 @@ router.get("/numero_votos", function (req, res) {
     usuarioController.numero_votos(req, res);
 });
 
+router.post("/placar", function (req, res) {
+    usuarioController.placar(req, res);
+});
+
+router.get("/listar_pontos", function (req, res) {
+    usuarioController.listar_pontos(req, res);
+});
+
+router.get("/podio", function (req, res) {
+    usuarioController.podio(req, res);
+});
+
+router.get("/primeiro_a_gabaritar", function (req, res) {
+    usuarioController.primeiro_a_gabaritar(req, res);
+});
+
+router.get("/grafi_pontos", function (req, res) {
+    usuarioController.grafi_pontos(req, res);
+});
+
 module.exports = router;

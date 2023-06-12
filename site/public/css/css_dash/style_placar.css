@@ -96,8 +96,14 @@
     height: 100px;
 }
 
-.podium #nome_usu {
+.podium #nome_usu_primeiro,
+#nome_usu_segundo,
+#nome_usu_terceiro {
     font-size: xx-large;
+}
+
+#nome_usu_primeiro_a_gabaritar {
+    font-size: 180%;
 }
 
 .card {
@@ -139,33 +145,47 @@
 }
 
 .historico {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
     width: 23vw;
     height: 75vh;
     color: #ffffff;
     background-color: #FF3300;
     border: #000000 solid;
     border-radius: 20px;
-}
-
-.historico #titulo_do_historico {
-    font-size: x-large;
     text-shadow:
         -1px -1px 0px #000000,
         -1px 1px 0px #000000,
         1px -1px 0px #000000,
         1px 0px 0px #000000;
+    ;
 }
 
-.historico #info {
-    display: flex;
-    gap: 7rem;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
+table {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+}
+
+table thead tr td,
+table tbody tr td {
+    width: 33%;
+    height: 40px;
+    padding: 15px;
+}
+
+table thead tr td {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+table th {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+table td {
+    font-weight: 400;
+    font-size: 2rem;
 }

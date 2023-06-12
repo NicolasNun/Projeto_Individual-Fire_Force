@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body onload="contarUsu(), contarVotoPersonagem(), pontuacoes_quiz()">
     <div class="menu">
         <div class="perfil">
             <div id="foto_perfil" class="foto_usu"></div>
@@ -34,11 +34,11 @@
                 <div id="numero_de_usuarios"></div>
             </div>
             <div class="card">
-                <span>Personagem mais escolhido</span>
+                <span>Personagem mais escolhido:</span>
                 <div id="img_fav"></div>
             </div>
             <div class="graficos" id="grafico_personagem"><canvas id="num_escolhas"></canvas></div>
-            <div class="graficos" id="grafico_quiz"><canvas id="media_quiz"></canvas></div>
+            <div class="graficos" id="grafico_quiz"><canvas id="pontuacoes"></canvas></div>
         </div>
     </div>
 </body>
@@ -46,31 +46,9 @@
 </html>
 
 <script>
-    var dadosGraficos = {
-        type: 'bar',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'Número de escolhas',
-                data: [],
-                borderWidth: 1
-            }],
-        },
-        options: {
-            indexAxis: 'y',
-            scales: {
-                x: {
-                    beginAtZero: true
-                }
-            },
-            backgroundColor: [
-                "rgba(21, 227, 235)"
-            ],
-        }
-    }
-    nome_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    nome_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO
+    var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO;
 
     if (fk_personagem == 1) {
         foto_perfil.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
@@ -90,13 +68,60 @@
         foto_perfil.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`
     }
 
+    var dados_votos = {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Número de escolhas',
+                data: [],
+                borderWidth: 1
+            }],
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            },
+            backgroundColor: [
+                "rgb(255, 51, 0)",
+                "rgb(255, 90, 0)",
+                "rgb(255, 129, 0)",
+                "rgb(255, 129, 0)",
+                "rgb(255, 193, 0)",
+                "rgb(255, 193, 0)",
+                "rgb(255, 244, 0)",
+                "rgb(255, 244, 0)"
+            ],
+        }
+    }
+
+    var dados_quiz = {
+        type: 'bar',
+        data: {
+            labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            datasets: [{
+                label: 'Pontos dos usuários',
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                borderWidth: 1
+            }],
+        },
+        options: {
+            beginAtZero: true,
+            backgroundColor: "rgb(198, 38, 14)"
+        }
+    }
+
+
+
     function contarUsu() {
         fetch("/usuarios/listar_quantidade_usu", {
             method: "get"
         }).then(function (resposta) {
             if (resposta.ok) {
                 resposta.json().then((json) => {
-                    console.log(json)
                     numero_de_usuarios.innerHTML = `${json[0].qtdUsu}`
                 })
             }
@@ -110,7 +135,6 @@
         }).then(function (resposta) {
             if (resposta.ok) {
                 resposta.json().then((json) => {
-                    console.log(json)
                     if (json[0].idPersonagem == 1) {
                         img_fav.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
                     } else if (json[0].idPersonagem == 2) {
@@ -134,18 +158,56 @@
     }
 
     var ctx = document.getElementById('num_escolhas');
-    var chart = new Chart(ctx, dadosGraficos);
+    var chart_votos = new Chart(ctx, dados_votos);
     function votos() {
         fetch("/usuarios/numero_votos", {
             method: "get"
         }).then(function (resposta) {
             if (resposta.ok) {
                 resposta.json().then((json) => {
-                    console.log(json)
                     for (var i = 0; i < json.length; i++) {
-                        dadosGraficos.data.datasets[0].data.push(json[i].voto)
-                        dadosGraficos.data.labels.push(json[i].nomePersonagem)
-                        chart.update()
+                        dados_votos.data.datasets[0].data.push(json[i].voto)
+                        dados_votos.data.labels.push(json[i].nomePersonagem)
+                        chart_votos.update()
+                    }
+                })
+            }
+        })
+    }
+
+    var ct = document.getElementById('pontuacoes');
+    var chart_quiz = new Chart(ct, dados_quiz);
+    function pontuacoes_quiz() {
+        fetch("/usuarios/grafi_pontos", {
+            method: "get"
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+                    for (var i = 0; i < json.length; i++) {
+                        if (json[i].pontuacao == 0) {
+                            dados_quiz.data.datasets[0].data[0] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 1) {
+                            dados_quiz.data.datasets[0].data[1] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 2) {
+                            dados_quiz.data.datasets[0].data[2] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 3) {
+                            dados_quiz.data.datasets[0].data[3] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 4) {
+                            dados_quiz.data.datasets[0].data[4] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 5) {
+                            dados_quiz.data.datasets[0].data[5] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 6) {
+                            dados_quiz.data.datasets[0].data[6] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 7) {
+                            dados_quiz.data.datasets[0].data[7] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 8) {
+                            dados_quiz.data.datasets[0].data[8] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 9) {
+                            dados_quiz.data.datasets[0].data[9] = json[i].qtd_usu
+                        } else if (json[i].pontuacao == 10) {
+                            dados_quiz.data.datasets[0].data[10] = json[i].qtd_usu
+                        }
+                        chart_quiz.update()
                     }
                 })
             }
@@ -159,29 +221,11 @@
     }, 2000)
     setInterval(() => {
         votos()
-        dadosGraficos.data.datasets[0].data = []
-        dadosGraficos.data.labels = []
-        chart.update
+        dados_votos.data.datasets[0].data = []
+        dados_votos.data.labels = []
+        chart_votos.update
+        pontuacoes_quiz()
+        dados_quiz.data.datasets[0].data = []
+        chart_quiz.update
     }, 30000)
-
-    const ct = document.getElementById('media_quiz');
-
-    new Chart(ct, {
-        type: 'bar',
-        data: {
-            labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-            datasets: [{
-                label: 'Média de resultados do quiz',
-                data: [, , , , ,],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
 </script>

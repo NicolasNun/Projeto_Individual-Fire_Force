@@ -30,7 +30,6 @@
                 <h1>SEJA BEM VINDO!</h1>
                 <input type="text" id="input_username" placeholder="USERNAME">
                 <input type="text" id="input_email" placeholder="EMAIL">
-                <input type="text" id="input_confirmar_email" placeholder="CONFIRMAR EMAIL">
                 <input type="text" id="input_senha" placeholder="SENHA">
                 <input type="text" id="input_confirmar_senha" placeholder="CONFIRMAR SENHA">
             </div>
@@ -100,16 +99,13 @@
             return false;
         }
         else if (usuarioVar.length < 5) {
-            swal("Ops", "O nome inserido é muito curto. Por favor, insira um nome com pelo menos 8 caracteres 😠", "warning")
+            swal("Ops", "O nome inserido é muito curto. Por favor, insira um nome com pelo menos 5 caracteres", "warning")
         }
         else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 7) {
             swal("Ops", "Por favor, insira um e-mail válido", "warning")
         }
-        else if (confirmarEmailvar != emailVar) {
-            swal("Ops", "Os emails não correspondem", "warning")
-        }
-        else if (senhaVar.length < 8) {
-            swal("Ops", "Por favor,insira uma senha com pelo menos 8 caracteres", "warning")
+        else if (senhaVar.length < 4) {
+            swal("Ops", "Por favor,insira uma senha com pelo menos 4 caracteres", "warning")
         }
         else if (confirmarSenhavar != senhaVar) {
             swal("Ops", "As senhas não correspondem", "warning")

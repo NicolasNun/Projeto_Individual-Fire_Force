@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -57,7 +57,6 @@ function entrar(req, res) {
                 }
             );
     }
-
 }
 
 function cadastrar(req, res) {
@@ -78,9 +77,9 @@ function cadastrar(req, res) {
     } else if (personagem == undefined) {
         res.status(400).send("Seu personagem está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(usuario, email, senha,personagem)
+        usuarioModel.cadastrar(usuario, email, senha, personagem)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -149,6 +148,92 @@ function numero_votos(req, res) {
         );
 }
 
+function grafi_pontos(req, res) {
+    usuarioModel.grafi_pontos()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function placar(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+    var pontos = req.body.pontosServer;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    } else if (pontos == undefined) {
+        res.status(400).send("Sua pontos está indefinida!");
+    } else {
+
+        usuarioModel.placar(idUsuario, pontos).then(
+            function (resposta) {
+                res.status(200).send("função noiva")
+            }
+        )
+    }
+}
+
+function listar_pontos(req, res) {
+    usuarioModel.listar_pontos()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function podio(req, res) {
+    usuarioModel.podio()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function primeiro_a_gabaritar(req, res) {
+    usuarioModel.primeiro_a_gabaritar()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     entrar,
     cadastrar,
@@ -156,5 +241,10 @@ module.exports = {
     testar,
     listar_quantidade_usu,
     mais_votado,
-    numero_votos
+    numero_votos,
+    placar,
+    listar_pontos,
+    podio,
+    primeiro_a_gabaritar,
+    grafi_pontos
 }
