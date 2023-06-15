@@ -88,7 +88,7 @@ h1 {
     width: 16vw;
 }
 
-.personagem {
+.infos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +101,8 @@ h1 {
     gap: 5vh;
     flex-direction: column;
     align-items: center;
-    padding: 1% 1% 0 1%;;
+    padding: 1% 1% 0 1%;
+    ;
     background-color: #000000;
     color: #ffffff;
     border-radius: 8px;
@@ -118,6 +119,16 @@ h1 {
     font-size: xx-large;
 }
 
+.gif_personagem {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.gif_personagem img {
+    width: 80%;
+}
+
 #apelidos {
     font-size: xx-large;
 }
@@ -130,6 +141,7 @@ h1 {
     width: 50%;
     align-self: flex-start;
     font-size: 1.2rem;
+    padding: 2%;
 }
 
 .habilidade {
@@ -140,6 +152,7 @@ h1 {
     width: 47vw;
     height: 42vh;
     background-color: #FF3300;
+    padding: 2%;
 }
 
 .habilidade #geracao {
@@ -162,14 +175,23 @@ h1 {
     color: #ffffff;
     text-align: center;
     text-shadow:
-    -1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px -1px 0px #000000,
-    1px 0px 0px #000000;
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
 }
 
 .historia span {
     font-size: 1.5rem;
+}
+
+.img_arcos {
+    width: 70%;
+}
+
+.resumo_arco {
+    font-size: 1.2rem;
+    padding-bottom: 1%;
 }
 
 .sobreMim {

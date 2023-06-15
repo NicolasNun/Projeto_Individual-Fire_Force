@@ -18,12 +18,8 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
-// Coloque os mesmos parâmetros aqui. Vá para a var instrucao
 function cadastrar(usuario, email, senha, fkPersonagem) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", usuario, email, senha, fkPersonagem);
-
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
     var instrucao = `
         INSERT INTO usuario (usuario, email, senha, fkPersonagem) VALUES ('${usuario}', '${email}', '${senha}', '${fkPersonagem}');
     `;
@@ -79,7 +75,7 @@ function placar(idUsuario, pontos) {
 function listar_pontos() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPontuacao()");
     var instrucao = `
-    SELECT usuario, pontuacao FROM pontuacao JOIN usuario ON fkUsuario = idUsuario ORDER BY idPontuacao DESC;
+        SELECT usuario, pontuacao, (pontuacao * 10) AS percent FROM pontuacao JOIN usuario ON fkUsuario = idUsuario ORDER BY idPontuacao DESC;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

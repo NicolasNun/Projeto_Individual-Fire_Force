@@ -40,8 +40,44 @@
     background-image: url("https://images7.alphacoders.com/872/872823.png");
 }
 
+.img_pergunta_um {
+    background-image: url(../../assets/img_perguntas/pergunta1.jpg);
+}
+
+.img_pergunta_dois {
+    background-image: url(../../assets/img_perguntas/pergunta2.jpg);
+}
+
+.img_pergunta_treis {
+    background-image: url(../../assets/img_perguntas/pergunta3.jpg);
+}
+
 .img_pergunta_quatro {
     background-image: url(../../assets/img_perguntas/pergunta4.png);
+}
+
+.img_pergunta_cinco {
+    background-image: url(../../assets/img_perguntas/pergunta5.png);
+}
+
+.img_pergunta_seis {
+    background-image: url(../../assets/img_perguntas/pergunta6.jpg);
+}
+
+.img_pergunta_sete {
+    background-image: url(../../assets/img_perguntas/pergunta7.png);
+}
+
+.img_pergunta_oito {
+    background-image: url(../../assets/img_perguntas/pergunta8.jpg);
+}
+
+.img_pergunta_nove {
+    background-image: url(../../assets/img_perguntas/pergunta9.png);
+}
+
+.img_pergunta_dez {
+    background-image: url(../../assets/img_perguntas/pergunta10.png);
 }
 
 .segura_botao {
@@ -135,11 +171,11 @@
 }
 
 .img_pontuacao_seisAsete {
-    background-image: url();
+    background-image: url(../../assets/img_pontuacao/seisAsete_pontos.png);
 }
 
 .img_pontuacao_oitoAnove {
-    background-image: url();
+    background-image: url(../../assets/img_pontuacao/oitoAnove_pontos.jpg);
 }
 
 .img_pontuacao_dez {

@@ -63,6 +63,7 @@
                         <tr class="title">
                             <th>Jogador</th>
                             <th>Pontos</th>
+                            <TH>Acertos%</TH>
                         </tr>
                     </thead>
                 </table>
@@ -116,20 +117,24 @@
                         // e dá à ele conteúdo
                         var tdUsuario = document.createElement("td");
                         var tdpontuacao = document.createElement("td");
+                        var tdPercent = document.createElement("td")
                         var tableTr = document.createElement("tr");
                         var hr = document.createElement("hr");
 
                         tdUsuario.className = "text"
                         tdpontuacao.className = "text"
+                        tdPercent.className = "text"
 
                         tdUsuario.innerHTML = `${publicacao.usuario}`;
                         tdpontuacao.innerHTML = `${publicacao.pontuacao}`;
+                        tdPercent.innerText = `${publicacao.percent}%`
 
 
                         // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
 
                         tableTr.appendChild(tdUsuario);
                         tableTr.appendChild(tdpontuacao);
+                        tableTr.appendChild(tdPercent);
                         table.appendChild(tableTr);
                     }
 

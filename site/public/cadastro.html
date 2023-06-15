@@ -53,6 +53,7 @@
 </body>
 
 </html>
+
 <script>
     function fotoPersonagem() {
         img_personagem.className = ""
@@ -78,20 +79,14 @@
     }
 
     function cadastrar() {
-        //aguardar();
-
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
         var usuarioVar = input_username.value;
         var emailVar = input_email.value;
-        var confirmarEmailvar = input_confirmar_email.value
         var senhaVar = input_senha.value;
         var confirmarSenhavar = input_confirmar_senha.value
         var personagemVar = select_personagem_favorito.value;
 
 
-        if (usuarioVar == "" || emailVar == "" || confirmarEmailvar == "" || senhaVar == "" || confirmarSenhavar == "" || personagemVar == "") {
-            //cardErro.style.display = "block"
+        if (usuarioVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhavar == "" || personagemVar == "") {
             swal("Ops", "Preencha todos os campos!", "error")
 
 
@@ -100,6 +95,9 @@
         }
         else if (usuarioVar.length < 5) {
             swal("Ops", "O nome inserido é muito curto. Por favor, insira um nome com pelo menos 5 caracteres", "warning")
+        }
+        else if (usuarioVar.length > 10) {
+            swal("Ops", "O nome inserido é muito grande. Por favor, insira um nome com 10 caracteres no máximo", "warning")
         }
         else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 7) {
             swal("Ops", "Por favor, insira um e-mail válido", "warning")
@@ -114,15 +112,12 @@
             setInterval('oi', 5000)
 
 
-            // Enviando o valor da nova input
             fetch("/usuarios/cadastrar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
                     usuarioServer: usuarioVar,
                     emailServer: emailVar,
                     senhaServer: senhaVar,
@@ -133,7 +128,6 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    //cardErro.style.display = "block";
                     swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄...!", "success");
 
 
@@ -154,9 +148,4 @@
             return false;
         }
     }
-
-    //function sumirMensagem() {
-        //cardErro.style.display = "none"
-    //}
-
 </script>

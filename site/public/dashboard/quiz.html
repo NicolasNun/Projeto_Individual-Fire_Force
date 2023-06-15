@@ -70,7 +70,7 @@
 
     // Questões no caminho. VÁ PARA A LINHA 289
     var quest1 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_um">
         <h2>1 - A QUAL BATALHÃO SHINRA PERTENCE?</h2>
     </div>
     <div class="opcoes">
@@ -91,7 +91,7 @@
         </div>
     </div>`
     var quest2 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_dois">
         <h2>2 - QUANTOS SÃO OS PILARES?</h2>
     </div>
     <div class="opcoes">
@@ -112,7 +112,7 @@
         </div>
     </div>`
     var quest3 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_treis">
         <h2>3 - QUEM É O IRMÃO DE SHINRA?</h2>
     </div>
     <div class="opcoes">
@@ -156,7 +156,7 @@
     </div>`
 
     var quest5 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_cinco">
         <h2>5 - QUEM ERA O TRAIDOR DA 1ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
@@ -178,7 +178,7 @@
     </div>`
 
     var quest6 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_seis">
         <h2>6 - QUEM É O CAPITÃO DA 4ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
@@ -200,7 +200,7 @@
     </div>`
 
     var quest7 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_sete">
         <h2>7 - QUEM SOBREVIVEU JUNTO DE IRIS AO INCÊNDIO NO CONVENTO?</h2>
     </div>
     <div class="opcoes">
@@ -222,7 +222,7 @@
     </div>`
 
     var quest8 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_oito">
         <h2>8 - COMO MAKI ENTROU PARA A 8ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
@@ -244,7 +244,7 @@
     </div>`
 
     var quest9 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_nove">
         <h2>9 - O QUE O ARTHUR IMAGINA SER?</h2>
     </div>
     <div class="opcoes">
@@ -266,7 +266,7 @@
     </div>`
 
     var quest10 = `
-    <div class="imagem_pergunta">
+    <div class="imagem_pergunta img_pergunta_dez">
         <h2>10 - QUAL O OBJETIVO DE SHINRA?</h2>
     </div>
     <div class="opcoes">
@@ -372,7 +372,7 @@
                         <h2>${pontos} - ACERTOS</h2>
                         <p>ACERTOU METADE, FOI BEM!</p>
                     </div>`
-                } else if (pontos < 7) {
+                } else if (pontos <= 7) {
                     pergunta.innerHTML = `
                     <div class="imagem_pergunta_final img_pontuacao_seisAsete">
                         <div class="pontuacao">
@@ -384,7 +384,7 @@
                         <h2>${pontos} - ACERTOS</h2>
                         <p>VOCÊ SABE BEM DAS COIAS!</p>
                     </div>`
-                } else if (pontos < 9) {
+                } else if (pontos <= 9) {
                     pergunta.innerHTML = `
                     <div class="imagem_pergunta_final img_pontuacao_oitoAnove">
                         <div class="pontuacao">

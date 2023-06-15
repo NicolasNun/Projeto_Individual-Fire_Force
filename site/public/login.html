@@ -41,19 +41,16 @@
 
 <script>
     function entrar() {
-
-
         var emailVar = input_usuario.value;
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            // cardErro.style.display = "block"
             swal("Ops", "Preencha todos os campos!", "error")
             finalizarAguardar();
             return false;
         }
         else {
-            swal("Parábens", "Login realizado com sucesso!", "success");
+            swal("Parabéns", "Login realizado com sucesso!", "success");
             setInterval('...', 2000)
 
 
@@ -106,9 +103,5 @@
 
             return false;
         }
-
-        //function sumirMensagem() {
-        //  cardErro.style.display = "none"
-        // } 
     }
 </script>
