@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash-Home</title>
-    <link rel="stylesheet" href="../css/css_dash/style_dash.css">
-    <link rel="stylesheet" href="../css/css_dash/style_sidebar.css">
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/css_dash/style_dash.css">
+    <link rel="stylesheet" href="./css/css_dash/style_sidebar.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -19,12 +19,12 @@
             <span id="nome_usuario"></span>
         </div>
         <div class="navegacao">
-            <div id="nav_home"><img src="../assets/icones/house.png">HOME</div>
-            <div><a href="./quiz.html"><img src="../assets/icones/rapid-fire-question.png">QUIZ</a></div>
-            <div><a href="./placar.html"><img src="../assets/icones/podium.png">PLACAR</a></div>
+            <div id="nav_home"><img src="./assets/icones/house.png">HOME</div>
+            <div><a href="./quiz.html"><img src="./assets/icones/rapid-fire-question.png">QUIZ</a></div>
+            <div><a href="./placar.html"><img src="./assets/icones/podium.png">PLACAR</a></div>
         </div>
         <div class="saida">
-            <span><a href="../login.html"><img src="../assets/icones/exit_icon.png">SAIR</a></span>
+            <span><a href="./login.html"><img src="./assets/icones/exit_icon.png">SAIR</a></span>
         </div>
     </div>
     <div class="home">
@@ -51,21 +51,21 @@
     var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO;
 
     if (fk_personagem == 1) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
     } else if (fk_personagem == 2) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/arthur_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
     } else if (fk_personagem == 3) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/beni_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`
     } else if (fk_personagem == 4) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/joker_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`
     } else if (fk_personagem == 5) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/obi_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`
     } else if (fk_personagem == 6) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/maki_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`
     } else if (fk_personagem == 7) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/iris_icon.jpeg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
     } else {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
     }
 
     var dados_votos = {
@@ -136,21 +136,21 @@
             if (resposta.ok) {
                 resposta.json().then((json) => {
                     if (json[0].idPersonagem == 1) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
                     } else if (json[0].idPersonagem == 2) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/arthur_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
                     } else if (json[0].idPersonagem == 3) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/beni_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`
                     } else if (json[0].idPersonagem == 4) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/joker_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`
                     } else if (json[0].idPersonagem == 5) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/obi_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`
                     } else if (json[0].idPersonagem == 6) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/maki_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`
                     } else if (json[0].idPersonagem == 7) {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/iris_icon.jpeg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
                     } else {
-                        img_fav.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`
+                        img_fav.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
                     }
                 })
             }

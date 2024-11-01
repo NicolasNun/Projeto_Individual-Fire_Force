@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash-Placar</title>
-    <link rel="stylesheet" href="../css/css_dash/style_placar.css">
-    <link rel="stylesheet" href="../css/css_dash/style_sidebar.css">
+    <link rel="stylesheet" href="./css/css_dash/style_placar.css">
+    <link rel="stylesheet" href="./css/css_dash/style_sidebar.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -18,12 +18,12 @@
             <span id="nome_usuario"></span>
         </div>
         <div class="navegacao">
-            <div><a href="./dashboard.html"><img src="../assets/icones/house.png">HOME</a></div>
-            <div><a href="./quiz.html"><img src="../assets/icones/rapid-fire-question.png">QUIZ</a></div>
-            <div id="nav_placar"><img src="../assets/icones/podium.png">PLACAR</div>
+            <div><a href="./dashboard.html"><img src="./assets/icones/house.png">HOME</a></div>
+            <div><a href="./quiz.html"><img src="./assets/icones/rapid-fire-question.png">QUIZ</a></div>
+            <div id="nav_placar"><img src="./assets/icones/podium.png">PLACAR</div>
         </div>
         <div class="saida">
-            <span><a href="../login.html"><img src="../assets/icones/exit_icon.png">SAIR</a></span>
+            <span><a href="./login.html"><img src="./assets/icones/exit_icon.png">SAIR</a></span>
         </div>
     </div>
     <div class="placar">
@@ -52,7 +52,7 @@
                 <div class="card">
                     <span>PRIMEIRO A GABARITAR</span>
                     <div class="img_usu" id="img_primeiro_a_gabaritar"><img
-                            src="../assets/personagens_icon/arthur_icon.jpg"></div>
+                            src="./assets/personagens_icon/arthur_icon.jpg"></div>
                     <span id="nome_usu_primeiro_a_gabaritar"></span>
                 </div>
             </div>
@@ -80,21 +80,21 @@
     var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO
 
     if (fk_personagem == 1) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
     } else if (fk_personagem == 2) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/arthur_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
     } else if (fk_personagem == 3) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/beni_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`
     } else if (fk_personagem == 4) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/joker_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`
     } else if (fk_personagem == 5) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/obi_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`
     } else if (fk_personagem == 6) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/maki_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`
     } else if (fk_personagem == 7) {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/iris_icon.jpeg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
     } else {
-        foto_perfil.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`
+        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
     }
 
     function update_pontos() {
@@ -153,21 +153,21 @@
         var endereco_foto;
 
         if (idPersonagem == 1) {
-            endereco_foto = `<img src="../assets/personagens_icon/shinra_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
         } else if (idPersonagem == 2) {
-            endereco_foto = `<img src="../assets/personagens_icon/arthur_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
         } else if (idPersonagem == 3) {
-            endereco_foto = `<img src="../assets/personagens_icon/beni_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/beni_icon.jpg">`
         } else if (idPersonagem == 4) {
-            endereco_foto = `<img src="../assets/personagens_icon/joker_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/joker_icon.jpg">`
         } else if (idPersonagem == 5) {
-            endereco_foto = `<img src="../assets/personagens_icon/obi_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/obi_icon.jpg">`
         } else if (idPersonagem == 6) {
-            endereco_foto = `<img src="../assets/personagens_icon/maki_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/maki_icon.jpg">`
         } else if (idPersonagem == 7) {
-            endereco_foto = `<img src="../assets/personagens_icon/iris_icon.jpeg">`
+            endereco_foto = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
         } else {
-            endereco_foto = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`
+            endereco_foto = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
         }
         return endereco_foto
     }
