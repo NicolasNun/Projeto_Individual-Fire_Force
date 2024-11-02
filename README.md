@@ -1,6 +1,8 @@
 # Site Individual - Fire Force
 
-<img align="center" src="https://i.imgur.com/4R0S8xn.png">
+<div align="center">
+<img align="center" src="https://i.imgur.com/4R0S8xn.png">  
+</div>
 
 
 Este site é sobre o mangá e anime japonês, Fire Force, escrito e ilustrado por Atsuchi Okubo, mesmo criador de outro grande sucesso chamado Soul Eater. Escolhi este tema para aborda sobre mim e apresentar um dos meus mangás e animes favoritos. aproveitar para treinar minhas habilidades de programação front-end e back-end.
