@@ -1,5 +1,5 @@
 function mudarPersonagem() {
-  var num_personagem = select_personagem.value;
+  var nome_personagem = select_personagem.value;
 
   const personagens = {
     shinra: {
@@ -76,7 +76,7 @@ function mudarPersonagem() {
     },
   };
 
-  var personagem = Object.values(personagens[num_personagem]);
+  var personagem = Object.values(personagens[nome_personagem]);
 
   apelidos.innerHTML = personagem[0];
   gif_personagem.innerHTML = personagem[1];
