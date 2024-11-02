@@ -19,10 +19,10 @@ CONSTRAINT fkPersonagemUsuario FOREIGN KEY (fkPersonagem) REFERENCES personagem(
 ) AUTO_INCREMENT = 20;
 
 CREATE TABLE pontuacao (
-idPontuacao INT PRIMARY KEY AUTO_INCREMENT,
+idPontuacao INT AUTO_INCREMENT,
 fkUsuario INT,
+CONSTRAINT pkPontuacaoUsuario primary key (idPontuacao, fkUsuario),
 pontuacao INT,
-percentualPontuacao FLOAT,
 CONSTRAINT fkUsuarioPoint FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 ) AUTO_INCREMENT = 50;
 
