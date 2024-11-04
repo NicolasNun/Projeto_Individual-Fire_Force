@@ -73,7 +73,7 @@ body {
     background-color: rgba(255, 90, 0, 0.55);
 }
 
-.navegacao #nav_home, #nav_quiz, #nav_placar {
+.tela_atual{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -88,4 +88,9 @@ body {
     color: #ffffff;
     gap: 7px;
     text-decoration: none;
+}
+
+.container {
+    display: flex;
+    width: 85vw;
 }

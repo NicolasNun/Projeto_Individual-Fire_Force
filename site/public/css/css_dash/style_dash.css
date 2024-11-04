@@ -1,9 +1,4 @@
 .home {
-    display: flex;
-    width: 85vw;
-}
-
-.container {
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-template-rows: 2fr 2fr;

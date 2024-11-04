@@ -1,223 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dash-Placar</title>
-    <link rel="stylesheet" href="./css/css_dash/style_placar.css">
-    <link rel="stylesheet" href="./css/css_dash/style_sidebar.css">
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-</head>
+    <link rel="stylesheet" href="./css/css_dash/style_placar.css" />
+    <link rel="stylesheet" href="./css/css_dash/style_sidebar.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="./js/placar.js" defer></script>
+  </head>
 
-<body scroll="si" style="overflow: hidden" onload="update_pontos(), gerar_podio(), primeiro_a_acertar()">
+  <body scroll="si" style="overflow: hidden" onload="chamar_funcoes()">
     <div class="menu">
-        <div class="perfil">
-            <div id="foto_perfil" class="foto_usu"></div>
-            <span id="nome_usuario"></span>
+      <div class="perfil">
+        <div id="foto_perfil" class="foto_usu"></div>
+        <span id="nome_usuario">Tulida</span>
+      </div>
+      <div class="navegacao">
+        <div>
+          <a href="./dashboard.html">
+            <img src="./assets/icones/house.png" />HOME
+          </a>
         </div>
-        <div class="navegacao">
-            <div><a href="./dashboard.html"><img src="./assets/icones/house.png">HOME</a></div>
-            <div><a href="./quiz.html"><img src="./assets/icones/rapid-fire-question.png">QUIZ</a></div>
-            <div id="nav_placar"><img src="./assets/icones/podium.png">PLACAR</div>
+        <div>
+          <a href="./quiz.html">
+            <img src="./assets/icones/rapid-fire-question.png" />HOME
+          </a>
         </div>
-        <div class="saida">
-            <span><a href="./login.html"><img src="./assets/icones/exit_icon.png">SAIR</a></span>
+        <div>
+          <a href="./gacha.html">
+            <img src="./assets/icones/rapid-fire-question.png" />GACHA
+          </a>
         </div>
+        <div class="tela_atual">
+          <img src="./assets/icones/podium.png" />PLACAR
+        </div>
+      </div>
+      <div class="saida">
+        <span>
+          <a href="./login.html">
+            <img src="./assets/icones/exit_icon.png" />SAIR
+          </a>
+        </span>
+      </div>
     </div>
-    <div class="placar">
-        <div class="container">
-            <div class="cartao">
-                <div class="podium">
-                    <h2>OS TRÊS MELHORES</h2>
-                    <div class="classificacoes">
-                        <div class="lugar">
-                            <div class="img_usu" id="img_segundo"></div>
-                            <span id="nome_usu_segundo"></span>
-                            <div class="segundo">2ª</div>
-                        </div>
-                        <div class="lugar">
-                            <div class="img_usu" id="img_primeiro"></div>
-                            <span id="nome_usu_primeiro"></span>
-                            <div class="primeiro">1ª</div>
-                        </div>
-                        <div class="lugar">
-                            <div class="img_usu" id="img_terceiro"></div>
-                            <span id="nome_usu_terceiro"></span>
-                            <div class="terceiro">3ª</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <span>PRIMEIRO A GABARITAR</span>
-                    <div class="img_usu" id="img_primeiro_a_gabaritar"><img
-                            src="./assets/personagens_icon/arthur_icon.jpg"></div>
-                    <span id="nome_usu_primeiro_a_gabaritar"></span>
-                </div>
+    <div class="container">
+      <div class="placar">
+        <div class="cartao">
+          <div class="podium">
+            <h2>OS TRÊS MELHORES</h2>
+            <div class="classificacoes">
+              <div class="lugar">
+                <div class="img_usu" id="img_segundo"></div>
+                <span id="nome_usu_segundo"></span>
+                <div class="segundo">2ª</div>
+              </div>
+              <div class="lugar">
+                <div class="img_usu" id="img_primeiro"></div>
+                <span id="nome_usu_primeiro"></span>
+                <div class="primeiro">1ª</div>
+              </div>
+              <div class="lugar">
+                <div class="img_usu" id="img_terceiro"></div>
+                <span id="nome_usu_terceiro"></span>
+                <div class="terceiro">3ª</div>
+              </div>
             </div>
-            <div class="historico">
-                <table id="infos" border="1px">
-                    <h2 id="titulo_do_historico">ULTIMOS A TENTAR</h2>
-                    <thead>
-                        <tr class="title">
-                            <th>Jogador</th>
-                            <th>Pontos</th>
-                            <TH>Acertos%</TH>
-                        </tr>
-                    </thead>
-                </table>
+          </div>
+          <div class="card">
+            <span>PRIMEIRO A GABARITAR</span>
+            <div class="img_usu" id="img_primeiro_a_gabaritar">
+              <img src="./assets/personagens_icon/arthur_icon.jpg" />
             </div>
+            <span id="nome_usu_primeiro_a_gabaritar"></span>
+          </div>
         </div>
+        <div class="historico">
+          <table id="infos" border="1px">
+            <h2 id="titulo_do_historico">ULTIMOS A TENTAR</h2>
+            <thead>
+              <tr class="title">
+                <th>Jogador</th>
+                <th>Pontos</th>
+                <th>Acertos%</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
-
-<script>
-    nome_usuario.innerHTML = sessionStorage.NOME_USUARIO
-
-    var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO
-
-    if (fk_personagem == 1) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
-    } else if (fk_personagem == 2) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
-    } else if (fk_personagem == 3) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`
-    } else if (fk_personagem == 4) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`
-    } else if (fk_personagem == 5) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`
-    } else if (fk_personagem == 6) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`
-    } else if (fk_personagem == 7) {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
-    } else {
-        foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
-    }
-
-    function update_pontos() {
-        //aguardar();
-        fetch("/usuarios/listar_pontos").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    throw "Nenhum resultado encontrado!!";
-                }
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                    var table = document.getElementById("infos");
-                    for (var contador = 0; contador < resposta.length; contador++) {
-                        var publicacao = resposta[contador];
-                        // criando e manipulando elementos do HTML via JavaScript
-
-                        console.log(publicacao)
-                        // // cria um novo elemento div
-                        // e dá à ele conteúdo
-                        var tdUsuario = document.createElement("td");
-                        var tdpontuacao = document.createElement("td");
-                        var tdPercent = document.createElement("td")
-                        var tableTr = document.createElement("tr");
-                        var hr = document.createElement("hr");
-
-                        tdUsuario.className = "text"
-                        tdpontuacao.className = "text"
-                        tdPercent.className = "text"
-
-                        tdUsuario.innerHTML = `${publicacao.usuario}`;
-                        tdpontuacao.innerHTML = `${publicacao.pontuacao}`;
-                        tdPercent.innerText = `${publicacao.percent}%`
-
-
-                        // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
-
-                        tableTr.appendChild(tdUsuario);
-                        tableTr.appendChild(tdpontuacao);
-                        tableTr.appendChild(tdPercent);
-                        table.appendChild(tableTr);
-                    }
-
-                    // finalizarAguardar();
-                });
-            } else {
-                swal("Ops", "Houve um erro na API!", "warning");
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            // finalizarAguardar();
-        });
-    }
-
-    function foto_podio(idPersonagem) {
-        var endereco_foto;
-
-        if (idPersonagem == 1) {
-            endereco_foto = `<img src="./assets/personagens_icon/shinra_icon.jpg">`
-        } else if (idPersonagem == 2) {
-            endereco_foto = `<img src="./assets/personagens_icon/arthur_icon.jpg">`
-        } else if (idPersonagem == 3) {
-            endereco_foto = `<img src="./assets/personagens_icon/beni_icon.jpg">`
-        } else if (idPersonagem == 4) {
-            endereco_foto = `<img src="./assets/personagens_icon/joker_icon.jpg">`
-        } else if (idPersonagem == 5) {
-            endereco_foto = `<img src="./assets/personagens_icon/obi_icon.jpg">`
-        } else if (idPersonagem == 6) {
-            endereco_foto = `<img src="./assets/personagens_icon/maki_icon.jpg">`
-        } else if (idPersonagem == 7) {
-            endereco_foto = `<img src="./assets/personagens_icon/iris_icon.jpeg">`
-        } else {
-            endereco_foto = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`
-        }
-        return endereco_foto
-    }
-
-    function gerar_podio() {
-        //aguardar();
-        fetch("/usuarios/podio").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    throw "Nenhum resultado encontrado!!";
-                }
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    nome_usu_primeiro.innerHTML = resposta[0].usuario;
-                    nome_usu_segundo.innerHTML = resposta[1].usuario;
-                    nome_usu_terceiro.innerHTML = resposta[2].usuario;
-
-                    img_primeiro.innerHTML = foto_podio(resposta[0].fkPersonagem);
-                    img_segundo.innerHTML = foto_podio(resposta[1].fkPersonagem);
-                    img_terceiro.innerHTML = foto_podio(resposta[2].fkPersonagem);
-                    // finalizarAguardar();
-                });
-            } else {
-                swal("Ops", "Houve um erro na API!", "warning");
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            // finalizarAguardar();
-        });
-    }
-
-    function primeiro_a_acertar() {
-        //aguardar();
-        fetch("/usuarios/primeiro_a_gabaritar").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    throw "Nenhum resultado encontrado!!";
-                }
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    nome_usu_primeiro_a_gabaritar.innerHTML = resposta[0].usuario;
-                    img_primeiro_a_gabaritar.innerHTML = foto_podio(resposta[0].fkPersonagem);
-                    // finalizarAguardar();
-                });
-            } else {
-                swal("Ops", "Houve um erro na API!", "warning");
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            // finalizarAguardar();
-        });
-    }
-</script>

@@ -1,9 +1,4 @@
 .placar {
-    display: flex;
-    width: 85vw;
-}
-
-.container {
     display: grid;
     grid-template-columns: 2fr 2fr;
     width: 100%;

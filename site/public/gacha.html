@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Force Gacha</title>
+    <link rel="stylesheet" href="css/css_dash/style_gacha.css" />
+    <link rel="stylesheet" href="css/css_dash/style_sidebar.css" />
+    <script src="./js/gacha.js" defer></script>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="perfil">
+        <div id="foto_perfil" class="foto_usu"></div>
+        <span id="nome_usuario">Tulida</span>
+      </div>
+      <div class="navegacao">
+        <div>
+          <a href="./dashboard.html">
+            <img src="./assets/icones/house.png" />HOME
+          </a>
+        </div>
+        <div>
+          <a href="./quiz.html">
+            <img src="./assets/icones/rapid-fire-question.png" />HOME
+          </a>
+        </div>
+        <div class="tela_atual">
+          <img src="./assets/icones/rapid-fire-question.png" />GACHA
+        </div>
+        <div>
+          <a href="./placar.html">
+            <img src="./assets/icones/podium.png" />PLACAR
+          </a>
+        </div>
+      </div>
+      <div class="saida">
+        <span>
+          <a href="./login.html">
+            <img src="./assets/icones/exit_icon.png" />SAIR
+          </a>
+        </span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="gacha">
+        <span id="span_fire_cash">100</span><br />
+        <span>Personagem bonus:</span>
+        <select id="select_personagem_bonus">
+          <option value="1">Licht</option>
+          <option value="2">Iris</option>
+          <option value="3">Hibana</option>
+          <option value="4">Burns</option>
+          <option value="5">Obi</option>
+          <option value="6">Famila Vulcan</option>
+          <option value="7">Hinawa</option>
+          <option value="8">Benimru</option>
+          <option value="9">Konro</option>
+          <option value="10">Tamaki</option></select
+        ><br />
+        <span>Quantas cartas iguais vão aparecer:</span>
+        <select id="select_chute_cartas_repetidas">
+          <option value="2">2</option>
+          <option value="3">3</option></select
+        ><br />
+        <span>
+          <b>Regras:</b><br />
+          1- Cada giro custa 10 Fire Cash<br />
+          2- Personagem bonus:<br />
+          - 1 vez = +20 Fire Cash<br />
+          - 2 vezes = +50 Fire Cash<br />
+          - 3 vezes = +100 Fire Cash<br />
+          3- Chute de cartas repetidas<br />
+          - 2 cartas = +50<br />
+          - 3 cartas = +25<br />
+          4- As regras 2 e 3 podem acontecer juntas </span
+        ><br />
+        <button onclick="girar()">Girar -10 Fire Cash</button><br />
+        <div id="div_resultado"></div>
+        <div id="div_grande_premio"></div>
+      </div>
+    </div>
+  </body>
+</html>

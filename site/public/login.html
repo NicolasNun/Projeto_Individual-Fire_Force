@@ -1,107 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="./css/style_login.css">
-    <link rel="stylesheet" href="./css/style_header.css">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style_login.css" />
+    <link rel="stylesheet" href="./css/style_header.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
+    <script src="js/login_cadastro.js"></script>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <div class="container">
-            <img src="./assets/logo.png" alt="Logo de Fire Force">
-            <ul class="navegacao">
-                <li><a href="index.html">H O M E</a></li>
-                <li><a href="index.html#sobremim">S O B R E M I M</a></li>
-                <li id="nav_login">L O G I N</li>
-                <li><a href="cadastro.html">C A D A S T R O</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <img src="./assets/logo.png" alt="Logo de Fire Force" />
+        <ul class="navegacao">
+          <li><a href="index.html">H O M E</a></li>
+          <li><a href="index.html#sobremim">S O B R E M I M</a></li>
+          <li id="nav_login">L O G I N</li>
+          <li><a href="cadastro.html">C A D A S T R O</a></li>
+        </ul>
+      </div>
     </div>
     <div class="conteudo">
-        <div class="container">
-            <h1>BEM VINDO DE VOLTA!</h1>
-            <div class="campos">
-                <input type="text" id="input_usuario" placeholder="EMAIL">
-                <input type="password" id="input_senha" placeholder="SENHA">
-            </div>
-            <button onclick="entrar()">ENTRAR</button>
-            <h3>Não possui cadastro? <a href="cadastro.html">CADASTRE-SE</a></h3>
+      <div class="container">
+        <h1>BEM VINDO DE VOLTA!</h1>
+        <div class="campos">
+          <input type="text" id="input_usuario" placeholder="EMAIL" />
+          <input type="password" id="input_senha" placeholder="SENHA" />
         </div>
+        <button onclick="entrar()">ENTRAR</button>
+        <h3>Não possui cadastro? <a href="cadastro.html">CADASTRE-SE</a></h3>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
-
-<script>
-    function entrar() {
-        var emailVar = input_usuario.value;
-        var senhaVar = input_senha.value;
-
-        if (emailVar == "" || senhaVar == "") {
-            swal("Ops", "Preencha todos os campos!", "error")
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            swal("Parabéns", "Login realizado com sucesso!", "success");
-            setInterval('...', 2000)
-
-
-            console.log("FORM LOGIN: ", emailVar);
-            console.log("FORM SENHA: ", senhaVar);
-
-            fetch("/usuarios/autenticar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
-                })
-            }).then(function (resposta) {
-                console.log("ESTOU NO THEN DO entrar()!")
-
-                if (resposta.ok) {
-                    console.log(resposta);
-
-                    resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
-
-                        sessionStorage.EMAIL_USUARIO = json.email;
-                        sessionStorage.NOME_USUARIO = json.usuario;
-                        sessionStorage.ID_USUARIO = json.idUsuario;
-                        sessionStorage.PERSONAGEM_FAVORITO = json.fkPersonagem;
-
-                        setTimeout(function () {
-                            window.location = "./dashboard.html";
-                        }, 3000); // apenas para exibir o loading
-
-                    });
-
-                } else {
-
-                    swal("Ops", "Email e/ou senha inválido(s)", "error")
-
-                    resposta.text().then(texto => {
-                        console.error(texto);
-                        finalizarAguardar(texto);
-                    });
-                }
-
-            }).catch(function (erro) {
-                console.log(erro);
-            })
-
-            return false;
-        }
-    }
-</script>
