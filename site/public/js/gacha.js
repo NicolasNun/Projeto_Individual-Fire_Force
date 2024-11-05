@@ -74,9 +74,8 @@ var fire_cash = 100;
 span_fire_cash.innerHTML = fire_cash;
 
 function girar() {
-  div_resultado.innerHTML = "";
-  const personagem_bonus = Number(select_personagem_bonus.value);
-  const chute_cartas_repetidas = Number(select_chute_cartas_repetidas.value);
+  // const personagem_bonus = Number(select_personagem_bonus.value);
+  const chute_cartas_repetidas = Number(span_chute_cartas_repetidas.value);
 
   if (fire_cash < 10) {
     alert("Fire cash insuficiente");
@@ -93,7 +92,13 @@ function girar() {
       var numero_aleatorio = parseInt(Math.random() * cartas.length);
       console.log(cartas[numero_aleatorio]);
 
-      div_resultado.innerHTML += cartas[numero_aleatorio];
+      if (i == 1) {
+        carta_um.innerHTML = cartas[numero_aleatorio];
+      } else if (i == 2) {
+        carta_dois.innerHTML = cartas[numero_aleatorio];
+      } else {
+        carta_tres.innerHTML = cartas[numero_aleatorio];
+      }
 
       if (primeira_carta == 0) {
         primeira_carta = numero_aleatorio;
@@ -104,44 +109,53 @@ function girar() {
       }
     }
 
-    if (
-      personagem_bonus == primeira_carta &&
-      personagem_bonus == segunda_carta &&
-      personagem_bonus == terceira_carta
-    ) {
-      fire_cash += 100;
-    } else if (
-      (personagem_bonus == primeira_carta &&
-        personagem_bonus == segunda_carta) ||
-      (personagem_bonus == primeira_carta &&
-        personagem_bonus == terceira_carta) ||
-      (personagem_bonus == segunda_carta && personagem_bonus == terceira_carta)
-    ) {
-      fire_cash += 50;
-    } else if (
-      personagem_bonus == primeira_carta ||
-      personagem_bonus == segunda_carta ||
-      personagem_bonus == terceira_carta
-    ) {
-      fire_cash += 20;
-    } else {
-      fire_cash = fire_cash;
-    }
+    // if (
+    //   personagem_bonus == primeira_carta &&
+    //   personagem_bonus == segunda_carta &&
+    //   personagem_bonus == terceira_carta
+    // ) {
+    //   fire_cash += 100;
+    // } else if (
+    //   (personagem_bonus == primeira_carta &&
+    //     personagem_bonus == segunda_carta) ||
+    //   (personagem_bonus == primeira_carta &&
+    //     personagem_bonus == terceira_carta) ||
+    //   (personagem_bonus == segunda_carta && personagem_bonus == terceira_carta)
+    // ) {
+    //   fire_cash += 50;
+    // } else if (
+    //   personagem_bonus == primeira_carta ||
+    //   personagem_bonus == segunda_carta ||
+    //   personagem_bonus == terceira_carta
+    // ) {
+    //   fire_cash += 20;
+    // } else {
+    //   fire_cash = fire_cash;
+    // }
 
-    if (
-      primeira_carta == segunda_carta &&
-      primeira_carta == terceira_carta &&
-      chute_cartas_repetidas == 3
-    ) {
-      fire_cash += 50;
-    } else if (
-      primeira_carta == segunda_carta ||
-      primeira_carta == terceira_carta ||
-      (segunda_carta == terceira_carta && chute_cartas_repetidas == 2)
-    ) {
-      fire_cash += 25;
-    }
+    // if (
+    //   primeira_carta == segunda_carta &&
+    //   primeira_carta == terceira_carta &&
+    //   chute_cartas_repetidas == 3
+    // ) {
+    //   fire_cash += 50;
+    // } else if (
+    //   primeira_carta == segunda_carta ||
+    //   primeira_carta == terceira_carta ||
+    //   (segunda_carta == terceira_carta && chute_cartas_repetidas == 2)
+    // ) {
+    //   fire_cash += 25;
+    // }
 
     span_fire_cash.innerHTML = fire_cash;
   }
+}
+
+function mudarChute() {
+  if (span_chute_cartas_repetidas.innerHTML == 2) {
+    span_chute_cartas_repetidas.innerHTML = 3;
+    return;
+  }
+
+  span_chute_cartas_repetidas.innerHTML = 2;
 }

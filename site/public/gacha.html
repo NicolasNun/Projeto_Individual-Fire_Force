@@ -44,7 +44,7 @@
     </div>
     <div class="container">
       <div class="gacha">
-        <span id="span_fire_cash">100</span><br />
+        <!-- <span id="span_fire_cash">100</span><br />
         <span>Personagem bonus:</span>
         <select id="select_personagem_bonus">
           <option value="1">Licht</option>
@@ -77,8 +77,26 @@
         ><br />
         <button onclick="girar()">Girar -10 Fire Cash</button><br />
         <div id="div_resultado"></div>
-        <div id="div_grande_premio"></div>
+        <div id="div_grande_premio"></div> -->
+        <div class="indicadores">
+          <div class="indicador">
+            Fire Cash <span id="span_fire_cash">1000</span>
+          </div>
+          <div class="indicador">Personagem Bonûs:</div>
+          <div class="indicador" onclick="mudarChute()">
+            Cartas Repetodas:
+            <span id="span_chute_cartas_repetidas">
+              2
+            </span>
+          </div>
+        </div>
+        <div class="painel_cartas">
+          <div id="carta_um" class="carta"></div>
+          <div id="carta_dois" class="carta"></div>
+          <div id="carta_tres" class="carta"></div>
+        </div>
       </div>
+      <button class="btn_girar_cartas" onclick="girar()">GIRAR</button>
     </div>
   </body>
 </html>
