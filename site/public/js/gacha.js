@@ -20,6 +20,67 @@ if (fk_personagem == 1) {
   foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`;
 }
 
+function mudarChute() {
+  if (span_chute_cartas_repetidas.innerHTML == 2) {
+    span_chute_cartas_repetidas.innerHTML = 3;
+    return;
+  }
+
+  span_chute_cartas_repetidas.innerHTML = 2;
+}
+
+function exibirOpcoesCartas() {
+  if (painel_escolha_carta.style.display == "grid") {
+    painel_escolha_carta.style.display = "none";
+    return;
+  }
+
+  painel_escolha_carta.style.display = "grid";
+}
+
+const opcoes_cartas = {
+  opcao_carta_um: "./assets/img_gacha/arthur.jpg",
+  opcao_carta_dois: "./assets/img_gacha/victor.jpg",
+  opcao_carta_tres: "./assets/img_gacha/iris.jpg",
+  opcao_carta_quatro: "./assets/img_gacha/hibana.jpg",
+  opcao_carta_cinco: "./assets/img_gacha/burns.jpg",
+  opcao_carta_seis: "./assets/img_gacha/obi.jpg",
+  opcao_carta_sete: "./assets/img_gacha/vulcan.jpg",
+  opcao_carta_oito: "./assets/img_gacha/hinawa.jpg",
+  opcao_carta_nove: "./assets/img_gacha/benimaru.jpg",
+  opcao_carta_dez: "./assets/img_gacha/konro.jpg",
+  opcao_carta_onze: "./assets/img_gacha/tamaki.jpg",
+  opcao_carta_doze: "./assets/img_gacha/ogun.jpg",
+  opcao_carta_treze: "./assets/img_gacha/pan.jpg",
+  opcao_carta_quatorze: "./assets/img_gacha/kurono.jpg",
+  opcao_carta_quinze: "./assets/img_gacha/kayoko.jpg",
+  opcao_carta_dezesseis: "./assets/img_gacha/shinra.jpg",
+  opcao_carta_dezessete: "./assets/img_gacha/joker.jpg",
+  opcao_carta_dezoito: "./assets/img_gacha/rekka.jpg",
+  opcao_carta_dezenove: "./assets/img_gacha/karim.jpg",
+  opcao_carta_vinte: "./assets/img_gacha/li.jpg",
+  opcao_carta_vinte_um: "./assets/img_gacha/asako.jpg",
+  opcao_carta_vinte_dois: "./assets/img_gacha/sho.jpg",
+};
+
+function mudarPersonagemBonus(opcao_carta) {
+  img_personagem_bonus.src = opcoes_cartas[opcao_carta];
+
+  painel_escolha_carta.style.display = "none";
+}
+
+function avancar_regras(instrucao) {
+  if (instrucao == "jogar") {
+    tela_gacha_regras.style.display = "none";
+    tela_gacha.style.display = "flex";
+    botao_girar_cartas.style.display = "flex";
+    return;
+  }
+
+  div_regras_iniciais.style.display = "none";
+  div_regras_finais.style.display = "flex";
+}
+
 // 22 cartas
 const carta_arthur = '<img src="./assets/img_gacha/arthur.jpg">';
 const carta_victor = '<img src="./assets/img_gacha/victor.jpg">';
@@ -149,13 +210,4 @@ function girar() {
 
     span_fire_cash.innerHTML = fire_cash;
   }
-}
-
-function mudarChute() {
-  if (span_chute_cartas_repetidas.innerHTML == 2) {
-    span_chute_cartas_repetidas.innerHTML = 3;
-    return;
-  }
-
-  span_chute_cartas_repetidas.innerHTML = 2;
 }

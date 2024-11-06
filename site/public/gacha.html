@@ -43,7 +43,43 @@
       </div>
     </div>
     <div class="container">
-      <div class="gacha">
+      <div id="tela_gacha_regras" class="gacha_regras">
+        <div class="card_regras">
+          <span class="span_titulo_regras">Regras:</span>
+          <div id="div_regras_iniciais">
+            <span class="span_regras">
+              <span>1 - Cada giro custa 10 Fire Cash</span>
+              <span>2 - Personagem bonus:</span>
+              <span>- 1 vez = +20 Fire Cash</span>
+              <span>- 2 vezes = +50 Fire Cash</span>
+              <span>- 3 vezes = +100 Fire Cash</span>
+              <span>3 - Chute de cartas repetidas</span>
+              <span>- 2 cartas = +50</span>
+              <span>- 3 cartas = +25</span>
+              <span>4 - As regras 2 e 3 podem acontecer juntas</span>
+              <!-- 1- Cada giro custa 10 Fire Cash
+              2- Personagem bonus:
+            - 1 vez = +20 Fire Cash
+            - 2 vezes = +50 Fire Cash
+            - 3 vezes = +100 Fire Cash
+            3- Chute de cartas repetidas
+            - 2 cartas = +50
+            - 3 cartas = +25
+            4- As regras 2 e 3 podem acontecer juntas -->
+            </span>
+            <button onclick="avancar_regras('proximo')">PROXIMO</button>
+          </div>
+          <div id="div_regras_finais">
+            <span class="span_regras">
+              <span>1 - Fire cash é onde você vê o seu dinheiro atual</span>
+              <span>2 - Clique em personagem bonus para escolher o seu</span>
+              <span>3 - Clique em cartas repetidas para dar o seu chute</span>
+            </span>
+            <button onclick="avancar_regras('jogar')">JOGAR</button>
+          </div>
+        </div>
+      </div>
+      <div id="tela_gacha" class="gacha">
         <!-- <span id="span_fire_cash">100</span><br />
         <span>Personagem bonus:</span>
         <select id="select_personagem_bonus">
@@ -80,14 +116,111 @@
         <div id="div_grande_premio"></div> -->
         <div class="indicadores">
           <div class="indicador">
-            Fire Cash <span id="span_fire_cash">1000</span>
+            Fire Cash:
+            <span id="span_fire_cash">1000</span>
           </div>
-          <div class="indicador">Personagem Bonûs:</div>
+          <div class="indicador" onclick="exibirOpcoesCartas()">
+            Personagem Bonûs:
+            <span id="span_personagem_bonus">
+              <img
+                id="img_personagem_bonus"
+                src="./assets/img_gacha/arthur.jpg"
+              />
+            </span>
+          </div>
+          <div id="painel_escolha_carta" class="painel_escolha_carta">
+            <img
+              src="./assets/img_gacha/arthur.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_um')"
+            />
+            <img
+              src="./assets/img_gacha/victor.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_dois')"
+            />
+            <img
+              src="./assets/img_gacha/iris.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_tres')"
+            />
+            <img
+              src="./assets/img_gacha/hibana.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_quatro')"
+            />
+            <img
+              src="./assets/img_gacha/burns.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_cinco')"
+            />
+            <img
+              src="./assets/img_gacha/obi.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_seis')"
+            />
+            <img
+              src="./assets/img_gacha/vulcan.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_sete')"
+            />
+            <img
+              src="./assets/img_gacha/hinawa.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_oito')"
+            />
+            <img
+              src="./assets/img_gacha/benimaru.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_nove')"
+            />
+            <img
+              src="./assets/img_gacha/konro.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_dez')"
+            />
+            <img
+              src="./assets/img_gacha/tamaki.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_onze')"
+            />
+            <img
+              src="./assets/img_gacha/ogun.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_doze')"
+            />
+            <img
+              src="./assets/img_gacha/pan.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_treze')"
+            />
+            <img
+              src="./assets/img_gacha/kurono.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_quatorze')"
+            />
+            <img
+              src="./assets/img_gacha/kayoko.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_quinze')"
+            />
+            <img
+              src="./assets/img_gacha/shinra.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_dezesseis')"
+            />
+            <img
+              src="./assets/img_gacha/joker.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_dezessete')"
+            />
+            <img
+              src="./assets/img_gacha/rekka.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_dezoito')"
+            />
+            <img
+              src="./assets/img_gacha/karim.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_dezenove')"
+            />
+            <img
+              src="./assets/img_gacha/li.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_vinte')"
+            />
+            <img
+              src="./assets/img_gacha/asako.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_vinte_um')"
+            />
+            <img
+              src="./assets/img_gacha/sho.jpg"
+              onclick="mudarPersonagemBonus('opcao_carta_vinte_dois')"
+            />
+          </div>
           <div class="indicador" onclick="mudarChute()">
             Cartas Repetodas:
-            <span id="span_chute_cartas_repetidas">
-              2
-            </span>
+            <span id="span_chute_cartas_repetidas"> 2 </span>
           </div>
         </div>
         <div class="painel_cartas">
@@ -96,7 +229,9 @@
           <div id="carta_tres" class="carta"></div>
         </div>
       </div>
-      <button class="btn_girar_cartas" onclick="girar()">GIRAR</button>
+      <button id="botao_girar_cartas" class="btn_girar_cartas" onclick="girar()">
+        GIRAR
+      </button>
     </div>
   </body>
 </html>

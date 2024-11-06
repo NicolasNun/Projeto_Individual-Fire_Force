@@ -4,8 +4,44 @@
   flex-direction: column;
 }
 
-.gacha {
+.gacha_regras {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card_regras {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  border: 2px solid #000;
+}
+
+.span_titulo_regras {
+  font-size: 10vh;
+}
+
+#div_regras_finais {
+  display: none;
+  flex-direction: column;
+}
+
+.span_regras {
+  font-size: 3vh;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.gacha {
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -24,10 +60,43 @@
   width: 25%;
   height: 10vh;
   border: 2px solid #000;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.painel_escolha_carta {
+  position: absolute;
+  left: 59.8vw;
+  top: 16vh;
+  display: none;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 16.6% 16.4% 16.6% 16.5% 16.5%;
+  height: 81vh;
+  width: 22vw;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  background-color: #d9d9d9;
+}
+
+#span_personagem_bonus {
+  height: 100%;
+  width: 20%;
+}
+
+#span_personagem_bonus img {
+  height: 100%;
+  width: 100%;
+}
+
+.painel_escolha_carta img {
+  height: 100px;
+  width: 80px;
+  border: 1px solid #000;
+  cursor: pointer;
 }
 
 .painel_cartas {
@@ -38,6 +107,14 @@
   border: 2px solid #000;
   width: 89%;
   height: 77%;
+}
+
+#carta_um,
+#carta_dois,
+#carta_tres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carta,
@@ -55,6 +132,9 @@
 }
 
 .btn_girar_cartas {
+  display: none;
+  align-items: center;
+  justify-content: center;
   width: 20%;
   height: 10%;
   border-radius: 0 0 100px 100px;
