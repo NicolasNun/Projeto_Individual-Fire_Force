@@ -39,34 +39,44 @@ function exibirOpcoesCartas() {
 }
 
 const opcoes_cartas = {
-  opcao_carta_um: "./assets/img_gacha/arthur.jpg",
-  opcao_carta_dois: "./assets/img_gacha/victor.jpg",
-  opcao_carta_tres: "./assets/img_gacha/iris.jpg",
-  opcao_carta_quatro: "./assets/img_gacha/hibana.jpg",
-  opcao_carta_cinco: "./assets/img_gacha/burns.jpg",
-  opcao_carta_seis: "./assets/img_gacha/obi.jpg",
-  opcao_carta_sete: "./assets/img_gacha/vulcan.jpg",
-  opcao_carta_oito: "./assets/img_gacha/hinawa.jpg",
-  opcao_carta_nove: "./assets/img_gacha/benimaru.jpg",
-  opcao_carta_dez: "./assets/img_gacha/konro.jpg",
-  opcao_carta_onze: "./assets/img_gacha/tamaki.jpg",
-  opcao_carta_doze: "./assets/img_gacha/ogun.jpg",
-  opcao_carta_treze: "./assets/img_gacha/pan.jpg",
-  opcao_carta_quatorze: "./assets/img_gacha/kurono.jpg",
-  opcao_carta_quinze: "./assets/img_gacha/kayoko.jpg",
-  opcao_carta_dezesseis: "./assets/img_gacha/shinra.jpg",
-  opcao_carta_dezessete: "./assets/img_gacha/joker.jpg",
-  opcao_carta_dezoito: "./assets/img_gacha/rekka.jpg",
-  opcao_carta_dezenove: "./assets/img_gacha/karim.jpg",
-  opcao_carta_vinte: "./assets/img_gacha/li.jpg",
-  opcao_carta_vinte_um: "./assets/img_gacha/asako.jpg",
-  opcao_carta_vinte_dois: "./assets/img_gacha/sho.jpg",
+  opcao_carta_01: "./assets/img_gacha/arthur.jpg",
+  opcao_carta_02: "./assets/img_gacha/victor.jpg",
+  opcao_carta_03: "./assets/img_gacha/iris.jpg",
+  opcao_carta_04: "./assets/img_gacha/hibana.jpg",
+  opcao_carta_05: "./assets/img_gacha/burns.jpg",
+  opcao_carta_06: "./assets/img_gacha/obi.jpg",
+  opcao_carta_07: "./assets/img_gacha/vulcan.jpg",
+  opcao_carta_08: "./assets/img_gacha/hinawa.jpg",
+  opcao_carta_09: "./assets/img_gacha/benimaru.jpg",
+  opcao_carta_10: "./assets/img_gacha/konro.jpg",
+  opcao_carta_11: "./assets/img_gacha/tamaki.jpg",
+  opcao_carta_12: "./assets/img_gacha/ogun.jpg",
+  opcao_carta_13: "./assets/img_gacha/pan.jpg",
+  opcao_carta_14: "./assets/img_gacha/kurono.jpg",
+  opcao_carta_15: "./assets/img_gacha/kayoko.jpg",
+  opcao_carta_16: "./assets/img_gacha/shinra.jpg",
+  opcao_carta_17: "./assets/img_gacha/joker.jpg",
+  opcao_carta_18: "./assets/img_gacha/rekka.jpg",
+  opcao_carta_19: "./assets/img_gacha/karim.jpg",
+  opcao_carta_20: "./assets/img_gacha/li.jpg",
+  opcao_carta_21: "./assets/img_gacha/asako.jpg",
+  opcao_carta_22: "./assets/img_gacha/sho.jpg",
 };
+
+var carta_escolhida = 0;
 
 function mudarPersonagemBonus(opcao_carta) {
   img_personagem_bonus.src = opcoes_cartas[opcao_carta];
 
   painel_escolha_carta.style.display = "none";
+
+  // -1 pois o numero da carta escolhida é 1 a mais do que a posicao dela no vetor de cartas
+  carta_escolhida = Number(
+    opcao_carta[opcao_carta.length - 2] +
+    opcao_carta[opcao_carta.length - 1]
+  ) - 1;
+
+  console.log(carta_escolhida);
 }
 
 function avancar_regras(instrucao) {
@@ -135,7 +145,7 @@ var fire_cash = 100;
 span_fire_cash.innerHTML = fire_cash;
 
 function girar() {
-  // const personagem_bonus = Number(select_personagem_bonus.value);
+  const personagem_bonus = carta_escolhida;
   const chute_cartas_repetidas = Number(span_chute_cartas_repetidas.value);
 
   if (fire_cash < 10) {
@@ -151,7 +161,6 @@ function girar() {
 
     for (var i = 1; i <= 3; i++) {
       var numero_aleatorio = parseInt(Math.random() * cartas.length);
-      console.log(cartas[numero_aleatorio]);
 
       if (i == 1) {
         carta_um.innerHTML = cartas[numero_aleatorio];
@@ -170,43 +179,43 @@ function girar() {
       }
     }
 
-    // if (
-    //   personagem_bonus == primeira_carta &&
-    //   personagem_bonus == segunda_carta &&
-    //   personagem_bonus == terceira_carta
-    // ) {
-    //   fire_cash += 100;
-    // } else if (
-    //   (personagem_bonus == primeira_carta &&
-    //     personagem_bonus == segunda_carta) ||
-    //   (personagem_bonus == primeira_carta &&
-    //     personagem_bonus == terceira_carta) ||
-    //   (personagem_bonus == segunda_carta && personagem_bonus == terceira_carta)
-    // ) {
-    //   fire_cash += 50;
-    // } else if (
-    //   personagem_bonus == primeira_carta ||
-    //   personagem_bonus == segunda_carta ||
-    //   personagem_bonus == terceira_carta
-    // ) {
-    //   fire_cash += 20;
-    // } else {
-    //   fire_cash = fire_cash;
-    // }
+    if (
+      personagem_bonus == primeira_carta &&
+      personagem_bonus == segunda_carta &&
+      personagem_bonus == terceira_carta
+    ) {
+      fire_cash += 100;
+    } else if (
+      (personagem_bonus == primeira_carta &&
+        personagem_bonus == segunda_carta) ||
+      (personagem_bonus == primeira_carta &&
+        personagem_bonus == terceira_carta) ||
+      (personagem_bonus == segunda_carta && personagem_bonus == terceira_carta)
+    ) {
+      fire_cash += 50;
+    } else if (
+      personagem_bonus == primeira_carta ||
+      personagem_bonus == segunda_carta ||
+      personagem_bonus == terceira_carta
+    ) {
+      fire_cash += 20;
+    } else {
+      fire_cash = fire_cash;
+    }
 
-    // if (
-    //   primeira_carta == segunda_carta &&
-    //   primeira_carta == terceira_carta &&
-    //   chute_cartas_repetidas == 3
-    // ) {
-    //   fire_cash += 50;
-    // } else if (
-    //   primeira_carta == segunda_carta ||
-    //   primeira_carta == terceira_carta ||
-    //   (segunda_carta == terceira_carta && chute_cartas_repetidas == 2)
-    // ) {
-    //   fire_cash += 25;
-    // }
+    if (
+      primeira_carta == segunda_carta &&
+      primeira_carta == terceira_carta &&
+      chute_cartas_repetidas == 3
+    ) {
+      fire_cash += 50;
+    } else if (
+      primeira_carta == segunda_carta ||
+      primeira_carta == terceira_carta ||
+      (segunda_carta == terceira_carta && chute_cartas_repetidas == 2)
+    ) {
+      fire_cash += 25;
+    }
 
     span_fire_cash.innerHTML = fire_cash;
   }

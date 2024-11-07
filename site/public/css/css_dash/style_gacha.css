@@ -73,13 +73,14 @@
   top: 16vh;
   display: none;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 16.6% 16.4% 16.6% 16.5% 16.5%;
+  grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
   height: 81vh;
   width: 22vw;
   justify-content: center;
   align-items: center;
   border: 2px solid #000;
   background-color: #d9d9d9;
+  padding: 0.3%;
 }
 
 #span_personagem_bonus {
@@ -93,8 +94,9 @@
 }
 
 .painel_escolha_carta img {
-  height: 100px;
-  width: 80px;
+  justify-self: center;
+  height: 100%;
+  width: 90%;
   border: 1px solid #000;
   cursor: pointer;
 }
