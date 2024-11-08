@@ -9,23 +9,25 @@ body {
     display: flex;
     width: 80%;
     margin: auto;
+    align-items: center;
 }
 
 .header {
+    position: fixed;
     display: flex;
     background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 17%;
 }
 
 .header img {
-    width: 199px;
-    height: 99px;
-    left: 84px;
-    top: 11px;
+    width: 17%;
+    height: 80%;
 }
 
 .header .container {
     justify-content: space-between;
-    padding: 1%;
+    height: 100%;
 }
 
 .navegacao {

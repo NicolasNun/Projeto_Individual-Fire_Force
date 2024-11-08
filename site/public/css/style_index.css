@@ -1,239 +1,225 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .banner {
-    background-image: url(../assets/banner.jpg);
-    background-size: cover;
-    height: 65vh;
+  background-image: url(../assets/banner.jpg);
+  background-size: cover;
+  height: 65vh;
 }
 
 h1 {
-    color: #ffffff;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
+  color: #ffffff;
+  text-shadow: -1px -1px 0px #000000, -1px 1px 0px #000000, 1px -1px 0px #000000,
+    1px 0px 0px #000000;
 }
 
 .conteudo .container {
-    gap: 10vh;
-    height: 79.8vh;
-    align-items: center;
-    flex-direction: column;
+  gap: 10vh;
+  height: 79.8vh;
+  align-items: center;
+  flex-direction: column;
 }
 
 .info {
-    display: flex;
-    width: 79vw;
+  display: flex;
+  width: 79vw;
 }
 
 .dados {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 56vw;
-    height: 20vh;
-    color: #ffffff;
-    font-size: x-large;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
-    background-color: #FF3300;
-    border: #000000 solid;
-    border-radius: 8px;
-    align-self: self-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 56vw;
+  height: 20vh;
+  color: #ffffff;
+  font-size: x-large;
+  text-shadow: -1px -1px 0px #000000, -1px 1px 0px #000000, 1px -1px 0px #000000,
+    1px 0px 0px #000000;
+  background-color: #ff3300;
+  border: #000000 solid;
+  border-radius: 8px;
+  align-self: self-start;
 }
 
 .info-dados {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .info .autor {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .autor h2 {
-    color: #ffffff;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
-    margin: 0;
+  color: #ffffff;
+  text-shadow: -1px -1px 0px #000000, -1px 1px 0px #000000, 1px -1px 0px #000000,
+    1px 0px 0px #000000;
+  margin: 0;
 }
 
 .autor .img_autor {
-    background-image: url(../assets/Atsushi__Okubo.jpg);
-    background-size: cover;
-    border: #000000 solid;
-    border-radius: 8px;
-    height: 54vh;
-    width: 16vw;
+  background-image: url(../assets/Atsushi__Okubo.jpg);
+  background-size: cover;
+  border: #000000 solid;
+  border-radius: 8px;
+  height: 54vh;
+  width: 16vw;
 }
 
 .infos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 79vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 79vw;
 }
 
 .cartao {
-    width: 77.5vw;
-    display: flex;
-    gap: 5vh;
-    flex-direction: column;
-    align-items: center;
-    padding: 1% 1% 0 1%;
-    ;
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 8px;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
-}
-
-.cartao #select_personagem {
-    background-color: #000000;
-    color: #ffffff;
-    font-size: xx-large;
-}
-
-.gif_personagem {
-    display: flex;
-    justify-content: center;
-    width: 90%;
-}
-
-.gif_personagem img {
-    width: 80%;
-}
-
-#apelidos {
-    font-size: xx-large;
-}
-
-.info {
-    display: flex;
-}
-
-.historiaPer {
-    width: 50%;
-    align-self: flex-start;
-    font-size: 1.2rem;
-    padding: 2%;
-}
-
-.habilidade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 47vw;
-    height: 42vh;
-    background-color: #FF3300;
-    padding: 2%;
-}
-
-.habilidade #geracao {
-    font-size: 1.2rem;
-}
-
-.habilidade #texto_habiliade {
-    font-size: 1.2rem;
-    margin-left: 1vw;
+  width: 77.5vw;
+  display: flex;
+  gap: 5vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 1% 1% 0 1%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border-radius: 8px;
+  text-shadow: -1px -1px 0px #000000, -1px 1px 0px #000000, 1px -1px 0px #000000,
+    1px 0px 0px #000000;
 }
 
 .historia {
-    border-radius: 8px;
-    background-color: #000000;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-    color: #ffffff;
-    text-align: center;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
+  padding: 1%;
 }
 
-.historia span {
-    font-size: 1.5rem;
+.cartao #select_personagem {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: xx-large;
 }
 
-.img_arcos {
-    width: 70%;
+.gif_personagem {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.gif_personagem img {
+  width: 80%;
+}
+
+#apelidos {
+  font-size: xx-large;
+}
+
+.info {
+  display: flex;
+}
+
+.historiaPer {
+  width: 50%;
+  align-self: flex-start;
+  font-size: 1.2rem;
+  padding: 2%;
+}
+
+.habilidade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 47vw;
+  height: 42vh;
+  background-color: #ff3300;
+  padding: 2%;
+}
+
+.habilidade #geracao {
+  font-size: 1.2rem;
+}
+
+.habilidade #texto_habiliade {
+  font-size: 1.2rem;
+  margin-left: 1vw;
+}
+
+.arco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.arco h2 {
+  font-size: 3rem;
 }
 
 .resumo_arco {
-    font-size: 1.2rem;
-    padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+}
+
+.resumo_arco img {
+  width: 50%;
+}
+
+.texto_arco {
+  font-size: 1.4rem;
+  padding-bottom: 1%;
 }
 
 .sobreMim {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 79vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 79vw;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
-
 .sobreMim .sobre {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .sobreMim #textoEu {
-    color: #ffffff;
-    font-size: 2rem;
-    text-shadow:
-        -1px -1px 0px #000000,
-        -1px 1px 0px #000000,
-        1px -1px 0px #000000,
-        1px 0px 0px #000000;
+  color: #ffffff;
+  font-size: 2rem;
 }
 
 .sobreMim .eu {
-    display: flex;
-    border: #000000 solid;
-    border-radius: 100%;
+  display: flex;
+  border: #000000 solid;
+  border-radius: 100%;
 }
 
 .eu img {
-    border-radius: 100%;
-    width: 300px;
-    height: 300px;
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
 }
 
 .footer {
-    display: flex;
-    flex-direction: column;
-    background-color: #000000;
-    color: #ffffff;
-    width: 98.8vw;
-    height: 20vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  color: #ffffff;
+  width: 98.8vw;
+  height: 20vh;
 }

@@ -140,7 +140,7 @@ const cartas = [
   carta_sho,
 ];
 
-var fire_cash = 100;
+var fire_cash = 1000;
 
 span_fire_cash.innerHTML = fire_cash;
 
