@@ -17,7 +17,7 @@ body {
     display: flex;
     background: rgba(0, 0, 0, 0.7);
     width: 100%;
-    height: 17%;
+    height: 17vh;
 }
 
 .header img {
@@ -34,7 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 50%;
     list-style: none;
 }
 
@@ -42,6 +42,7 @@ body {
 .navegacao a {
     color: #ffffff;
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .navegacao #nav_cadastro,

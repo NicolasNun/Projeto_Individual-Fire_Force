@@ -3,7 +3,7 @@ html {
 }
 
 .banner {
-  background-image: url(../assets/banner.jpg);
+  background-image: url(../assets/banner.png);
   background-size: cover;
   height: 65vh;
 }
@@ -176,6 +176,15 @@ h1 {
 
 .resumo_arco img {
   width: 50%;
+  margin: 2%;
+}
+
+.img_lado_direito {
+  float: right;
+}
+
+.img_lado_esquedo {
+  float: left;
 }
 
 .texto_arco {

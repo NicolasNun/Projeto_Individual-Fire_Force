@@ -1,3 +1,7 @@
+.header {
+    position: unset;
+}
+
 .conteudo h1 {
     color: #ffffff;
     text-shadow:
