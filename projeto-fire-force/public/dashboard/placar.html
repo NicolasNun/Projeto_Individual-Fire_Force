@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dash-Placar</title>
+    <link rel="stylesheet" href="../css/css_dash/style_placar.css" />
+    <link rel="stylesheet" href="../css/css_dash/style_sidebar.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon"/>
+    <script src="../js/placar.js" defer></script>
+  </head>
+
+  <body scroll="si" style="overflow: hidden" onload="chamar_funcoes()">
+    <div class="menu">
+      <div class="perfil">
+        <div id="foto_perfil" class="foto_usu"></div>
+        <span id="nome_usuario">Tulida</span>
+      </div>
+      <div class="navegacao">
+        <div>
+          <a href="./dashboard.html">
+            <img src="../assets/icones/house.png" />HOME
+          </a>
+        </div>
+        <div>
+          <a href="./quiz.html">
+            <img src="../assets/icones/rapid-fire-question.png" />HOME
+          </a>
+        </div>
+        <div>
+          <a href="./gacha.html">
+            <img src="../assets/icones/rapid-fire-question.png" />GACHA
+          </a>
+        </div>
+        <div class="tela_atual">
+          <img src="../assets/icones/podium.png" />PLACAR
+        </div>
+      </div>
+      <div class="saida">
+        <span>
+          <a href="../login.html">
+            <img src="../assets/icones/exit_icon.png" />SAIR
+          </a>
+        </span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="placar">
+        <div class="cartao">
+          <div class="podium">
+            <h2>OS TRÊS MELHORES</h2>
+            <div class="classificacoes">
+              <div class="lugar">
+                <div class="img_usu" id="img_segundo"></div>
+                <span id="nome_usu_segundo"></span>
+                <div class="segundo">2ª</div>
+              </div>
+              <div class="lugar">
+                <div class="img_usu" id="img_primeiro"></div>
+                <span id="nome_usu_primeiro"></span>
+                <div class="primeiro">1ª</div>
+              </div>
+              <div class="lugar">
+                <div class="img_usu" id="img_terceiro"></div>
+                <span id="nome_usu_terceiro"></span>
+                <div class="terceiro">3ª</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <span>PRIMEIRO A GABARITAR</span>
+            <div class="img_usu" id="img_primeiro_a_gabaritar">
+              <img src="../assets/personagens_icon/arthur_icon.jpg" />
+            </div>
+            <span id="nome_usu_primeiro_a_gabaritar"></span>
+          </div>
+        </div>
+        <div class="historico">
+          <table id="infos" border="1px">
+            <h2 id="titulo_do_historico">ULTIMOS A TENTAR</h2>
+            <thead>
+              <tr class="title">
+                <th>Jogador</th>
+                <th>Pontos</th>
+                <th>Acertos%</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

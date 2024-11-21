@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dash-Quiz</title>
+    <link rel="stylesheet" href="../css/css_dash/style_quiz.css" />
+    <link rel="stylesheet" href="../css/css_dash/style_sidebar.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="../js/quiz.js" defer></script>
+  </head>
+
+  <body>
+    <div class="menu">
+      <div class="perfil">
+        <div id="foto_perfil" class="foto_usu"></div>
+        <span id="nome_usuario">Tulida</span>
+      </div>
+      <div class="navegacao">
+        <div>
+          <a href="./dashboard.html">
+            <img src="../assets/icones/house.png" />HOME
+          </a>
+        </div>
+        <div class="tela_atual">
+          <a href="./quiz.html">
+            <img src="../assets/icones/rapid-fire-question.png" />HOME
+          </a>
+        </div>
+        <div>
+          <a href="./gacha.html">
+            <img src="../assets/icones/rapid-fire-question.png" />GACHA
+          </a>
+        </div>
+        <div>
+          <a href="./placar.html">
+            <img src="../assets/icones/podium.png" />PLACAR
+          </a>
+        </div>
+      </div>
+      <div class="saida">
+        <span>
+          <a href="../login.html">
+            <img src="../assets/icones/exit_icon.png" />SAIR
+          </a>
+        </span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="quiz">
+        <div class="caixa_de_pergunta">
+          <div class="pergunta" id="pergunta">
+            <div class="imagem_pergunta">
+              <div class="segura_botao">
+                <button id="comecar" onclick="comecar()">COMEÇAR QUIZ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

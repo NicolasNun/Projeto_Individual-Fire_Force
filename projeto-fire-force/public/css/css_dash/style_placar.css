@@ -1,0 +1,187 @@
+.placar {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.cartao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: space-between;
+}
+
+.podium {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    font-size: large;
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.podium h2 {
+    margin: 0;
+}
+
+.classificacoes {
+    display: flex;
+    width: 30vw;
+    height: 40vh;
+    align-items: end;
+}
+
+.lugar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.primeiro {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF3300;
+    border: #000000 solid;
+    font-size: 8rem;
+}
+
+.segundo {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF8100;
+    border: #000000 solid;
+    border-right: 0;
+    font-size: 6rem;
+}
+
+.terceiro {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFC100;
+    border: #000000 solid;
+    border-left: 0;
+    font-size: 4rem;
+}
+
+.podium img {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.podium #nome_usu_primeiro,
+#nome_usu_segundo,
+#nome_usu_terceiro {
+    font-size: xx-large;
+}
+
+#nome_usu_primeiro_a_gabaritar {
+    font-size: 180%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    font-size: large;
+    color: #ffffff;
+    background-color: #FF3300;
+    border: #000000 solid;
+    width: 24vw;
+    height: 22vh;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+}
+
+.card div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #000000 solid;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.card img {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.card #nome_usu {
+    font-size: xx-large;
+}
+
+.historico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 75vh;
+    color: #ffffff;
+    background-color: #FF3300;
+    border: #000000 solid;
+    border-radius: 20px;
+    text-shadow:
+        -1px -1px 0px #000000,
+        -1px 1px 0px #000000,
+        1px -1px 0px #000000,
+        1px 0px 0px #000000;
+    ;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+}
+
+table thead tr td,
+table tbody tr td {
+    width: 33%;
+    height: 40px;
+    padding: 15px;
+}
+
+table thead tr td {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+table th {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+table td {
+    font-weight: 400;
+    font-size: 2rem;
+}
