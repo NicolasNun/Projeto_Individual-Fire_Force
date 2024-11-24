@@ -25,8 +25,13 @@ function cadastrar(usuario, email, senha, fkPersonagem) {
   var instrucao = `
         INSERT INTO usuario (usuario, email, senha, fkPersonagem) VALUES ('${usuario}', '${email}', '${senha}', '${fkPersonagem}');
     `;
+  
+  var instrucao2 = `
+        INSERT INTO saldo (fkUsuario, fireCash) VALUES ((SELECT idUsuario FROM usuario ORDER BY idusuario DESC LIMIT 1), 1000);
+   `;
   console.log("Executando a instrução SQL: \n" + instrucao);
-  return database.executar(instrucao);
+  database.executar(instrucao)
+  return database.executar(instrucao2);
 }
 
 module.exports = {

@@ -355,6 +355,7 @@ function responder(botao, resposta) {
     liberar();
   }, 1500);
 }
+
 function pontuar() {
   fetch("/quiz/pontuar", {
     method: "POST",

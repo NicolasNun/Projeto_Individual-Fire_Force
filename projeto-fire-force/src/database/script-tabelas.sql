@@ -43,9 +43,7 @@ pontuacao INT
 );
 
 CREATE TABLE saldo (
-idSaldo INT,
-fkUsuario INT,
+fkUsuario INT PRIMARY KEY,
 CONSTRAINT fkSaldoUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
-CONSTRAINT pkSaldousuario PRIMARY KEY (idSaldo, fkUsuario),
 fireCash INT
 );
