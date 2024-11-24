@@ -1,25 +1,3 @@
-nome_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO;
-
-if (fk_personagem == 1) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`;
-} else if (fk_personagem == 2) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`;
-} else if (fk_personagem == 3) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`;
-} else if (fk_personagem == 4) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`;
-} else if (fk_personagem == 5) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`;
-} else if (fk_personagem == 6) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`;
-} else if (fk_personagem == 7) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`;
-} else {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`;
-}
-
 var dados_votos = {
   type: "bar",
   data: {
@@ -89,21 +67,21 @@ function contarVotoPersonagem() {
     if (resposta.ok) {
       resposta.json().then((json) => {
         if (json[0].idPersonagem == 1) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`;
         } else if (json[0].idPersonagem == 2) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/arthur_icon.jpg">`;
         } else if (json[0].idPersonagem == 3) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/beni_icon.jpg">`;
         } else if (json[0].idPersonagem == 4) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/joker_icon.jpg">`;
         } else if (json[0].idPersonagem == 5) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/obi_icon.jpg">`;
         } else if (json[0].idPersonagem == 6) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/maki_icon.jpg">`;
         } else if (json[0].idPersonagem == 7) {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/iris_icon.jpeg">`;
         } else {
-          img_fav.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`;
+          img_fav.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`;
         }
       });
     }
@@ -112,6 +90,7 @@ function contarVotoPersonagem() {
 
 var ctx = document.getElementById("num_escolhas");
 var chart_votos = new Chart(ctx, dados_votos);
+
 function votos() {
   fetch("/dashboard/numero_votos", {
     method: "get",
@@ -130,6 +109,7 @@ function votos() {
 
 var ct = document.getElementById("pontuacoes");
 var chart_quiz = new Chart(ct, dados_quiz);
+
 function pontuacoes_quiz() {
   fetch("/dashboard/grafi_pontos", {
     method: "get",
@@ -167,25 +147,9 @@ function pontuacoes_quiz() {
   });
 }
 
-votos();
-
-setInterval(() => {
-  contarVotoPersonagem();
-  contarUsu();
-}, 2000);
-
-setInterval(() => {
-  votos();
-  dados_votos.data.datasets[0].data = [];
-  dados_votos.data.labels = [];
-  chart_votos.update;
-  pontuacoes_quiz();
-  dados_quiz.data.datasets[0].data = [];
-  chart_quiz.update;
-}, 30000);
-
 function chamarFuncoes() {
   contarUsu();
   contarVotoPersonagem();
+  votos();
   pontuacoes_quiz();
 }

@@ -1,25 +1,3 @@
-nome_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-var fk_personagem = sessionStorage.PERSONAGEM_FAVORITO;
-
-if (fk_personagem == 1) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/shinra_icon.jpg">`;
-} else if (fk_personagem == 2) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/arthur_icon.jpg">`;
-} else if (fk_personagem == 3) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/beni_icon.jpg">`;
-} else if (fk_personagem == 4) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/joker_icon.jpg">`;
-} else if (fk_personagem == 5) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/obi_icon.jpg">`;
-} else if (fk_personagem == 6) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/maki_icon.jpg">`;
-} else if (fk_personagem == 7) {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/iris_icon.jpeg">`;
-} else {
-  foto_perfil.innerHTML = `<img src="./assets/personagens_icon/tamaki_icon.jpg">`;
-}
-
 function mudarChute() {
   if (span_chute_cartas_repetidas.innerHTML == 2) {
     span_chute_cartas_repetidas.innerHTML = 3;
@@ -39,28 +17,28 @@ function exibirOpcoesCartas() {
 }
 
 const opcoes_cartas = {
-  opcao_carta_01: "./assets/img_gacha/arthur.jpg",
-  opcao_carta_02: "./assets/img_gacha/victor.jpg",
-  opcao_carta_03: "./assets/img_gacha/iris.jpg",
-  opcao_carta_04: "./assets/img_gacha/hibana.jpg",
-  opcao_carta_05: "./assets/img_gacha/burns.jpg",
-  opcao_carta_06: "./assets/img_gacha/obi.jpg",
-  opcao_carta_07: "./assets/img_gacha/vulcan.jpg",
-  opcao_carta_08: "./assets/img_gacha/hinawa.jpg",
-  opcao_carta_09: "./assets/img_gacha/benimaru.jpg",
-  opcao_carta_10: "./assets/img_gacha/konro.jpg",
-  opcao_carta_11: "./assets/img_gacha/tamaki.jpg",
-  opcao_carta_12: "./assets/img_gacha/ogun.jpg",
-  opcao_carta_13: "./assets/img_gacha/pan.jpg",
-  opcao_carta_14: "./assets/img_gacha/kurono.jpg",
-  opcao_carta_15: "./assets/img_gacha/kayoko.jpg",
-  opcao_carta_16: "./assets/img_gacha/shinra.jpg",
-  opcao_carta_17: "./assets/img_gacha/joker.jpg",
-  opcao_carta_18: "./assets/img_gacha/rekka.jpg",
-  opcao_carta_19: "./assets/img_gacha/karim.jpg",
-  opcao_carta_20: "./assets/img_gacha/li.jpg",
-  opcao_carta_21: "./assets/img_gacha/asako.jpg",
-  opcao_carta_22: "./assets/img_gacha/sho.jpg",
+  opcao_carta_01: "../assets/img_gacha/arthur.jpg",
+  opcao_carta_02: "../assets/img_gacha/victor.jpg",
+  opcao_carta_03: "../assets/img_gacha/iris.jpg",
+  opcao_carta_04: "../assets/img_gacha/hibana.jpg",
+  opcao_carta_05: "../assets/img_gacha/burns.jpg",
+  opcao_carta_06: "../assets/img_gacha/obi.jpg",
+  opcao_carta_07: "../assets/img_gacha/vulcan.jpg",
+  opcao_carta_08: "../assets/img_gacha/hinawa.jpg",
+  opcao_carta_09: "../assets/img_gacha/benimaru.jpg",
+  opcao_carta_10: "../assets/img_gacha/konro.jpg",
+  opcao_carta_11: "../assets/img_gacha/tamaki.jpg",
+  opcao_carta_12: "../assets/img_gacha/ogun.jpg",
+  opcao_carta_13: "../assets/img_gacha/pan.jpg",
+  opcao_carta_14: "../assets/img_gacha/kurono.jpg",
+  opcao_carta_15: "../assets/img_gacha/kayoko.jpg",
+  opcao_carta_16: "../assets/img_gacha/shinra.jpg",
+  opcao_carta_17: "../assets/img_gacha/joker.jpg",
+  opcao_carta_18: "../assets/img_gacha/rekka.jpg",
+  opcao_carta_19: "../assets/img_gacha/karim.jpg",
+  opcao_carta_20: "../assets/img_gacha/li.jpg",
+  opcao_carta_21: "../assets/img_gacha/asako.jpg",
+  opcao_carta_22: "../assets/img_gacha/sho.jpg",
 };
 
 var carta_escolhida = 0;
@@ -71,10 +49,10 @@ function mudarPersonagemBonus(opcao_carta) {
   painel_escolha_carta.style.display = "none";
 
   // -1 pois o numero da carta escolhida é 1 a mais do que a posicao dela no vetor de cartas
-  carta_escolhida = Number(
-    opcao_carta[opcao_carta.length - 2] +
-    opcao_carta[opcao_carta.length - 1]
-  ) - 1;
+  carta_escolhida =
+    Number(
+      opcao_carta[opcao_carta.length - 2] + opcao_carta[opcao_carta.length - 1]
+    ) - 1;
 
   console.log(carta_escolhida);
 }
@@ -92,28 +70,28 @@ function avancar_regras(instrucao) {
 }
 
 // 22 cartas
-const carta_arthur = '<img src="./assets/img_gacha/arthur.jpg">';
-const carta_victor = '<img src="./assets/img_gacha/victor.jpg">';
-const carta_iris = '<img src="./assets/img_gacha/iris.jpg">';
-const carta_hibana = '<img src="./assets/img_gacha/hibana.jpg">';
-const carta_burns = '<img src="./assets/img_gacha/burns.jpg">';
-const carta_obi = '<img src="./assets/img_gacha/obi.jpg">';
-const carta_vulcan_family = '<img src="./assets/img_gacha/vulcan.jpg">';
-const carta_hinawa = '<img src="./assets/img_gacha/hinawa.jpg">';
-const carta_benimaru = '<img src="./assets/img_gacha/benimaru.jpg">';
-const carta_konro = '<img src="./assets/img_gacha/konro.jpg">';
-const carta_tamaki = '<img src="./assets/img_gacha/tamaki.jpg">';
-const carta_ogun = '<img src="./assets/img_gacha/ogun.jpg">';
-const carta_pan = '<img src="./assets/img_gacha/pan.jpg">';
-const carta_kurono = '<img src="./assets/img_gacha/kurono.jpg">';
-const carta_kayoko = '<img src="./assets/img_gacha/kayoko.jpg">';
-const carta_shinra = '<img src="./assets/img_gacha/shinra.jpg">';
-const carta_joker = '<img src="./assets/img_gacha/joker.jpg">';
-const carta_rekka = '<img src="./assets/img_gacha/rekka.jpg">';
-const carta_karim = '<img src="./assets/img_gacha/karim.jpg">';
-const carta_li = '<img src="./assets/img_gacha/li.jpg">';
-const carta_asako = '<img src="./assets/img_gacha/asako.jpg">';
-const carta_sho = '<img src="./assets/img_gacha/sho.jpg">';
+const carta_arthur = '<img src="../assets/img_gacha/arthur.jpg">';
+const carta_victor = '<img src="../assets/img_gacha/victor.jpg">';
+const carta_iris = '<img src="../assets/img_gacha/iris.jpg">';
+const carta_hibana = '<img src="../assets/img_gacha/hibana.jpg">';
+const carta_burns = '<img src="../assets/img_gacha/burns.jpg">';
+const carta_obi = '<img src="../assets/img_gacha/obi.jpg">';
+const carta_vulcan_family = '<img src="../assets/img_gacha/vulcan.jpg">';
+const carta_hinawa = '<img src="../assets/img_gacha/hinawa.jpg">';
+const carta_benimaru = '<img src="../assets/img_gacha/benimaru.jpg">';
+const carta_konro = '<img src="../assets/img_gacha/konro.jpg">';
+const carta_tamaki = '<img src="../assets/img_gacha/tamaki.jpg">';
+const carta_ogun = '<img src="../assets/img_gacha/ogun.jpg">';
+const carta_pan = '<img src="../assets/img_gacha/pan.jpg">';
+const carta_kurono = '<img src="../assets/img_gacha/kurono.jpg">';
+const carta_kayoko = '<img src="../assets/img_gacha/kayoko.jpg">';
+const carta_shinra = '<img src="../assets/img_gacha/shinra.jpg">';
+const carta_joker = '<img src="../assets/img_gacha/joker.jpg">';
+const carta_rekka = '<img src="../assets/img_gacha/rekka.jpg">';
+const carta_karim = '<img src="../assets/img_gacha/karim.jpg">';
+const carta_li = '<img src="../assets/img_gacha/li.jpg">';
+const carta_asako = '<img src="../assets/img_gacha/asako.jpg">';
+const carta_sho = '<img src="../assets/img_gacha/sho.jpg">';
 
 const cartas = [
   carta_arthur,

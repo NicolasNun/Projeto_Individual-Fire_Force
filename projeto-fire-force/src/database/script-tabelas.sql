@@ -15,23 +15,6 @@ idPersonagem INT PRIMARY KEY AUTO_INCREMENT,
 nomePersonagem VARCHAR(45)
 );
 
-CREATE TABLE usuario (
-idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-usuario VARCHAR(45) NOT NULL,
-email VARCHAR(45) NOT NULL,
-senha VARCHAR(16) NOT NULL,
-fkPersonagem INT,
-CONSTRAINT fkPersonagemUsuario FOREIGN KEY (fkPersonagem) REFERENCES personagem(idPersonagem)
-) AUTO_INCREMENT = 20;
-
-CREATE TABLE pontuacao (
-idPontuacao INT AUTO_INCREMENT,
-fkUsuario INT,
-CONSTRAINT pkPontuacaoUsuario primary key (idPontuacao, fkUsuario),
-pontuacao INT,
-CONSTRAINT fkUsuarioPoint FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
-) AUTO_INCREMENT = 50;
-
 INSERT INTO personagem VALUES
 	(NULL, 'Shinra Kusakabe'),
 	(NULL, 'Arthur Boyle'),
@@ -41,3 +24,28 @@ INSERT INTO personagem VALUES
 	(NULL, 'Maki Oze'),
 	(NULL, 'Iris'),
 	(NULL, 'Tamaki Kotatsu');
+
+CREATE TABLE usuario (
+idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+usuario VARCHAR(45) NOT NULL,
+email VARCHAR(45) NOT NULL,
+senha VARCHAR(16) NOT NULL,
+fkPersonagem INT NOT NULL,
+CONSTRAINT fkPersonagemUsuario FOREIGN KEY (fkPersonagem) REFERENCES personagem(idPersonagem)
+);
+    
+CREATE TABLE pontuacao (
+idPontuacao INT AUTO_INCREMENT,
+fkUsuario INT,
+CONSTRAINT fkPontuacaoUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
+CONSTRAINT pkPontuacaoUsuario PRIMARY KEY (idPontuacao, fkUsuario),
+pontuacao INT
+);
+
+CREATE TABLE saldo (
+idSaldo INT,
+fkUsuario INT,
+CONSTRAINT fkSaldoUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
+CONSTRAINT pkSaldousuario PRIMARY KEY (idSaldo, fkUsuario),
+fireCash INT
+);

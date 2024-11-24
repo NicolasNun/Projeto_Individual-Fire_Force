@@ -4,7 +4,7 @@ function entrar() {
 
   if (emailVar == "" || senhaVar == "") {
     swal("Ops", "Preencha todos os campos!", "error");
-    finalizarAguardar();
+
     return false;
   } else {
     swal("Parabéns", "Login realizado com sucesso!", "success");
@@ -13,7 +13,7 @@ function entrar() {
     console.log("FORM LOGIN: ", emailVar);
     console.log("FORM SENHA: ", senhaVar);
 
-    fetch("/usuarios/autenticar", {
+    fetch("/usuarios/entrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,15 +39,14 @@ function entrar() {
             sessionStorage.PERSONAGEM_FAVORITO = json.fkPersonagem;
 
             setTimeout(function () {
-              window.location = "./dashboard.html";
-            }, 3000); // apenas para exibir o loading
+              window.location = "./dashboard/dashboard.html";
+            }, 1500);
           });
         } else {
           swal("Ops", "Email e/ou senha inválido(s)", "error");
 
           resposta.text().then((texto) => {
             console.error(texto);
-            finalizarAguardar(texto);
           });
         }
       })
@@ -75,7 +74,6 @@ function cadastrar() {
   ) {
     swal("Ops", "Preencha todos os campos!", "error");
 
-    finalizarAguardar();
     return false;
   } else if (usuarioVar.length < 5 || usuarioVar.length > 10) {
     swal(
@@ -124,17 +122,14 @@ function cadastrar() {
 
           setTimeout(() => {
             window.location = "login.html";
-          }, 3000);
+          }, 1500);
 
-          limparFormulario();
-          finalizarAguardar();
         } else {
           swal("Ops", "Mais de um usuário com o mesmo login e senha 😭!");
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
       });
 
     return false;
