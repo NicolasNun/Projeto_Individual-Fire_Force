@@ -1,9 +1,9 @@
 var pontos = 0;
 
-// Questões no caminho. VÁ PARA A LINHA 289
+// Questões no caminho. VÁ PARA A LINHA 220
 var quest1 = `
     <div class="imagem_pergunta img_pergunta_um">
-        <h2>1 - A QUAL BATALHÃO SHINRA PERTENCE?</h2>
+        <h2>1/10 - A QUAL BATALHÃO SHINRA PERTENCE?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -24,7 +24,7 @@ var quest1 = `
     </div>`;
 var quest2 = `
     <div class="imagem_pergunta img_pergunta_dois">
-        <h2>2 - QUANTOS SÃO OS PILARES?</h2>
+        <h2>2/10 - QUANTOS SÃO OS PILARES?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -45,7 +45,7 @@ var quest2 = `
     </div>`;
 var quest3 = `
     <div class="imagem_pergunta img_pergunta_treis">
-        <h2>3 - QUEM É O IRMÃO DE SHINRA?</h2>
+        <h2>3/10 - QUEM É O IRMÃO DE SHINRA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -67,7 +67,7 @@ var quest3 = `
 
 var quest4 = `
     <div class="imagem_pergunta img_pergunta_quatro">
-        <h2>4 - QUEM É O QUINTO PILAR?</h2>
+        <h2>4/10 - QUEM É O QUINTO PILAR?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -89,7 +89,7 @@ var quest4 = `
 
 var quest5 = `
     <div class="imagem_pergunta img_pergunta_cinco">
-        <h2>5 - QUEM ERA O TRAIDOR DA 1ª BRIGADA?</h2>
+        <h2>5/10 - QUEM ERA O TRAIDOR DA 1ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -111,7 +111,7 @@ var quest5 = `
 
 var quest6 = `
     <div class="imagem_pergunta img_pergunta_seis">
-        <h2>6 - QUEM É O CAPITÃO DA 4ª BRIGADA?</h2>
+        <h2>6/10 - QUEM É O CAPITÃO DA 4ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -133,7 +133,7 @@ var quest6 = `
 
 var quest7 = `
     <div class="imagem_pergunta img_pergunta_sete">
-        <h2>7 - QUEM SOBREVIVEU JUNTO DE IRIS AO INCÊNDIO NO CONVENTO?</h2>
+        <h2>7/10 - QUEM SOBREVIVEU JUNTO DE IRIS AO INCÊNDIO NO CONVENTO?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -155,7 +155,7 @@ var quest7 = `
 
 var quest8 = `
     <div class="imagem_pergunta img_pergunta_oito">
-        <h2>8 - COMO MAKI ENTROU PARA A 8ª BRIGADA?</h2>
+        <h2>8/10 - COMO MAKI ENTROU PARA A 8ª BRIGADA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -177,7 +177,7 @@ var quest8 = `
 
 var quest9 = `
     <div class="imagem_pergunta img_pergunta_nove">
-        <h2>9 - O QUE O ARTHUR IMAGINA SER?</h2>
+        <h2>9/10 - O QUE O ARTHUR IMAGINA SER?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">
@@ -199,7 +199,7 @@ var quest9 = `
 
 var quest10 = `
     <div class="imagem_pergunta img_pergunta_dez">
-        <h2>10 - QUAL O OBJETIVO DE SHINRA?</h2>
+        <h2>10/10 - QUAL O OBJETIVO DE SHINRA?</h2>
     </div>
     <div class="opcoes">
         <div class="alternativa" id="A">

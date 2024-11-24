@@ -32,7 +32,7 @@
     justify-content: center;
     background-size: cover;
     background-position: center;
-    background-image: url("https://images7.alphacoders.com/872/872823.png");
+    background-image: url(../../assets/img_perguntas/backgroundQuiz.png);
 }
 
 .img_pergunta_um {
@@ -100,6 +100,7 @@
         1px -1px 0px #000000,
         1px 0px 0px #000000;
     ;
+    text-align: center;
 }
 
 .alternativa button {
