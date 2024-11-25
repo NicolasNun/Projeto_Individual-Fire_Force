@@ -1,7 +1,7 @@
-var usuarioModel = require("../models/placarModel");
+var placarModel = require("../models/placarModel");
 
 function listar_pontos(req, res) {
-  usuarioModel
+  placarModel
     .listar_pontos()
     .then(function (resultado) {
       if (resultado.length > 0) {
@@ -21,7 +21,7 @@ function listar_pontos(req, res) {
 }
 
 function podio(req, res) {
-  usuarioModel
+  placarModel
     .podio()
     .then(function (resultado) {
       if (resultado.length > 0) {
@@ -41,7 +41,7 @@ function podio(req, res) {
 }
 
 function primeiro_a_gabaritar(req, res) {
-  usuarioModel
+  placarModel
     .primeiro_a_gabaritar()
     .then(function (resultado) {
       if (resultado.length > 0) {

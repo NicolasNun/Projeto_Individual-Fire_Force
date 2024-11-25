@@ -6,10 +6,11 @@
     <title>Fire Force Gacha</title>
     <link rel="stylesheet" href="../css/css_dash/style_gacha.css" />
     <link rel="stylesheet" href="../css/css_dash/style_sidebar.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
     <script src="../js/utilitario.js" defer></script>
     <script src="../js/gacha.js" defer></script>
   </head>
-  <body>
+  <body onload="chamarFuncoes()">
     <div class="menu">
       <div class="perfil">
         <div id="foto_perfil" class="foto_usu"></div>
@@ -27,7 +28,7 @@
           </a>
         </div>
         <div class="tela_atual">
-          <img src="../assets/icones/dado-em-chamas.png" />GACHA
+          <img src="../assets/icones/slot-machine.png" />GACHA
         </div>
         <div>
           <a href="./placar.html">
@@ -118,7 +119,7 @@
         <div class="indicadores">
           <div class="indicador">
             Fire Cash:
-            <span id="span_fire_cash">1000</span>
+            <span id="span_fire_cash"></span>
           </div>
           <div class="indicador" onclick="exibirOpcoesCartas()">
             Personagem Bonûs:
@@ -221,7 +222,7 @@
           </div>
           <div class="indicador" onclick="mudarChute()">
             Cartas Repetidas:
-            <span id="span_chute_cartas_repetidas"> 2 </span>
+            <span id="span_chute_cartas_repetidas">2</span>
           </div>
         </div>
         <div class="painel_cartas">

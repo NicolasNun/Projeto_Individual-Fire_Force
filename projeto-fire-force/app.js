@@ -20,6 +20,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var quizRouter = require("./src/routes/quiz");
 var placarRouter = require("./src/routes/placar");
 var dashboardRouter = require("./src/routes/dashboard");
+var gachaRouter = require("./src/routes/gacha");
 
 
 app.use(express.json());
@@ -33,6 +34,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/quiz", quizRouter);
 app.use("/placar", placarRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/gacha", gachaRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

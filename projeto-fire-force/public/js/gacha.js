@@ -118,21 +118,34 @@ const cartas = [
   carta_sho,
 ];
 
-var fire_cash = 1000;
+var fire_cash = 0;
 
-span_fire_cash.innerHTML = fire_cash;
+function buscarFireCash() {
+  fetch("/gacha/buscarFireCash/" + sessionStorage.ID_USUARIO, {
+    method: "GET",
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      resposta.json().then((json) => {
+        fire_cash = `${json[0].fireCash}`;
+        span_fire_cash.innerHTML = fire_cash;
+      });
+    }
+  });
+}
+
+var novoValor = 0;
 
 function girar() {
   const personagem_bonus = carta_escolhida;
-  const chute_cartas_repetidas = Number(span_chute_cartas_repetidas.value);
+  const chute_cartas_repetidas = Number(document.getElementById("span_chute_cartas_repetidas").innerHTML);
+
+  let fireCashAux = Number(fire_cash)
 
   if (fire_cash < 10) {
     alert("Fire cash insuficiente");
     div_resultado.innerHTML =
       "<b>Recarregue a pagína para jogar novamente.</b>";
   } else {
-    fire_cash -= 10;
-    span_fire_cash.innerHTML = fire_cash;
     var primeira_carta = 0;
     var segunda_carta = 0;
     var terceira_carta = 0;
@@ -158,11 +171,28 @@ function girar() {
     }
 
     if (
+      primeira_carta == segunda_carta &&
+      primeira_carta == terceira_carta &&
+      chute_cartas_repetidas == 3
+    ) {
+      fireCashAux += 60
+      novoValor = fireCashAux;
+    } else if (
+      (primeira_carta == segunda_carta ||
+      primeira_carta == terceira_carta ||
+      segunda_carta == terceira_carta) && chute_cartas_repetidas == 2
+    ) {
+      fireCashAux += 35
+      novoValor = fireCashAux;
+    }
+
+    if (
       personagem_bonus == primeira_carta &&
       personagem_bonus == segunda_carta &&
       personagem_bonus == terceira_carta
     ) {
-      fire_cash += 100;
+      fireCashAux += 110
+      novoValor = fireCashAux;
     } else if (
       (personagem_bonus == primeira_carta &&
         personagem_bonus == segunda_carta) ||
@@ -170,31 +200,39 @@ function girar() {
         personagem_bonus == terceira_carta) ||
       (personagem_bonus == segunda_carta && personagem_bonus == terceira_carta)
     ) {
-      fire_cash += 50;
+      fireCashAux += 60
+      novoValor = fireCashAux;
     } else if (
       personagem_bonus == primeira_carta ||
       personagem_bonus == segunda_carta ||
       personagem_bonus == terceira_carta
     ) {
-      fire_cash += 20;
-    } else {
-      fire_cash = fire_cash;
-    }
+      fireCashAux += 30
+      novoValor = fireCashAux;
+    } 
 
-    if (
-      primeira_carta == segunda_carta &&
-      primeira_carta == terceira_carta &&
-      chute_cartas_repetidas == 3
-    ) {
-      fire_cash += 50;
-    } else if (
-      primeira_carta == segunda_carta ||
-      primeira_carta == terceira_carta ||
-      (segunda_carta == terceira_carta && chute_cartas_repetidas == 2)
-    ) {
-      fire_cash += 25;
-    }
-
-    span_fire_cash.innerHTML = fire_cash;
+    fireCashAux -= 10
+    novoValor = fireCashAux
+    atualizarFireCash(novoValor);
   }
+}
+
+function atualizarFireCash(novoValor) {
+  fetch("/gacha/atualizarFireCash/" + sessionStorage.ID_USUARIO, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      fireCash: novoValor,
+    }),
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      buscarFireCash();
+    }
+  });
+}
+
+function chamarFuncoes() {
+  buscarFireCash();
 }

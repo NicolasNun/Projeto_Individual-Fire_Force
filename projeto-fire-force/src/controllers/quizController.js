@@ -1,4 +1,4 @@
-var usuarioModel = require("../models/quizModel");
+var quizModel = require("../models/quizModel");
 
 function pontuar(req, res) {
   var idUsuario = req.body.idUsuarioServer;
@@ -9,7 +9,7 @@ function pontuar(req, res) {
   } else if (pontos == undefined) {
     res.status(400).send("Sua pontos está indefinida!");
   } else {
-    usuarioModel.pontuar(idUsuario, pontos).then(function (resposta) {
+    quizModel.pontuar(idUsuario, pontos).then(function (resposta) {
       res.status(200).send("função noiva");
     });
   }

@@ -1,7 +1,7 @@
-var usuarioModel = require("../models/dashboardModel");
+var dashboardModel = require("../models/dashboardModel");
 
 function listar_quantidade_usu(req, res) {
-  usuarioModel
+  dashboardModel
     .listar_quantidade_usu()
     .then(function (resultado) {
       if (resultado.length > 0) {
@@ -21,7 +21,7 @@ function listar_quantidade_usu(req, res) {
 }
 
 function mais_votado(req, res) {
-  usuarioModel
+  dashboardModel
     .mais_votado()
     .then(function (resultado) {
       if (resultado.length > 0) {
@@ -41,7 +41,7 @@ function mais_votado(req, res) {
 }
 
 function numero_votos(req, res) {
-  usuarioModel
+  dashboardModel
     .numero_votos()
     .then(function (resultado) {
       if (resultado.length > 0) {
@@ -61,7 +61,7 @@ function numero_votos(req, res) {
 }
 
 function grafi_pontos(req, res) {
-  usuarioModel
+  dashboardModel
     .grafi_pontos()
     .then(function (resultado) {
       if (resultado.length > 0) {
