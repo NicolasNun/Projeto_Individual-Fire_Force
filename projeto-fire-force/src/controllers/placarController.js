@@ -40,9 +40,9 @@ function podio(req, res) {
     });
 }
 
-function primeiro_a_gabaritar(req, res) {
+function maisRico(req, res) {
   placarModel
-    .primeiro_a_gabaritar()
+    .maisRico()
     .then(function (resultado) {
       if (resultado.length > 0) {
         res.status(200).json(resultado);
@@ -63,5 +63,5 @@ function primeiro_a_gabaritar(req, res) {
 module.exports = {
   listar_pontos,
   podio,
-  primeiro_a_gabaritar,
+  maisRico,
 };

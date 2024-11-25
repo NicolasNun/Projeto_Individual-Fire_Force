@@ -97,7 +97,7 @@
     font-size: xx-large;
 }
 
-#nome_usu_primeiro_a_gabaritar {
+#nome_mais_rico {
     font-size: 180%;
 }
 
@@ -155,6 +155,7 @@
         1px -1px 0px #000000,
         1px 0px 0px #000000;
     ;
+    padding: 1.5%;
     overflow: auto;
 }
 

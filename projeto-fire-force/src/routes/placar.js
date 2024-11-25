@@ -11,8 +11,8 @@ router.get("/podio", function (req, res) {
   placarController.podio(req, res);
 });
 
-router.get("/primeiro_a_gabaritar", function (req, res) {
-  placarController.primeiro_a_gabaritar(req, res);
+router.get("/maisRico", function (req, res) {
+  placarController.maisRico(req, res);
 });
 
 module.exports = router;

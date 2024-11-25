@@ -22,12 +22,12 @@ function podio() {
   return database.executar(instrucao);
 }
 
-function primeiro_a_gabaritar() {
+function maisRico() {
   console.log(
     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPontuacao()"
   );
   var instrucao = `
-    SELECT usuario, fkPersonagem, pontuacao FROM pontuacao JOIN usuario ON fkUsuario = idUsuario WHERE pontuacao = 10 ORDER BY  idPontuacao LIMIT 1;        
+    select usuario, fkPersonagem from usuario join saldo on idUsuario = fkUsuario where fireCash = (select max(fireCash) from saldo);
     `;
   console.log("Executando a instrução SQL: \n" + instrucao);
   return database.executar(instrucao);
@@ -36,5 +36,5 @@ function primeiro_a_gabaritar() {
 module.exports = {
   listar_pontos,
   podio,
-  primeiro_a_gabaritar,
+  maisRico,
 };

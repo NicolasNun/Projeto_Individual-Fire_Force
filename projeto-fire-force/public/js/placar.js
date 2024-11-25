@@ -85,8 +85,8 @@ function gerar_podio() {
     });
 }
 
-function primeiro_a_acertar() {
-  fetch("/placar/primeiro_a_gabaritar")
+function maisRico() {
+  fetch("/placar/maisRico")
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {
@@ -94,10 +94,8 @@ function primeiro_a_acertar() {
         }
         resposta.json().then(function (resposta) {
           console.log("Dados recebidos: ", JSON.stringify(resposta));
-          nome_usu_primeiro_a_gabaritar.innerHTML = resposta[0].usuario;
-          img_primeiro_a_gabaritar.innerHTML = carregarFoto(
-            resposta[0].fkPersonagem
-          );
+          nome_mais_rico.innerHTML = resposta[0].usuario;
+          img_mais_rico.innerHTML = carregarFoto(resposta[0].fkPersonagem);
         });
       } else {
         swal("Ops", "Houve um erro na API!", "warning");
@@ -111,5 +109,5 @@ function primeiro_a_acertar() {
 function chamar_funcoes() {
   update_pontos();
   gerar_podio();
-  primeiro_a_acertar();
+  maisRico();
 }
