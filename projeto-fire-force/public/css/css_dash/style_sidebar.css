@@ -79,13 +79,10 @@ body {
 }
 
 .tela_atual{
-    display: flex;
-    align-items: center;
-    gap: 10px;
     background-color: #FF5A00;
     border: #000000 solid 1px;
     border-radius: 20px;
-    cursor: default;
+    padding: 2%;
 }
 
 .menu .saida a {

@@ -1,3 +1,27 @@
+function contarUsu() {
+  fetch("/dashboard/listar_quantidade_usu", {
+    method: "get",
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      resposta.json().then((json) => {
+        numero_de_usuarios.innerHTML = `${json[0].qtdUsu}`;
+      });
+    }
+  });
+}
+
+function contarVotoPersonagem() {
+  fetch("/dashboard/mais_votado", {
+    method: "get",
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      resposta.json().then((json) => {
+        img_fav.innerHTML = carregarFoto(json[0].idPersonagem);
+      });
+    }
+  });
+}
+
 var dados_votos = {
   type: "bar",
   data: {
@@ -48,45 +72,38 @@ var dados_quiz = {
   },
 };
 
-function contarUsu() {
-  fetch("/dashboard/listar_quantidade_usu", {
-    method: "get",
-  }).then(function (resposta) {
-    if (resposta.ok) {
-      resposta.json().then((json) => {
-        numero_de_usuarios.innerHTML = `${json[0].qtdUsu}`;
-      });
-    }
-  });
-}
+var dados_gacha = {
+  type: "bar",
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: "Usuarios por dinheiro",
+        data: [],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    scales: {
+      x: {
+        beginAtZero: true,
+      },
+    },
+    backgroundColor: [
+      "rgb(255, 51, 0)",
+      "rgb(255, 90, 0)",
+      "rgb(255, 129, 0)",
+      "rgb(255, 129, 0)",
+      "rgb(255, 193, 0)",
+      "rgb(255, 193, 0)",
+      "rgb(255, 244, 0)",
+      "rgb(255, 244, 0)",
+    ],
+  },
+};
 
-function contarVotoPersonagem() {
-  fetch("/dashboard/mais_votado", {
-    method: "get",
-  }).then(function (resposta) {
-    if (resposta.ok) {
-      resposta.json().then((json) => {
-        if (json[0].idPersonagem == 1) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/shinra_icon.jpg">`;
-        } else if (json[0].idPersonagem == 2) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/arthur_icon.jpg">`;
-        } else if (json[0].idPersonagem == 3) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/beni_icon.jpg">`;
-        } else if (json[0].idPersonagem == 4) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/joker_icon.jpg">`;
-        } else if (json[0].idPersonagem == 5) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/obi_icon.jpg">`;
-        } else if (json[0].idPersonagem == 6) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/maki_icon.jpg">`;
-        } else if (json[0].idPersonagem == 7) {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/iris_icon.jpeg">`;
-        } else {
-          img_fav.innerHTML = `<img src="../assets/personagens_icon/tamaki_icon.jpg">`;
-        }
-      });
-    }
-  });
-}
 
 var ctx = document.getElementById("num_escolhas");
 var chart_votos = new Chart(ctx, dados_votos);
@@ -147,9 +164,29 @@ function pontuacoes_quiz() {
   });
 }
 
+var cty = document.getElementById("qtd_fire_cash");
+var chart_gacha = new Chart(cty, dados_gacha);
+
+function qtd_fire_cash() {
+  fetch("/dashboard/qtd_fire_cash", {
+    method: "get",
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      resposta.json().then((json) => {
+        for (var i = 0; i < json.length; i++) {
+          dados_gacha.data.datasets[0].data.push(json[i].fireCash);
+          dados_gacha.data.labels.push(json[i].usuario);
+          chart_gacha.update();
+        }
+      });
+    }
+  });
+}
+
 function chamarFuncoes() {
   contarUsu();
   contarVotoPersonagem();
   votos();
   pontuacoes_quiz();
+  qtd_fire_cash();
 }

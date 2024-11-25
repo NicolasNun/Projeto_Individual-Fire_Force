@@ -19,4 +19,8 @@ router.get("/grafi_pontos", function (req, res) {
   dashboardController.grafi_pontos(req, res);
 });
 
+router.get("/qtd_fire_cash", function (req, res) {
+  dashboardController.qtd_fire_cash(req, res);
+});
+
 module.exports = router;

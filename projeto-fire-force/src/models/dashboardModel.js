@@ -44,9 +44,21 @@ function grafi_pontos() {
   return database.executar(instrucao);
 }
 
+function qtd_fire_cash() {
+  console.log(
+    "ACESSEI O DASHBOARD MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()"
+  );
+  var instrucao = `
+    SELECT fireCash, usuario FROM saldo RIGTH JOIN Usuario ON fkUsuario = idUsuario ORDER BY fireCash DESC;
+    `;
+  console.log("Executando a instrução SQL: \n" + instrucao);
+  return database.executar(instrucao);
+}
+
 module.exports = {
   listar_quantidade_usu,
   mais_votado,
   numero_votos,
   grafi_pontos,
+  qtd_fire_cash,
 };
