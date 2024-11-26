@@ -61,10 +61,11 @@
 }
 
 .grafico {
+  width: 27vw;
+  height: 32vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #151515;
   border: #000000 solid;
-  width: 27vw;
-  height: 33vh;
 }
