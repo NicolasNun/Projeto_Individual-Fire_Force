@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/style_header.css" />
     <link rel="stylesheet" href="./css/style_cadastro.css" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
@@ -30,12 +31,10 @@
           <h1>SEJA BEM VINDO!</h1>
           <input type="text" id="input_username" placeholder="USERNAME" />
           <input type="text" id="input_email" placeholder="EMAIL" />
-          <input type="text" id="input_senha" placeholder="SENHA" />
-          <input
-            type="text"
-            id="input_confirmar_senha"
-            placeholder="CONFIRMAR SENHA"
-          />
+          <i id="olho1" class="fa-solid fa-eye" onclick="revelar('input_senha')"></i>
+          <input type="password" id="input_senha" placeholder="SENHA" />
+          <i id="olho2" class="fa-solid fa-eye" onclick="revelar('input_confirmar_senha')"></i>
+          <input type="password" id="input_confirmar_senha" placeholder="CONFIRMAR SENHA"/>
         </div>
         <div class="personagem">
           <div class="shinra" id="img_personagem"></div>

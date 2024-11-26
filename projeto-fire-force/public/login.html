@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="./css/style_header.css" />
-    <link rel="stylesheet" href="./css/style_login.css" />
+    <link rel="stylesheet" href="./css/style_login.css" />  
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/login_cadastro.js"></script>
   </head>
@@ -29,6 +30,7 @@
         <h1>BEM VINDO DE VOLTA!</h1>
         <div class="campos">
           <input type="text" id="input_usuario" placeholder="EMAIL" />
+          <i id="olho1" class="fa-solid fa-eye" onclick="revelar('input_senha')"></i>
           <input type="password" id="input_senha" placeholder="SENHA" />
         </div>
         <button onclick="entrar()">ENTRAR</button>

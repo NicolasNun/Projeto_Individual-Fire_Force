@@ -58,6 +58,28 @@ function entrar() {
   }
 }
 
+function revelar(campo) {
+  if (campo == 'input_senha' && input_senha.type == 'password') {
+    input_senha.type = 'text'
+    olho1.classList.remove("fa-eye");
+    olho1.classList.add("fa-eye-slash");
+  } else if (campo == "input_senha" && input_senha.type == "text") {
+    input_senha.type = "password";
+    olho1.classList.add("fa-eye");
+    olho1.classList.remove("fa-eye-slash");
+  }
+  
+  if (campo == 'input_confirmar_senha' && input_confirmar_senha.type == 'password') {
+    input_confirmar_senha.type = 'text'
+    olho2.classList.remove("fa-eye");
+    olho2.classList.add("fa-eye-slash");
+  } else if (campo == "input_confirmar_senha" && input_confirmar_senha.type == "text") {
+    input_confirmar_senha.type = "password";
+    olho2.classList.add("fa-eye");
+    olho2.classList.remove("fa-eye-slash");
+  }
+}
+
 function cadastrar() {
   var usuarioVar = input_username.value;
   var emailVar = input_email.value;

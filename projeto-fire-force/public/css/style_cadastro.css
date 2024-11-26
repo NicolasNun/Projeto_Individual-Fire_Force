@@ -33,6 +33,19 @@
     padding: 2%;
 }
 
+.campos i {
+    position: absolute;
+    left: 43%;
+}
+
+#olho1 {
+    top: 60.5%;
+}
+
+#olho2 {
+    top: 70%;
+}
+
 .personagem {
     display: flex;
     flex-direction: column;
