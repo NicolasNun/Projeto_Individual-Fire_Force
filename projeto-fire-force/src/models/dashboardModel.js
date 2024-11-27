@@ -16,7 +16,7 @@ function mais_votado() {
     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()"
   );
   var instrucao = `
-    SELECT COUNT(Usuario.fkPersonagem) as voto, Personagem.* FROM Usuario JOIN Personagem ON  personagem.idPersonagem = usuario.fkPersonagem GROUP BY usuario.fkPersonagem ORDER BY voto DESC LIMIT 1;
+    SELECT COUNT(usuario.fkPersonagem) as voto, personagem.* FROM usuario JOIN personagem ON  personagem.idPersonagem = usuario.fkPersonagem GROUP BY usuario.fkPersonagem ORDER BY voto DESC LIMIT 1;
     `;
   console.log("Executando a instrução SQL: \n" + instrucao);
   return database.executar(instrucao);
@@ -27,7 +27,7 @@ function numero_votos() {
     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()"
   );
   var instrucao = `
-    SELECT COUNT(Usuario.fkPersonagem) as voto, Personagem.* FROM Usuario RIGHT JOIN Personagem ON  personagem.idPersonagem = usuario.fkPersonagem GROUP BY personagem.idPersonagem ORDER BY voto DESC;
+    SELECT COUNT(usuario.fkPersonagem) as voto, personagem.* FROM usuario RIGHT JOIN personagem ON  personagem.idPersonagem = usuario.fkPersonagem GROUP BY personagem.idPersonagem ORDER BY voto DESC;
     `;
   console.log("Executando a instrução SQL: \n" + instrucao);
   return database.executar(instrucao);
@@ -49,7 +49,7 @@ function qtd_fire_cash() {
     "ACESSEI O DASHBOARD MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()"
   );
   var instrucao = `
-    SELECT fireCash, usuario FROM saldo RIGTH JOIN Usuario ON fkUsuario = idUsuario ORDER BY fireCash DESC;
+    SELECT fireCash, usuario FROM saldo RIGTH JOIN usuario ON fkUsuario = idUsuario ORDER BY fireCash DESC;
     `;
   console.log("Executando a instrução SQL: \n" + instrucao);
   return database.executar(instrucao);
