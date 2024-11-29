@@ -136,16 +136,24 @@ function buscarFireCash() {
 var novoValor = 0;
 
 function girar() {
-  const personagem_bonus = carta_escolhida;
-  const chute_cartas_repetidas = Number(document.getElementById("span_chute_cartas_repetidas").innerHTML);
+  botao_girar_cartas.classList.add("botao_bloqueado");
 
-  let fireCashAux = Number(fire_cash)
+  const personagem_bonus = carta_escolhida;
+  const chute_cartas_repetidas = Number(
+    document.getElementById("span_chute_cartas_repetidas").innerHTML
+  );
+
+  let fireCashAux = Number(fire_cash);
 
   if (fire_cash < 10) {
     alert("Fire cash insuficiente");
-    div_resultado.innerHTML =
-      "<b>Recarregue a pagína para jogar novamente.</b>";
-  } else {
+    return;
+  }
+
+  fireCashAux -= 10;
+  girarCartas();
+
+  setTimeout(() => {
     var primeira_carta = 0;
     var segunda_carta = 0;
     var terceira_carta = 0;
@@ -175,14 +183,15 @@ function girar() {
       primeira_carta == terceira_carta &&
       chute_cartas_repetidas == 3
     ) {
-      fireCashAux += 60
+      fireCashAux += 60;
       novoValor = fireCashAux;
     } else if (
       (primeira_carta == segunda_carta ||
-      primeira_carta == terceira_carta ||
-      segunda_carta == terceira_carta) && chute_cartas_repetidas == 2
+        primeira_carta == terceira_carta ||
+        segunda_carta == terceira_carta) &&
+      chute_cartas_repetidas == 2
     ) {
-      fireCashAux += 35
+      fireCashAux += 35;
       novoValor = fireCashAux;
     }
 
@@ -191,7 +200,7 @@ function girar() {
       personagem_bonus == segunda_carta &&
       personagem_bonus == terceira_carta
     ) {
-      fireCashAux += 110
+      fireCashAux += 110;
       novoValor = fireCashAux;
     } else if (
       (personagem_bonus == primeira_carta &&
@@ -200,21 +209,22 @@ function girar() {
         personagem_bonus == terceira_carta) ||
       (personagem_bonus == segunda_carta && personagem_bonus == terceira_carta)
     ) {
-      fireCashAux += 60
+      fireCashAux += 60;
       novoValor = fireCashAux;
     } else if (
       personagem_bonus == primeira_carta ||
       personagem_bonus == segunda_carta ||
       personagem_bonus == terceira_carta
     ) {
-      fireCashAux += 30
+      fireCashAux += 30;
       novoValor = fireCashAux;
-    } 
+    }
 
-    fireCashAux -= 10
-    novoValor = fireCashAux
+    novoValor = fireCashAux;
     atualizarFireCash(novoValor);
-  }
+    
+    botao_girar_cartas.classList.remove("botao_bloqueado");
+  }, 1600);
 }
 
 function atualizarFireCash(novoValor) {
@@ -231,6 +241,26 @@ function atualizarFireCash(novoValor) {
       buscarFireCash();
     }
   });
+}
+
+function girarCartas() {
+  const giro = setInterval(() => {
+    for (var i = 1; i <= 3; i++) {
+      var numero_aleatorio = parseInt(Math.random() * cartas.length);
+
+      if (i == 1) {
+        carta_um.innerHTML = cartas[numero_aleatorio];
+      } else if (i == 2) {
+        carta_dois.innerHTML = cartas[numero_aleatorio];
+      } else {
+        carta_tres.innerHTML = cartas[numero_aleatorio];
+      }
+    }
+  }, 50);
+
+  setTimeout(() => {
+    clearInterval(giro);
+  }, 1500);
 }
 
 function chamarFuncoes() {

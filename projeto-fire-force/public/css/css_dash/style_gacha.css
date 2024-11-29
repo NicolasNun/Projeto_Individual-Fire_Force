@@ -26,7 +26,8 @@
 }
 
 .card_regras button{
-  border-radius: 10px
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .span_titulo_regras {
@@ -157,4 +158,11 @@
   border-radius: 0 0 100px 100px;
   border: 0;
   font-size: 5vh;
+  cursor: pointer;
+}
+
+.botao_bloqueado {
+  cursor: none;
+  pointer-events: none;
+  opacity: 0.5;
 }
